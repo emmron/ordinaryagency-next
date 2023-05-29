@@ -23,12 +23,12 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
 
   return (
     <motion.div
-      className="border-2 rounded-lg shadow-lg my-4 overflow-hidden bg-white"
-      whileHover={{ scale: 1.02, boxShadow: "0px 5px 5px rgba(0, 0, 0, 0.2)" }}
+      className="border-2 rounded-none my-2 overflow-hidden bg-white"
+      whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.3 }}
     >
       <motion.div
-        className="p-6 flex justify-between items-center cursor-pointer"
+        className="p-4 flex justify-between items-center cursor-pointer"
         onClick={handleClick}
       >
         <motion.h2
