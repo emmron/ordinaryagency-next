@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 interface AccordionProps {
   question: string;
@@ -17,35 +17,41 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
   };
 
   const variants = {
-    open: { opacity: 1, maxHeight: 2000 }, // Use a large number for maxHeight to simulate 'auto'
-    closed: { opacity: 0, maxHeight: 0 }
+    open: { opacity: 1, height: "auto" },
+    closed: { opacity: 0, height: 0 }
+  };
+
+  const transition = {
+    duration: 0.5,
+    ease: [0.04, 0.62, 0.23, 0.98]
   };
 
   return (
     <motion.div
-      className="border-2 rounded-none my-2 overflow-hidden bg-white"
+      className="rounded-none my-2 overflow-hidden bg-white"
       whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.3 }}
+      transition={transition}
     >
       <motion.div
-        className="p-4 flex justify-between items-center cursor-pointer"
+        className="p-4 flex items-center cursor-pointer bg-gray-100 hover:bg-gray-200 transition-colors duration-200 ease-out"
         onClick={handleClick}
+        style={{ justifyContent: 'flex-start' }}
       >
+        <motion.div
+          className="transition-all duration-500 ease-in-out mr-3"
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={transition}
+        >
+          {isOpen ? <FiChevronUp size={24} /> : <FiChevronDown size={24} />}
+        </motion.div>
         <motion.h2
-          className="font-bold text-lg"
+          className="font-bold text-lg text-gray-800"
           initial={false}
           animate={{ fontSize: isOpen ? "1.2em" : "1em" }}
-          transition={{ duration: 0.3 }}
+          transition={transition}
         >
           {question}
         </motion.h2>
-        <motion.div
-          className="transition-transform duration-500"
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <FiChevronDown size={24} />
-        </motion.div>
       </motion.div>
 
       <AnimatePresence>
@@ -55,8 +61,8 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
             initial="closed"
             animate={isOpen ? "open" : "closed"}
             exit="closed"
-            transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-            className="p-6 bg-white text-black border-t text-lg overflow-hidden"
+            transition={transition}
+            className="p-4 bg-white text-black border-t text-lg overflow-hidden"
           >
             {answer}
           </motion.section>
