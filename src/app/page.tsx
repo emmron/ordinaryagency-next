@@ -23,14 +23,14 @@ export default function Home() {
           <Accordion question="SEO & PPC" answer="Our SEO and PPC services are designed to help you reach your target audience effectively." />
           <Accordion question="Automations & AI" answer="We implement cutting-edge automations and AI to boost the efficiency and effectiveness of your business processes." />
           <Accordion question="Web Development & API Integrations" answer="Our team of experts offer top-tier web development and API integration services." />
-        </div>
+                  </div>
 
         <div className="work mb-8">
           <h2 className="mb-4">Our Work</h2>
-          <Accordion question="JLC Associates" answer="Details of the work we've done for JLC Associates." />
+          <Accordion question="JLC Associates" answer="We rebuilt their website giving them a clean modern design. Check out the website at <a href='http://jlcassociates.com.au' target='_blank' rel='noopener noreferrer'>jlcassociates.com.au</a>." />
           <Accordion question="The Barefoot Disciple" answer="Details of the work we've done for The Barefoot Disciple." />
-          <Accordion question="Instant Fun" answer="Details of the work we've done for Instant Fun." />
-          <Accordion question="BML Ventures" answer="Details of the work we've done for BML Ventures." />
+          <Accordion question="Instant Fun" answer="We rebuilt their website in Shopify, offering a modern ecommerce experience." />
+          <Accordion question="BML Ventures" answer="We built BML Ventures a Gatsby website that's fast, clean, and modern. Visit <a href='http://bmlventures.com.au' target='_blank' rel='noopener noreferrer'>bmlventures.com.au</a> to see it." />
           <Accordion question="Aust-BioSearch" answer="Details of the work we've done for Aust-BioSearch." />
           <Accordion question="Wanneroo Basketball Association" answer="Details of the work we've done for Wanneroo Basketball Association." />
           <Accordion question="WA Pest Consultants" answer="Details of the work we've done for WA Pest Consultants." />
