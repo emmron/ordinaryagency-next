@@ -28,12 +28,12 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
 
   return (
     <motion.div
-      className="rounded-none my-2 overflow-hidden bg-white"
+      className="rounded-none my-2 overflow-hidden"
       whileHover={{ scale: 1.02 }}
       transition={transition}
     >
       <motion.div
-        className="p-4 flex items-center cursor-pointer bg-gray-100 hover:bg-gray-200 transition-colors duration-200 ease-out"
+        className="p-4 flex items-center cursor-pointer transition-colors duration-200 ease-out"
         onClick={handleClick}
         style={{ justifyContent: 'flex-start' }}
       >
@@ -62,7 +62,7 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
             animate={isOpen ? "open" : "closed"}
             exit="closed"
             transition={transition}
-            className="p-4 bg-white text-black border-t text-lg overflow-hidden"
+            className="p-4 text-black border-t text-lg overflow-hidden"
           >
             {answer}
           </motion.section>
