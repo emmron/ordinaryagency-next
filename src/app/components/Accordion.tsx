@@ -34,6 +34,7 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
       >
         <motion.div
           className="font-bold text-lg"
+          style={{ fontFamily: 'Poppins', fontWeight: 700 }}
           initial={false}
           animate={{ color: isOpen ? '#fff' : '#000', fontSize: isOpen ? "1.1em" : "1em", letterSpacing: isOpen ? "0.05em" : "0em" }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -58,6 +59,7 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="p-6 bg-white text-black border-t text-lg"
+            style={{ fontFamily: 'Poppins', fontWeight: 400 }}
           >
             {answer}
           </motion.div>
