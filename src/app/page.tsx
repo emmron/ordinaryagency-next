@@ -31,11 +31,11 @@ export default function Home() {
           <Accordion question="The Barefoot Disciple" answer="Details of the work we've done for The Barefoot Disciple." />
           <Accordion question="Instant Fun" answer="We rebuilt their website in Shopify, offering a modern ecommerce experience." />
           <Accordion question="BML Ventures" answer="We built BML Ventures a Gatsby website that's fast, clean, and modern. Visit <a href='http://bmlventures.com.au' target='_blank' rel='noopener noreferrer'>bmlventures.com.au</a> to see it." />
-          <Accordion question="Aust-BioSearch" answer="Details of the work we've done for Aust-BioSearch." />
+          <Accordion question="Aust-BioSearch" answer="We revamped Aust-BioSearch's website search and modernised the homepage." />
           <Accordion question="Wanneroo Basketball Association" answer="Details of the work we've done for Wanneroo Basketball Association." />
           <Accordion question="WA Pest Consultants" answer="Details of the work we've done for WA Pest Consultants." />
-          <Accordion question="Central Lending Solutions" answer="Details of the work we've done for Central Lending Solutions." />
-        </div>
+          <Accordion question="Central Lending Solutions" answer="We do SEO for Central Lending Solutions, optimizing their content and keywords." />
+                  </div>
       </div>
     </main>
   )
