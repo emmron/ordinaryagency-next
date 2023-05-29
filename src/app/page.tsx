@@ -19,9 +19,10 @@ export default function Home() {
 
         <div className="services mb-8">
           <h2 className="mb-4">Our Services</h2>
-          <Accordion question="Web Development" answer="We provide high-quality web development services." />
-          <Accordion question="WordPress" answer="We can create and manage your WordPress site." />
-          <Accordion question="API and Integrations" answer="We can integrate various APIs into your website." />
+          <Accordion question="Web Support & Hosting" answer="We provide excellent web support and hosting services." />
+          <Accordion question="SEO & PPC" answer="Our SEO and PPC services are designed to help you reach your target audience effectively." />
+          <Accordion question="Automations & AI" answer="We implement cutting-edge automations and AI to boost the efficiency and effectiveness of your business processes." />
+          <Accordion question="Web Development & API Integrations" answer="Our team of experts offer top-tier web development and API integration services." />
         </div>
 
         <div className="work mb-8">
