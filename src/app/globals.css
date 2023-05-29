@@ -26,7 +26,7 @@ body {
     rgb(var(--background-start-rgb));
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #000;
@@ -34,12 +34,12 @@ body {
 
 
 h1,h2,h3,h4,h5 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 900;
 }
 
 p {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #333;
