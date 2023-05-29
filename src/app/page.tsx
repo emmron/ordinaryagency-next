@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen items-center justify-start p-24 bg-white text-black">
       <Logo className="mb-8" />
+      <h1 className="text-3xl text-center mb-8">A digital agency that is anything but ordinary</h1>
       <div className="z-10 w-full max-w-5xl items-center justify-center font-mono text-sm">
         <div className="about mb-8">
           <h2 className="mb-4">About</h2>
