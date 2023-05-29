@@ -6,9 +6,6 @@ export default function Home() {
     <main className="flex flex-col min-h-screen items-center justify-start p-24 bg-white text-black">
       <Logo className="mb-8" />
       <div className="z-10 w-full max-w-5xl items-center justify-center font-mono text-sm">
-        <h1 className="text-center mb-4">Welcome to OA Digital Agency</h1>
-        <p className="text-center mb-8">We offer a wide range of services to help you build your online presence.</p>
-
         <div className="about mb-8">
           <h2 className="mb-4">About</h2>
           <p>Our digital agency excels in web development, SEO, API integrations, marketing, AI, and marketing strategy. We create stunning websites, optimize them for search engines, and seamlessly integrate different software systems. Our marketing services leverage AI to analyze data and devise effective strategies. We're dedicated to delivering tangible results for Australian businesses in the digital realm.</p>
