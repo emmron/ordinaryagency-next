@@ -1,5 +1,13 @@
+"use client";
+
+import { motion } from 'framer-motion';
 import Logo from './components/Logo';
 import Accordion from './components/Accordion';
+
+const variants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0 },
+};
 
 export default function Home() {
   return (
@@ -7,25 +15,25 @@ export default function Home() {
       <Logo className="mb-8" />
       <h1 className="text-3xl text-center mb-8">A digital agency that is anything but ordinary</h1>
       <div className="z-10 w-full max-w-5xl items-center justify-center font-mono text-sm">
-        <div className="about mb-8">
+        <motion.div className="about mb-8" initial="hidden" animate="visible" variants={variants} transition={{ delay: 0.5 }}>
           <h2 className="text-2xl mb-4">About</h2>
           <p>Our digital agency excels in web development, SEO, API integrations, marketing, AI, and marketing strategy. We create stunning websites, optimize them for search engines, and seamlessly integrate different software systems. Our marketing services leverage AI to analyze data and devise effective strategies. We're dedicated to delivering tangible results for Australian businesses in the digital realm.</p>
-        </div>
+        </motion.div>
 
-        <div className="team mb-8">
+        <motion.div className="team mb-8" initial="hidden" animate="visible" variants={variants} transition={{ delay: 1 }}>
           <h2 className="text-2xl mb-4">Team</h2>
           <p>We are comprising of both local and international talent. Our agency is proud to have a group of professionals with diverse expertise and backgrounds. Many of our team members bring valuable experience from agency backgrounds in Perth, Western Australia.</p>
-        </div>
+        </motion.div>
 
-        <div className="services mb-8">
+        <motion.div className="services mb-8" initial="hidden" animate="visible" variants={variants} transition={{ delay: 1.5 }}>
           <h2 className="text-2xl mb-4">Our Services</h2>
           <Accordion question="Web Support & Hosting" answer="We provide excellent web support and hosting services." />
           <Accordion question="SEO & PPC" answer="Our SEO and PPC services are designed to help you reach your target audience effectively." />
           <Accordion question="Automations & AI" answer="We implement cutting-edge automations and AI to boost the efficiency and effectiveness of your business processes." />
           <Accordion question="Web Development & API Integrations" answer="Our team of experts offer top-tier web development and API integration services." />
-                  </div>
+        </motion.div>
 
-        <div className="work mb-8">
+        <motion.div className="work mb-8" initial="hidden" animate="visible" variants={variants} transition={{ delay: 2 }}>
           <h2 className="text-2xl mb-4">Our Work</h2>
           <Accordion question="JLC Associates" answer="We rebuilt their website giving them a clean modern design. Check out the website at <a href='http://jlcassociates.com.au' target='_blank' rel='noopener noreferrer'>jlcassociates.com.au</a>." />
           <Accordion question="The Barefoot Disciple" answer="Details of the work we've done for The Barefoot Disciple." />
@@ -35,7 +43,7 @@ export default function Home() {
           <Accordion question="Wanneroo Basketball Association" answer="Details of the work we've done for Wanneroo Basketball Association." />
           <Accordion question="WA Pest Consultants" answer="Details of the work we've done for WA Pest Consultants." />
           <Accordion question="Central Lending Solutions" answer="We do SEO for Central Lending Solutions, optimizing their content and keywords." />
-                  </div>
+        </motion.div>
       </div>
     </main>
   )
