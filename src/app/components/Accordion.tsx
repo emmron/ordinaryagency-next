@@ -22,13 +22,13 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
   };
 
   const transition = {
-    duration: 0.5,
-    ease: [0.04, 0.62, 0.23, 0.98]
+    duration: 0.8,
+    ease: "easeInOut",
   };
 
   return (
     <motion.div
-      className="rounded-none my-2 overflow-hidden"
+      className="rounded-none my-0.5 overflow-hidden"
       whileHover={{ scale: 1.02 }}
       transition={transition}
     >
@@ -62,7 +62,7 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
             animate={isOpen ? "open" : "closed"}
             exit="closed"
             transition={transition}
-            className="p-4 text-black border-t text-lg overflow-hidden"
+            className="p-4 pt-2 text-black text-lg overflow-hidden"
           >
             {answer}
           </motion.section>
