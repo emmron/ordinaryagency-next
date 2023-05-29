@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronDown } from "react-icons/fi";
-type AccordionProps = {
+
+interface AccordionProps {
   question: string;
   answer: string;
-};
-const Accordion = ({ question, answer }) => {
+}
+
+const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
