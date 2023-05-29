@@ -16,36 +16,33 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
     setIsOpen(!isOpen);
   };
 
+  const variants = {
+    open: { opacity: 1, maxHeight: 2000 }, // Use a large number for maxHeight to simulate 'auto'
+    closed: { opacity: 0, maxHeight: 0 }
+  };
+
   return (
     <motion.div
       className="border-2 rounded-lg shadow-lg my-4 overflow-hidden bg-white"
-      whileHover={{ boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.2)" }}
+      whileHover={{ scale: 1.02, boxShadow: "0px 5px 5px rgba(0, 0, 0, 0.2)" }}
       transition={{ duration: 0.3 }}
-      animate={{ borderColor: isOpen ? '#000' : '#ddd', borderWidth: isOpen ? '3px' : '2px' }}
     >
       <motion.div
         className="p-6 flex justify-between items-center cursor-pointer"
         onClick={handleClick}
-        initial={false}
-        animate={{ backgroundColor: isOpen ? '#000' : '#fff' }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
       >
-        <motion.div
+        <motion.h2
           className="font-bold text-lg"
-          style={{ fontFamily: 'Poppins', fontWeight: 700 }}
           initial={false}
-          animate={{ color: isOpen ? '#fff' : '#000', fontSize: isOpen ? "1.1em" : "1em", letterSpacing: isOpen ? "0.05em" : "0em" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          animate={{ fontSize: isOpen ? "1.2em" : "1em" }}
+          transition={{ duration: 0.3 }}
         >
           {question}
-        </motion.div>
+        </motion.h2>
         <motion.div
-          className={`transition-transform duration-500 ${isOpen ? 'text-white' : 'text-black'}`}
-          animate={{ rotate: isOpen ? 180 : 0, scale: isOpen ? 1.2 : 1 }}
-          whileHover={{ rotate: isOpen ? 180 : 90 }}
-          transition={{ duration: 0.5 }}
+          className="transition-transform duration-500"
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
         >
           <FiChevronDown size={24} />
         </motion.div>
@@ -53,16 +50,16 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="p-6 bg-white text-black border-t text-lg"
-            style={{ fontFamily: 'Poppins', fontWeight: 400 }}
+          <motion.section
+            variants={variants}
+            initial="closed"
+            animate={isOpen ? "open" : "closed"}
+            exit="closed"
+            transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+            className="p-6 bg-white text-black border-t text-lg overflow-hidden"
           >
             {answer}
-          </motion.div>
+          </motion.section>
         )}
       </AnimatePresence>
     </motion.div>
