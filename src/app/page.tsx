@@ -9,6 +9,16 @@ export default function Home() {
         <h1 className="text-center mb-4">Welcome to OA Digital Agency</h1>
         <p className="text-center mb-8">We offer a wide range of services to help you build your online presence.</p>
 
+        <div className="about mb-8">
+          <h2 className="mb-4">About</h2>
+          <p>Our digital agency excels in web development, SEO, API integrations, marketing, AI, and marketing strategy. We create stunning websites, optimize them for search engines, and seamlessly integrate different software systems. Our marketing services leverage AI to analyze data and devise effective strategies. We're dedicated to delivering tangible results for Australian businesses in the digital realm.</p>
+        </div>
+
+        <div className="team mb-8">
+          <h2 className="mb-4">Team</h2>
+          <p>We are comprising of both local and international talent. Our agency is proud to have a group of professionals with diverse expertise and backgrounds. Many of our team members bring valuable experience from agency backgrounds in Perth, Western Australia.</p>
+        </div>
+
         <div className="services mb-8">
           <h2 className="mb-4">Our Services</h2>
           <Accordion question="Web Development" answer="We provide high-quality web development services." />
@@ -18,9 +28,14 @@ export default function Home() {
 
         <div className="work mb-8">
           <h2 className="mb-4">Our Work</h2>
-          <Accordion question="Client A" answer="We have worked with Client A to create a responsive website." />
-          <Accordion question="Client B" answer="We helped Client B to integrate their API with their website." />
-          <Accordion question="Client C" answer="We managed the WordPress site for Client C." />
+          <Accordion question="JLC Associates" answer="Details of the work we've done for JLC Associates." />
+          <Accordion question="The Barefoot Disciple" answer="Details of the work we've done for The Barefoot Disciple." />
+          <Accordion question="Instant Fun" answer="Details of the work we've done for Instant Fun." />
+          <Accordion question="BML Ventures" answer="Details of the work we've done for BML Ventures." />
+          <Accordion question="Aust-BioSearch" answer="Details of the work we've done for Aust-BioSearch." />
+          <Accordion question="Wanneroo Basketball Association" answer="Details of the work we've done for Wanneroo Basketball Association." />
+          <Accordion question="WA Pest Consultants" answer="Details of the work we've done for WA Pest Consultants." />
+          <Accordion question="Central Lending Solutions" answer="Details of the work we've done for Central Lending Solutions." />
         </div>
       </div>
     </main>
