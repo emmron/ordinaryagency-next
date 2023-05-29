@@ -3,7 +3,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronDown } from "react-icons/fi";
-
+type AccordionProps = {
+  question: string;
+  answer: string;
+};
 const Accordion = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
