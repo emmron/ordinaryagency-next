@@ -12,7 +12,13 @@ const variants = {
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen items-center justify-start p-4 sm:p-6 md:p-8 lg:p-12 xl:p-24 bg-white text-black">
+      <header className="fixed top-0 right-0 m-4">
+      <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className="bg-black text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300">
+      Login
+    </a>
+      </header>
       <Logo className="mb-8" />
+
       <h1 className="text-3xl text-center mb-8">A digital agency that is anything but ordinary</h1>
       <div className="z-10 w-full max-w-5xl items-center justify-center font-mono text-sm">
         <motion.div className="about mb-8" initial="hidden" animate="visible" variants={variants} transition={{ delay: 0.5 }}>
