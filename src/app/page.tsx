@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import Logo from './components/Logo';
 import Accordion from './components/Accordion';
+import { FiPhone } from 'react-icons/fi';
+
 
 const variants = {
   hidden: { opacity: 0, x: -100 },
@@ -11,12 +13,19 @@ const variants = {
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen items-center justify-start p-4 sm:p-6 md:p-8 lg:p-12 xl:p-24 bg-white text-black">
-      <header className="fixed top-0 right-0 m-4">
+    <main className="flex flex-col min-h-screen items-center justify-start p-4 pt-20 sm:p-6 md:p-8 lg:p-12 xl:p-28 bg-white text-black">
+    <header className="fixed top-0 right-0 bg-white p-8 flex justify-between items-center w-full z-10">
+      <div className="flex items-center">
+        <FiPhone className="mr-2" />
+        <a href="tel:+1234567890" className="text-black hover:text-gray-700 transition-colors duration-300">
+          +1 (234) 567-890
+        </a>
+      </div>
       <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className="bg-black text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300">
-      Login
-    </a>
-      </header>
+        Login
+      </a>
+    </header>
+
       <Logo className="mb-8" />
 
       <h1 className="text-3xl text-center mb-8">A digital agency that is anything but ordinary</h1>
