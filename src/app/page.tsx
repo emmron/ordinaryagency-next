@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Modal from 'react-modal';
 import Logo from './components/Logo';
 import Accordion from './components/Accordion';
 import { FiPhone } from 'react-icons/fi';
 
+Modal.setAppElement('#my-root') // replace with your app element id
 
 const variants = {
   hidden: { opacity: 0, x: -100 },
@@ -12,19 +15,76 @@ const variants = {
 };
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 10000, // ensure the modal is on top of everything else
+    background: '#fff', // make sure the background is solid white
+    borderRadius: '4px',
+    border: '1px solid #ccc',
+    padding: '20px',
+    overflow: 'auto', // add this to enable scrolling if the content is larger than the modal
+    fontFamily: "'Poppins', sans-serif", // set the font for the modal content
+  },
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.75)', // semi-transparent black
+    zIndex: 10000,
+  },
+};
   return (
     <main className="flex flex-col min-h-screen items-center justify-start p-4 pt-20 sm:p-6 md:p-8 lg:p-12 xl:p-28 bg-white text-black">
-    <header className="fixed top-0 right-0 bg-white p-8 flex justify-between items-center w-full z-10">
-      <div className="flex items-center">
-        <FiPhone className="mr-2" />
-        <a href="tel:+610899308081" className="text-black hover:text-gray-700 transition-colors duration-300">
-          (08) 9930 8081
-        </a>
-      </div>
-      <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className="bg-black text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300">
-        Login
-      </a>
-    </header>
+      <header className="fixed top-0 right-0 bg-white p-8 flex justify-between items-center w-full z-10">
+        <div className="flex items-center">
+          <FiPhone className="mr-2" />
+          <a href="tel:+610899308081" className="text-black hover:text-gray-700 transition-colors duration-300">
+            (08) 9930 8081
+          </a>
+        </div>
+        <div className="flex items-center">
+          <button onClick={openModal} className="bg-black text-white font-bold py-2 px-4 rounded mr-4 hover:bg-white hover:text-black transition-colors duration-300">
+            Contact
+          </button>
+          <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className="bg-black text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300">
+            Login
+          </a>
+        </div>
+      </header>
+
+      <Modal
+      id="contact_modal"
+      isOpen={isModalOpen}
+      onRequestClose={closeModal}
+      style={customStyles} // apply the custom styles
+    >
+      <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
+      <form className="space-y-4">
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name:</label>
+          <input id="name" className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" type="text" name="name" />
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email:</label>
+          <input id="email" className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" type="email" name="email" />
+        </div>
+        <button type="submit" className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit</button>
+      </form>
+      <button onClick={closeModal} className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Close</button>
+    </Modal>
+
 
       <Logo className="mb-8" />
 
