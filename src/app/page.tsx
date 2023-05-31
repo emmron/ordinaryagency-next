@@ -17,8 +17,8 @@ export default function Home() {
     <header className="fixed top-0 right-0 bg-white p-8 flex justify-between items-center w-full z-10">
       <div className="flex items-center">
         <FiPhone className="mr-2" />
-        <a href="tel:+1234567890" className="text-black hover:text-gray-700 transition-colors duration-300">
-          +1 (234) 567-890
+        <a href="tel:+610899308081" className="text-black hover:text-gray-700 transition-colors duration-300">
+          (08) 9930 8081
         </a>
       </div>
       <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className="bg-black text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300">
