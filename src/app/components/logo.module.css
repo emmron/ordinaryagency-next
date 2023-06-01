@@ -4,19 +4,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px; /* decrease the size */
-  height: 60px; /* decrease the size */
-  border: 3px solid black; /* adjust border size accordingly */
+  width: 60px;
+  height: 60px;
+  border: 3px solid black;
   border-radius: 50%;
   background-color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.circle.scrolled {
+  background-color: black;
 }
 
 .text {
-  font-size: 36px; /* decrease the font size */
+  font-size: 36px;
   font-weight: bold;
   color: black;
   font-family: 'Radley', serif;
   text-transform: lowercase;
   position: relative;
-  top: -3px; /* adjust position accordingly */
+  top: -3px;
+  transition: color 0.3s ease;
+}
+
+.circle.scrolled .text {
+  color: white;
 }
