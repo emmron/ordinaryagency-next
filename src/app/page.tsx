@@ -47,22 +47,23 @@ export default function Home() {
 };
   return (
     <main className="flex flex-col min-h-screen items-center justify-start p-4 pt-20 sm:p-6 md:p-8 lg:p-12 xl:p-28 bg-white text-black">
-      <header className="fixed top-0 right-0 bg-white p-8 flex justify-between items-center w-full z-10">
-        <div className="flex items-center">
-          <FiPhone className="mr-2" />
-          <a href="tel:+610899308081" className="text-black hover:text-gray-700 transition-colors duration-300">
-            (08) 9930 8081
-          </a>
-        </div>
-        <div className="flex items-center">
-          <button onClick={openModal} className="bg-black text-white font-bold py-2 px-4 rounded mr-4 hover:bg-white hover:text-black transition-colors duration-300">
-            Contact
-          </button>
-          <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className="bg-black text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300">
-            Login
-          </a>
-        </div>
-      </header>
+    <header className="fixed top-0 right-0 bg-white p-8 flex justify-between items-center w-full z-10">
+    <div className="flex items-center">
+      <Logo className="mr-4" />
+      <FiPhone className="mr-2" />
+      <a href="tel:+610899308081" className="text-black hover:text-gray-700 transition-colors duration-300">
+        (08) 9930 8081
+      </a>
+    </div>
+    <div className="flex items-center">
+      <button onClick={openModal} className="bg-black text-white font-bold py-2 px-4 rounded mr-4 hover:bg-white hover:text-black transition-colors duration-300">
+        Contact
+      </button>
+      <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className="bg-black text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300">
+        Login
+      </a>
+    </div>
+</header>
 
       <Modal
       id="contact_modal"
@@ -84,9 +85,6 @@ export default function Home() {
       </form>
       <button onClick={closeModal} className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Close</button>
     </Modal>
-
-
-      <Logo className="mb-8" />
       <div className="flex flex-col md:flex-row justify-center items-center text-3xl md:text-6xl font-bold my-8">
         <motion.span className="md:pr-4"
           style={{ fontFamily: "'Poppins', sans-serif" }}

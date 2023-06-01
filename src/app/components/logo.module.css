@@ -4,19 +4,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 126px;
-  height: 126px;
-  border: 5px solid black;
+  width: 60px; /* decrease the size */
+  height: 60px; /* decrease the size */
+  border: 3px solid black; /* adjust border size accordingly */
   border-radius: 50%;
   background-color: white;
 }
 
 .text {
-  font-size: 74px;
+  font-size: 36px; /* decrease the font size */
   font-weight: bold;
   color: black;
   font-family: 'Radley', serif;
   text-transform: lowercase;
   position: relative;
-  top: -5px;
+  top: -3px; /* adjust position accordingly */
 }
