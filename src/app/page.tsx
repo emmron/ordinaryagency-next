@@ -87,8 +87,26 @@ export default function Home() {
 
 
       <Logo className="mb-8" />
+      <div className="flex flex-col md:flex-row justify-center items-center text-3xl md:text-6xl font-bold my-8">
+        <motion.span className="md:pr-4"
+          style={{ fontFamily: "'Poppins', sans-serif" }}
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Anything.
+        </motion.span>
+        <motion.span
+          style={{ fontFamily: "'Poppins', sans-serif" }}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        >
+          But Ordinary
+        </motion.span>
+      </div>
 
-      <h1 className="text-3xl text-center mb-8">A digital agency that is anything but ordinary</h1>
+
       <div className="z-10 w-full max-w-5xl items-center justify-center font-mono text-sm">
         <motion.div className="about mb-8" initial="hidden" animate="visible" variants={variants} transition={{ delay: 0.5 }}>
           <h2 className="text-2xl mb-4">About</h2>
