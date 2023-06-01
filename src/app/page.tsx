@@ -88,21 +88,27 @@ export default function Home() {
 
   return (
     <main className="flex flex-col min-h-screen items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-28 bg-white text-black">
-      <header className={`fixed top-0 right-0 bg-white p-8 flex justify-between items-center w-full z-10 ${isScrolled ? '' : ''}`}>
-        <Logo className="mr-4" />
-        <div className="flex items-center">
-          <FiPhone className="mr-2" />
-          <a href="tel:+610899308081" className="text-black hover:text-gray-700 transition-colors duration-300">
-            (08) 9930 8081
-          </a>
-          <button onClick={openModal} className={`${buttonClass} font-bold py-2 px-4 rounded ml-4 hover:bg-white hover:text-black transition-colors duration-300`}>
-            Contact
-          </button>
-          <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className={`${buttonClass} font-bold py-2 px-4 rounded ml-4 hover:bg-white hover:text-black transition-colors duration-300`}>
-            Login
-          </a>
-        </div>
-      </header>
+    <header className={`fixed top-0 right-0 bg-white p-4 md:p-8 w-full z-10 ${isScrolled ? '' : ''}`}>
+  <div className="flex flex-row justify-between items-center w-full">
+    <div className="flex-1">
+      <Logo className="w-12 h-12 md:w-16 md:h-16 object-contain" />
+    </div>
+    <div className="flex-1 text-right">
+    <FiPhone />
+      <a href="tel:+610899308081" className="text-black block hover:text-gray-700 transition-colors duration-300">
+        (08) 9930 8081
+      </a>
+      <div className="mt-2">
+        <button onClick={openModal} className={`${buttonClass} font-bold py-2 px-4 rounded mr-2 hover:bg-white hover:text-black transition-colors duration-300`}>
+          Contact
+        </button>
+        <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className={`${buttonClass} font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300`}>
+          Login
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
 
       <Modal
         id="contact_modal"
