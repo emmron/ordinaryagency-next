@@ -46,9 +46,8 @@ export default function Home() {
   },
 };
   return (
-    <main className="flex flex-col min-h-screen items-center justify-start p-4 pt-20 sm:p-6 md:p-8 lg:p-12 xl:p-28 bg-white text-black">
-    <header className="fixed top-0 right-0 bg-white p-8 flex justify-between items-center w-full z-10">
-    <div className="flex items-center">
+    <main className="flex flex-col min-h-screen items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-28 bg-white text-black">
+      <header className="fixed top-0 right-0 bg-white p-8 flex justify-between items-center w-full z-10">    <div className="flex items-center">
       <Logo className="mr-4" />
       <FiPhone className="mr-2" />
       <a href="tel:+610899308081" className="text-black hover:text-gray-700 transition-colors duration-300">
@@ -85,7 +84,8 @@ export default function Home() {
       </form>
       <button onClick={closeModal} className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Close</button>
     </Modal>
-      <div className="flex flex-col md:flex-row justify-center items-center text-3xl md:text-6xl font-bold my-8">
+    <div className="flex flex-col md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-8 h-screen bg-white text-black">
+      <motion.div className="flex flex-col justify-center items-center h-full w-full p-16">
         <motion.span className="md:pr-4"
           style={{ fontFamily: "'Poppins', sans-serif" }}
           initial={{ opacity: 0, x: -100 }}
@@ -102,8 +102,8 @@ export default function Home() {
         >
           But Ordinary
         </motion.span>
-      </div>
-
+      </motion.div>
+    </div>
 
       <div className="z-10 w-full max-w-5xl items-center justify-center font-mono text-sm">
         <motion.div className="about mb-8" initial="hidden" animate="visible" variants={variants} transition={{ delay: 0.5 }}>
