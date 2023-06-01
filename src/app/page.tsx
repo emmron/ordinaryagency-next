@@ -7,9 +7,6 @@ import Logo from './components/Logo';
 import Accordion from './components/Accordion';
 import { FiPhone } from 'react-icons/fi';
 
-if (document.getElementById('my-root')) {
-  Modal.setAppElement('#my-root')
-}
 const variants = {
   hidden: { opacity: 0, x: -100 },
   visible: { opacity: 1, x: 0 },
@@ -108,7 +105,7 @@ export default function Home() {
       <button onClick={closeModal} className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Close</button>
     </Modal>
     <div className="flex flex-col md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-0 h-screen bg-white text-black">
-      <motion.div className="flex flex-col justify-start items-center h-full w-full py-12 p-0">
+      <motion.div className="flex flex-col justify-start items-center h-full w-full py- p-0">
         <motion.span className="md:pr-4"
           style={{ fontFamily: "'Poppins', sans-serif" }}
           initial={{ opacity: 0, x: -100 }}
