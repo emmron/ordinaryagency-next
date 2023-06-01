@@ -107,8 +107,8 @@ export default function Home() {
       </form>
       <button onClick={closeModal} className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Close</button>
     </Modal>
-    <div className="flex flex-col md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-8 h-screen bg-white text-black">
-      <motion.div className="flex flex-col justify-center items-center h-full w-full p-16">
+    <div className="flex flex-col md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-0 h-screen bg-white text-black">
+      <motion.div className="flex flex-col justify-center items-center h-full w-full p-12">
         <motion.span className="md:pr-4"
           style={{ fontFamily: "'Poppins', sans-serif" }}
           initial={{ opacity: 0, x: -100 }}
