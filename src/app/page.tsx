@@ -47,21 +47,20 @@ export default function Home() {
 };
   return (
     <main className="flex flex-col min-h-screen items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-28 bg-white text-black">
-      <header className="fixed top-0 right-0 bg-white p-8 flex justify-between items-center w-full z-10">    <div className="flex items-center">
-      <Logo className="mr-4" />
+    <header className="fixed top-0 right-0 bg-white p-8 flex justify-between items-center w-full z-10">
+  <Logo className="mr-4" />
+  <div className="flex items-center">
       <FiPhone className="mr-2" />
       <a href="tel:+610899308081" className="text-black hover:text-gray-700 transition-colors duration-300">
-        (08) 9930 8081
+          (08) 9930 8081
       </a>
-    </div>
-    <div className="flex items-center">
-      <button onClick={openModal} className="bg-black text-white font-bold py-2 px-4 rounded mr-4 hover:bg-white hover:text-black transition-colors duration-300">
-        Contact
+      <button onClick={openModal} className="bg-black text-white font-bold py-2 px-4 rounded ml-4 hover:bg-white hover:text-black transition-colors duration-300">
+          Contact
       </button>
-      <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className="bg-black text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300">
-        Login
+      <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className="bg-black text-white font-bold py-2 px-4 rounded ml-4 hover:bg-white hover:text-black transition-colors duration-300">
+          Login
       </a>
-    </div>
+  </div>
 </header>
 
       <Modal
