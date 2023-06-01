@@ -1,14 +1,15 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Modal from 'react-modal';
 import Logo from './components/Logo';
 import Accordion from './components/Accordion';
 import { FiPhone } from 'react-icons/fi';
 
-Modal.setAppElement('#my-root') // replace with your app element id
-
+if (document.getElementById('my-root')) {
+  Modal.setAppElement('#my-root')
+}
 const variants = {
   hidden: { opacity: 0, x: -100 },
   visible: { opacity: 1, x: 0 },
@@ -16,6 +17,7 @@ const variants = {
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -24,6 +26,22 @@ export default function Home() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  useEffect(() => {
+     const handleScroll = () => {
+       const show = window.scrollY > 50;
+       if (show !== isScrolled) {
+         setIsScrolled(show);
+       }
+     };
+
+     document.addEventListener('scroll', handleScroll);
+     return () => {
+       document.removeEventListener('scroll', handleScroll);
+     };
+   }, [isScrolled]);
+
+   const buttonClass = isScrolled ? 'bg-white text-black border-2 border-black' : 'bg-black text-white';
   const customStyles = {
   content: {
     top: '50%',
@@ -32,36 +50,37 @@ export default function Home() {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    zIndex: 10000, // ensure the modal is on top of everything else
-    background: '#fff', // make sure the background is solid white
+    zIndex: 10000,
+    background: '#fff',
     borderRadius: '4px',
     border: '1px solid #ccc',
     padding: '20px',
-    overflow: 'auto', // add this to enable scrolling if the content is larger than the modal
-    fontFamily: "'Poppins', sans-serif", // set the font for the modal content
+    overflow: 'auto',
+    fontFamily: "'Poppins', sans-serif",
   },
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.75)', // semi-transparent black
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
     zIndex: 10000,
   },
 };
+
   return (
     <main className="flex flex-col min-h-screen items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-28 bg-white text-black">
-    <header className="fixed top-0 right-0 bg-white p-8 flex justify-between items-center w-full z-10">
-  <Logo className="mr-4" />
-  <div className="flex items-center">
-      <FiPhone className="mr-2" />
-      <a href="tel:+610899308081" className="text-black hover:text-gray-700 transition-colors duration-300">
-          (08) 9930 8081
-      </a>
-      <button onClick={openModal} className="bg-black text-white font-bold py-2 px-4 rounded ml-4 hover:bg-white hover:text-black transition-colors duration-300">
-          Contact
-      </button>
-      <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className="bg-black text-white font-bold py-2 px-4 rounded ml-4 hover:bg-white hover:text-black transition-colors duration-300">
-          Login
-      </a>
-  </div>
-</header>
+    <header className={`fixed top-0 right-0 bg-white p-8 flex justify-between items-center w-full z-10 ${isScrolled ? '' : ''}`}>
+           <Logo className="mr-4" />
+           <div className="flex items-center">
+             <FiPhone className="mr-2" />
+             <a href="tel:+610899308081" className="text-black hover:text-gray-700 transition-colors duration-300">
+               (08) 9930 8081
+             </a>
+             <button onClick={openModal} className={`${buttonClass} font-bold py-2 px-4 rounded ml-4 hover:bg-white hover:text-black transition-colors duration-300`}>
+               Contact
+             </button>
+             <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className={`${buttonClass} font-bold py-2 px-4 rounded ml-4 hover:bg-white hover:text-black transition-colors duration-300`}>
+               Login
+             </a>
+           </div>
+         </header>
 
       <Modal
       id="contact_modal"
