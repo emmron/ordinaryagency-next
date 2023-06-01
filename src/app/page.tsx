@@ -28,18 +28,23 @@ export default function Home() {
   };
 
   useEffect(() => {
-     const handleScroll = () => {
-       const show = window.scrollY > 50;
-       if (show !== isScrolled) {
-         setIsScrolled(show);
-       }
-     };
+  const handleScroll = () => {
+    const show = window.scrollY > 50;
+    if (show !== isScrolled) {
+      setIsScrolled(show);
+    }
+  };
 
-     document.addEventListener('scroll', handleScroll);
-     return () => {
-       document.removeEventListener('scroll', handleScroll);
-     };
-   }, [isScrolled]);
+  if (typeof window !== "undefined") {
+    Modal.setAppElement('#my-root')
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }
+}, [isScrolled]);
+
 
    const buttonClass = isScrolled ? 'bg-white text-black border-2 border-black' : 'bg-black text-white';
   const customStyles = {
