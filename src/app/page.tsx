@@ -8,7 +8,7 @@ import Accordion from './components/Accordion';
 import { FiPhone } from 'react-icons/fi';
 import { useInView } from 'react-intersection-observer';
 import ChatWidget from './components/ChatWidget';
-import { Parallax } from 'react-scroll-parallax';
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 const variants = {
   hidden: { opacity: 0, x: -100 },
@@ -89,6 +89,7 @@ export default function Home() {
   };
 
   return (
+    <ParallaxProvider>
     <main className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-28 bg-transparent text-black">
 <header className={`fixed top-0 right-0 bg-transparent p-4 md:p-8 w-full z-10 ${isScrolled ? '' : ''}`}>
   <div className="flex items-center justify-between w-full">
@@ -220,5 +221,6 @@ export default function Home() {
       </div>
       <ChatWidget />
     </main>
+    </ParallaxProvider>
   );
 }
