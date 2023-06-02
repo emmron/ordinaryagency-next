@@ -220,7 +220,6 @@ const image1 = "/images/frest2.png";
         </div>
       </div>
       <Footer />
-      <ChatWidget />
     </main>
   );
 }
