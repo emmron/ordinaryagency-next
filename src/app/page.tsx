@@ -103,7 +103,7 @@ export default function Home() {
             <div className="flex items-center justify-end md:mr-4">
               <FiPhone />
               <a href="tel:+610899308081" className="text-black block ml-2 hover:text-gray-700 transition-colors duration-300 bold">
-                Call Us
+                (08) 9930 8081
               </a>
             </div>
             <div className="flex justify-end mt-2 md:mt-0">
