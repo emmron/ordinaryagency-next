@@ -45,14 +45,15 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
           {isOpen ? <IoIosArrowUp size={24} color="black" /> : <IoIosArrowDown size={24} color="black" />}
         </motion.div>
         <motion.h2
-          className="font-bold text-lg text-gray-800"
-          style={{ fontFamily: "'Poppins', sans-serif", color: 'black', fontWeight: "600" }}
-          initial={false}
-          animate={{ fontSize: isOpen ? "1.2em" : "1em" }}
-          transition={transition}
-        >
-          {question}
-        </motion.h2>
+      className="font-bold text-lg text-gray-800"
+      style={{ fontFamily: "'Poppins', sans-serif", color: 'black', fontWeight: "600" }}
+      initial={false}
+      animate={{ fontSize: isOpen ? "1.8em" : "1.5em" }} // Increase the font size here
+      transition={transition}
+    >
+      {question}
+    </motion.h2>
+
       </motion.div>
 
       <AnimatePresence>
@@ -64,10 +65,11 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
             exit="closed"
             transition={transition}
             className="p-4 pt-2 text-black text-lg overflow-hidden"
-            style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500" }}
+            style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500", fontSize: "1.5em" }} // Increase the font size here
           >
             {answer}
           </motion.section>
+
         )}
       </AnimatePresence>
     </motion.div>
