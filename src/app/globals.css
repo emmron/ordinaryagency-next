@@ -31,9 +31,11 @@ body {
   line-height: 1.5;
   color: #000;
 }
-
+.hero {
+  margin-top: -120px !important;
+}
 header {
-  background: white;
+  background: transparent;
   z-index: 99 !important;
 }
 
