@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { motion } from 'framer-motion';
 import Modal from 'react-modal';
 import Logo from './components/Logo';
@@ -8,7 +8,7 @@ import Accordion from './components/Accordion';
 import Footer from './components/Footer';
 import { FiPhone } from 'react-icons/fi';
 import { useInView } from 'react-intersection-observer';
-import ChatWidget from './components/ChatWidget';
+import Head from "next/head"
 import { Parallax } from 'react-parallax';
 const variants = {
   hidden: { opacity: 0, x: -100 },
@@ -65,7 +65,7 @@ export default function Home() {
     }
   }, [isScrolled]);
 
-  const buttonClass = isScrolled ? 'bg-white text-black border-2 border-black' : 'bg-black text-white';
+  const buttonClass = isScrolled ? 'bg-white text-black border-2 border-black' : 'bg-black text-white border-2 border-black';
   const customStyles = {
     content: {
       top: '50%',
@@ -87,31 +87,36 @@ export default function Home() {
       zIndex: 10000,
     },
   };
-const image1 = "/images/frest2.png";
+  const image1 = "/images/frest2.png";
   return (
-    <main className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 lg:py-0 xl:p-28 bg-transparent text-black">
-<header className={`fixed top-0 right-0 bg-transparent p-4 md:p-8 w-full z-10 ${isScrolled ? '' : ''}`}>
-  <div className="flex items-center justify-between w-full">
-    <Logo className="w-12 h-12 md:w-16 md:h-16 object-contain" />
-    <div className="md:flex items-center">
-      <div className="flex items-center justify-end md:mr-4">
-        <FiPhone />
-        <a href="tel:+610899308081" className="text-black block ml-2 hover:text-gray-700 transition-colors duration-300">
-          (08) 9930 8081
-        </a>
-      </div>
-      <div className="flex justify-end mt-2 md:mt-0">
-        <button onClick={openModal} className={`${buttonClass} font-bold py-2 px-4 rounded mr-2 hover:bg-white hover:text-black transition-colors duration-300`}>
-          Contact
-        </button>
-        <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className={`${buttonClass} font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300`}>
-          Login
-        </a>
-      </div>
-    </div>
-  </div>
-</header>
-
+    <>
+    <Head>
+      <title>Ordinary Agency</title>
+      <meta property="og:title" content="Ordinary Agency" key="title" />
+      <meta name="description" content="Digital Agency in West Perth" key="desc" />
+    </Head>
+    <main id="#my-root" className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 lg:py-0 xl:p-28 bg-transparent text-black">
+      <header className={`fixed top-0 right-0 bg-transparent p-4 md:p-8 w-full z-10 ${isScrolled ? '' : ''}`}>
+        <div className="flex items-center justify-between w-full">
+          <Logo className="w-12 h-12 md:w-16 md:h-16 object-contain" />
+          <div className="md:flex items-center">
+            <div className="flex items-center justify-end md:mr-4">
+              <FiPhone />
+              <a href="tel:+610899308081" className="text-black block ml-2 hover:text-gray-700 transition-colors duration-300 bold">
+                Call Us
+              </a>
+            </div>
+            <div className="flex justify-end mt-2 md:mt-0">
+              <button onClick={openModal} className={`${buttonClass} font-bold py-2 px-4 rounded mr-2 hover:bg-white hover:text-black transition-colors duration-300`}>
+                Contact
+              </button>
+              <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className={`${buttonClass} font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300`}>
+                Login
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
       <Modal
         id="contact_modal"
         isOpen={isModalOpen}
@@ -133,38 +138,38 @@ const image1 = "/images/frest2.png";
         <button onClick={closeModal} className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Close</button>
       </Modal>
 
-        <Parallax bgImage={image1} strength={500}>
-                <div className="flex flex-col hero md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-0 h-screen bg-white text-black mt-8 md:mt-0"
-      style={{
-        backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/images/frest2.png')",
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed',
-        height: '120vh',
-        width: '100vw',
-        marginTop: '-200px',
-      }}
-    >
-  <motion.span className="md:pr-4 text-5xl sm:text-6xl md:text-8xl text-black"
-  style={{ fontFamily: "'Poppins', sans-serif" }}
-  initial={{ opacity: 0, x: -100 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 1 }}
->
-  Anything.
-</motion.span>
-<motion.span className="text-5xl sm:text-6xl md:text-8xl text-black"
-  style={{ fontFamily: "'Poppins', sans-serif" }}
-  initial={{ opacity: 0, x: 100 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 1 }}
->
-  But Ordinary
-</motion.span>
-  </div>
-        </Parallax>
-              <div ref={refAbout} className="z-10 pt-12 w-full max-w-5xl items-center justify-center font-mono text-sm">
+      <Parallax bgImage={image1} strength={500}>
+        <div className="flex flex-col hero md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-0 h-screen bg-white text-black mt-8 md:mt-0"
+          style={{
+            backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/images/frest2.png')",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed',
+            height: '120vh',
+            width: '100vw',
+            marginTop: '-200px',
+          }}
+        >
+          <motion.span className="md:pr-4 text-5xl sm:text-6xl md:text-8xl text-black"
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
+            Anything.
+          </motion.span>
+          <motion.span className="text-5xl sm:text-6xl md:text-8xl text-black"
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
+            But Ordinary
+          </motion.span>
+        </div>
+      </Parallax>
+      <div ref={refAbout} className="z-10 pt-12 w-full max-w-5xl items-center justify-center font-mono text-sm">
         <motion.div className="about mb-8"
           initial="hidden"
           animate={inViewAbout ? 'visible' : 'hidden'}
@@ -221,5 +226,6 @@ const image1 = "/images/frest2.png";
       </div>
       <Footer />
     </main>
+    </>
   );
 }
