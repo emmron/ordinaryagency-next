@@ -87,7 +87,7 @@ export default function Home() {
       zIndex: 10000,
     },
   };
-const image1 = "/images/perthhigh.png";
+const image1 = "/images/frest2.png";
   return (
     <main className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 lg:py-0 xl:p-28 bg-transparent text-black">
 <header className={`fixed top-0 right-0 bg-transparent p-4 md:p-8 w-full z-10 ${isScrolled ? '' : ''}`}>
@@ -136,7 +136,7 @@ const image1 = "/images/perthhigh.png";
         <Parallax bgImage={image1} strength={500}>
                 <div className="flex flex-col hero md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-0 h-screen bg-white text-black mt-8 md:mt-0"
       style={{
-        backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/images/forest.png')",
+        backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/images/frest2.png')",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
