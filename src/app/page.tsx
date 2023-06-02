@@ -8,13 +8,12 @@ import Accordion from './components/Accordion';
 import { FiPhone } from 'react-icons/fi';
 import { useInView } from 'react-intersection-observer';
 import ChatWidget from './components/ChatWidget';
-import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
-
+import { Parallax } from 'react-parallax';
 const variants = {
   hidden: { opacity: 0, x: -100 },
   visible: { opacity: 1, x: 0 },
 };
-//lolrofl
+
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -87,9 +86,8 @@ export default function Home() {
       zIndex: 10000,
     },
   };
-
+const image1 = "/images/perthhigh.png";
   return (
-    <ParallaxProvider>
     <main className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-28 bg-transparent text-black">
 <header className={`fixed top-0 right-0 bg-transparent p-4 md:p-8 w-full z-10 ${isScrolled ? '' : ''}`}>
   <div className="flex items-center justify-between w-full">
@@ -134,16 +132,17 @@ export default function Home() {
         <button onClick={closeModal} className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Close</button>
       </Modal>
 
-<Parallax y={[-100, 100]} tagOuter="figure">
-    <div className="flex flex-col hero md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-0 h-screen bg-white text-black mt-8 md:mt-0"
+        <Parallax bgImage={image1} strength={500}>
+                <div className="flex flex-col hero md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-0 h-screen bg-white text-black mt-8 md:mt-0"
       style={{
         backgroundImage: "linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5)), url('/images/perthhigh.png')",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
-        height: '100vh',
-        width: '100vw'
+        height: '120vh',
+        width: '100vw',
+        marginTop: '-200px',
       }}
     >
   <motion.span className="md:pr-4 text-5xl sm:text-6xl md:text-8xl text-black"
@@ -163,8 +162,8 @@ export default function Home() {
   But Ordinary
 </motion.span>
   </div>
-</Parallax>
-      <div ref={refAbout} className="z-10 pt-12 w-full max-w-5xl items-center justify-center font-mono text-sm">
+        </Parallax>
+              <div ref={refAbout} className="z-10 pt-12 w-full max-w-5xl items-center justify-center font-mono text-sm">
         <motion.div className="about mb-8"
           initial="hidden"
           animate={inViewAbout ? 'visible' : 'hidden'}
@@ -221,6 +220,5 @@ export default function Home() {
       </div>
       <ChatWidget />
     </main>
-    </ParallaxProvider>
   );
 }
