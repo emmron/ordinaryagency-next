@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Modal from 'react-modal';
 import Logo from './components/Logo';
 import Accordion from './components/Accordion';
+import Footer from './components/Footer';
 import { FiPhone } from 'react-icons/fi';
 import { useInView } from 'react-intersection-observer';
 import ChatWidget from './components/ChatWidget';
@@ -88,7 +89,7 @@ export default function Home() {
   };
 const image1 = "/images/perthhigh.png";
   return (
-    <main className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-28 bg-transparent text-black">
+    <main className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 lg:py-0 xl:p-28 bg-transparent text-black">
 <header className={`fixed top-0 right-0 bg-transparent p-4 md:p-8 w-full z-10 ${isScrolled ? '' : ''}`}>
   <div className="flex items-center justify-between w-full">
     <Logo className="w-12 h-12 md:w-16 md:h-16 object-contain" />
@@ -218,6 +219,7 @@ const image1 = "/images/perthhigh.png";
           </motion.div>
         </div>
       </div>
+      <Footer />
       <ChatWidget />
     </main>
   );
