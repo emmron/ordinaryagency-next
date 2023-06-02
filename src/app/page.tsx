@@ -7,6 +7,8 @@ import Logo from './components/Logo';
 import Accordion from './components/Accordion';
 import { FiPhone } from 'react-icons/fi';
 import { useInView } from 'react-intersection-observer';
+import ChatWidget from './components/ChatWidget';
+
 
 const variants = {
   hidden: { opacity: 0, x: -100 },
@@ -207,6 +209,7 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
+      <ChatWidget />
     </main>
   );
 }
