@@ -201,8 +201,8 @@ export default function Home() {
           >
             <h2 className="text-2xl mb-4">Our Services</h2>
             <Accordion question="Web Support & Hosting" answer="We provide excellent web support and hosting services." />
-            <Accordion question="SEO & PPC" answer="Our SEO and PPC services are designed to help you reach your target audience effectively." />
-            <Accordion question="Automations & AI" answer="We implement cutting-edge automations and AI to boost the efficiency and effectiveness of your business processes." />
+            <Accordion question="SEO & PPC" answer="Harnessing the power of SEO and PPC, we devise strategies to help you connect with your target audience more effectively. Our approaches are designed to maximize visibility, drive traffic, and increase conversions, contributing to your business growth." />
+            <Accordion question="Automations & AI" answer="We embrace the future of digital technology by implementing state-of-the-art automations and AI. Our objective is to enhance your business processes' efficiency and effectiveness, freeing you to focus on what matters most: your business's success." />
             <Accordion question="Web Development & API Integrations" answer="Our team of experts offer top-tier web development and API integration services." />
           </motion.div>
         </div>
