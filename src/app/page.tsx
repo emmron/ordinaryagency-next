@@ -200,7 +200,7 @@ export default function Home() {
             transition={{ delay: 1.5 }}
           >
             <h2 className="text-2xl mb-4">Our Services</h2>
-            <Accordion question="Web Support & Hosting" answer="We provide excellent web support and hosting services." />
+            <Accordion question="Web Support & Hosting" answer="Our dedicated team provides robust web support and hosting services, ensuring your digital presence remains secure, reliable and efficient. We take care of your digital infrastructure, so you can focus on what you do best – running your business." />
             <Accordion question="SEO & PPC" answer="Harnessing the power of SEO and PPC, we devise strategies to help you connect with your target audience more effectively. Our approaches are designed to maximize visibility, drive traffic, and increase conversions, contributing to your business growth." />
             <Accordion question="Automations & AI" answer="We embrace the future of digital technology by implementing state-of-the-art automations and AI. Our objective is to enhance your business processes' efficiency and effectiveness, freeing you to focus on what matters most: your business's success." />
             <Accordion question="Web Development & API Integrations" answer="Our expert web development team excels in creating seamless digital experiences. We specialise in integrating APIs with a variety of platforms including Shopify, WordPress, WooCommerce, and custom React applications. Our goal is to simplify complex technical processes, ensuring your business tools are in perfect harmony for maximum performance and scalability." />
