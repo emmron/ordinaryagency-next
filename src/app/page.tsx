@@ -217,11 +217,42 @@ return () => {
             transition={{ delay: 1.5 }}
           >
             <h2 className="text-2xl mb-4">Our Services</h2>
-            <Accordion question="Web Support & Hosting" answer="Our proficient team delivers steadfast web support and hosting services. We ensure your digital presence is secure, reliable, and efficient, allowing you to concentrate on your core business operations." />
-            <Accordion question="SEO & PPC" answer="With a strategic blend of SEO and PPC, we foster meaningful connections between you and your target audience. Our strategies aim to boost visibility, drive website traffic, and increase conversions, propelling your business growth." />
-            <Accordion question="Automations & AI" answer="We embrace the future of digital technology by implementing state-of-the-art automations and AI. Our objective is to enhance your business processes' efficiency and effectiveness, freeing you to focus on what matters most: your business's success." />
-            <Accordion question="Web Development & API Integrations" answer="Specialising in creating seamless digital experiences, our expert web development team seamlessly integrates APIs with diverse platforms, including Shopify, WordPress, WooCommerce, and custom React applications. We aim to simplify complex technical processes, ensuring your business tools perform harmoniously for maximum performance and scalability." />
-          </motion.div>
+            <Accordion
+              question="Web Support & Hosting"
+              answer={
+                <>
+                  Our proficient team delivers steadfast web support and hosting services. We ensure your digital presence is secure, reliable, and efficient, allowing you to concentrate on your core business operations.
+                </>
+              }
+            />
+
+            <Accordion
+              question="SEO & PPC"
+              answer={
+                <>
+                  With a strategic blend of SEO and PPC, we foster meaningful connections between you and your target audience. Our strategies aim to boost visibility, drive website traffic, and increase conversions, propelling your business growth.
+                </>
+              }
+            />
+
+            <Accordion
+              question="Automations & AI"
+              answer={
+                <>
+                  We embrace the future of digital technology by implementing state-of-the-art automations and AI. Our objective is to enhance your business processes' efficiency and effectiveness, freeing you to focus on what matters most: your business's success.
+                </>
+              }
+            />
+
+            <Accordion
+              question="Web Development & API Integrations"
+              answer={
+                <>
+                  Specialising in creating seamless digital experiences, our expert web development team seamlessly integrates APIs with diverse platforms, including Shopify, WordPress, WooCommerce, and custom React applications. We aim to simplify complex technical processes, ensuring your business tools perform harmoniously for maximum performance and scalability.
+                </>
+              }
+            />
+</motion.div>
         </div>
 
         <div ref={refWork}>
@@ -233,39 +264,58 @@ return () => {
           >
             <h2 className="text-2xl mb-4">Our Work</h2>
             <Accordion
-        question="JLC Associates"
-        answer={
-            <>
-                We revitalised the JLC Associates' digital footprint with a sleek, contemporary website design.
-                Take a moment to explore their transformed platform at
-                <a href="http://www.jlcassociates.com.au" target="_blank" rel="noopener noreferrer">jlcassociates.com.au</a>.
-            </>
-        }
-    />
-    <Accordion
-        question="The Barefoot Disciple"
-        answer={
-            <>
-                Tasked with showcasing their book, we constructed a clean, intuitive website for The Barefoot Disciple using WordPress, ACF, and GeneratePress.
-                Discover our work and their compelling content at
-                <a href="http://www.barefootdisciple.com" target="_blank" rel="noopener noreferrer">barefootdisciple.com</a>.
-            </>
-        }
-    />
+  question="JLC Associates"
+  answer={
+    <>
+      We revitalised the JLC Associates' digital footprint with a sleek, contemporary website design. Take a moment to explore their transformed platform at <a href="http://www.jlcassociates.com.au" target="_blank" rel="noopener noreferrer">jlcassociates.com.au</a>.
+    </>
+  }
+/>
 
-            <Accordion question="Instant Fun" answer="Transitioning to a modern e-commerce platform, we reimagined Instant Fun's website on Shopify, enhancing the online shopping experience." />
-            <Accordion
-                question="BML Ventures"
-                answer={
-                    <>
-                        For BML Ventures, we developed a website utilising Gatsby. The result? A platform that's speedy, streamlined, and stylish.
-                        Visit
-                        <a href="http://www.bmlventures.com.au" target="_blank" rel="noopener noreferrer">bmlventures.com.au</a> to see for yourself.
-                    </>
-                }
-            />
-                        <Accordion question="Aust-BioSearch" answer="We revitalised Aust-BioSearch's website, introducing a sophisticated search function and modernising the homepage for an improved user experience." />
-            <Accordion question="Wanneroo Basketball Association" answer="We are currently working on developing a new website for Wanneroo Basketball Association. Stay tuned for the upcoming launch!" />
+<Accordion
+  question="The Barefoot Disciple"
+  answer={
+    <>
+      Tasked with showcasing their book, we constructed a clean, intuitive website for The Barefoot Disciple using WordPress, ACF, and GeneratePress. Discover our work and their compelling content at <a href="http://www.barefootdisciple.com" target="_blank" rel="noopener noreferrer">barefootdisciple.com</a>.
+    </>
+  }
+/>
+
+<Accordion
+  question="Instant Fun"
+  answer={
+    <>
+      Transitioning to a modern e-commerce platform, we reimagined Instant Fun's website on Shopify, enhancing the online shopping experience.
+    </>
+  }
+/>
+
+<Accordion
+  question="BML Ventures"
+  answer={
+    <>
+      For BML Ventures, we developed a website utilising Gatsby. The result? A platform that's speedy, streamlined, and stylish. Visit <a href="http://www.bmlventures.com.au" target="_blank" rel="noopener noreferrer">bmlventures.com.au</a> to see for yourself.
+    </>
+  }
+/>
+
+<Accordion
+  question="Aust-BioSearch"
+  answer={
+    <>
+      We revitalised Aust-BioSearch's website, introducing a sophisticated search function and modernising the homepage for an improved user experience.
+    </>
+  }
+/>
+
+<Accordion
+  question="Wanneroo Basketball Association"
+  answer={
+    <>
+      We are currently working on developing a new website for Wanneroo Basketball Association. Stay tuned for the upcoming launch!
+    </>
+  }
+/>
           </motion.div>
         </div>
       </div>
