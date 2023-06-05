@@ -294,8 +294,8 @@ return () => {
   question="BML Ventures"
   answer={
     <>
-      For BML Ventures, we developed a website utilising Gatsby. The result? A platform that's speedy, streamlined, and stylish. Visit <a href="http://www.bmlventures.com.au" target="_blank" rel="noopener noreferrer">bmlventures.com.au</a> to see for yourself.
-    </>
+    Given the task to create a fast and elegant platform for BML Ventures, we developed a website using Gatsby, coupled with a WordPress backend, striking a balance between performance and ease of management. Check out their new website at
+  <a href="http://www.bmlventures.com.au" target="_blank" rel="noopener noreferrer">bmlventures.com.au</a>.    </>
   }
 />
 
