@@ -138,37 +138,37 @@ export default function Home() {
         <button onClick={closeModal} className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Close</button>
       </Modal>
 
-      <Parallax bgImage={image1} strength={500}>
-        <div className="flex flex-col hero md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-0 h-screen bg-white text-black mt-8 md:mt-0"
-          style={{
-            backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))",
-       backgroundPosition: 'center',
-       backgroundSize: 'cover',
-       backgroundRepeat: 'no-repeat',
-       backgroundAttachment: 'fixed',
-       height: '120vh',
-       width: '100vw',
-       marginTop: '-200px',
-          }}
-        >
-          <motion.span className="md:pr-4 text-5xl sm:text-6xl md:text-8xl text-black"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          >
-            Anything.
-          </motion.span>
-          <motion.span className="text-5xl sm:text-6xl md:text-8xl text-black"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          >
-            But Ordinary
-          </motion.span>
-        </div>
-      </Parallax>
+            <Parallax bgImage={image1} strength={500}>
+              <div className="flex flex-col hero md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-0 h-screen bg-white text-black mt-8 md:mt-0"
+                style={{
+                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/images/frest2.png')",
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundAttachment: 'fixed',
+                  height: '120vh',
+                  width: '100vw',
+                  marginTop: '-200px',
+                }}
+              >
+                <motion.span className="md:pr-4 text-5xl sm:text-6xl md:text-8xl text-black"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1 }}
+                >
+                  Anything.
+                </motion.span>
+                <motion.span className="text-5xl sm:text-6xl md:text-8xl text-black"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1 }}
+                >
+                  But Ordinary
+                </motion.span>
+              </div>
+            </Parallax>
       <div ref={refAbout} className="z-10 pt-12 w-full max-w-5xl items-center justify-center font-mono text-sm">
         <motion.div className="about mb-8"
           initial="hidden"
