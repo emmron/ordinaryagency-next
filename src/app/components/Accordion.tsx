@@ -6,7 +6,7 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 interface AccordionProps {
   question: string;
-  answer: string;
+  answer: JSX.Element;
 }
 
 const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
@@ -59,19 +59,17 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
       <AnimatePresence>
         {isOpen && (
           <motion.section
-            variants={variants}
-            initial="closed"
-            animate={isOpen ? "open" : "closed"}
-            exit="closed"
-            transition={transition}
-            className="p-4 pt-2 text-black text-lg overflow-hidden"
-            style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500", fontSize: "1.5em" }} // Increase the font size here
-          >
-            <div
-              dangerouslySetInnerHTML={{ __html: answer }}
-              className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto link-styling"
-            />
-          </motion.section>
+       variants={variants}
+       initial="closed"
+       animate={isOpen ? "open" : "closed"}
+       exit="closed"
+       transition={transition}
+       className="p-4 pt-2 text-black text-lg overflow-hidden"
+       style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500", fontSize: "1.5em" }}
+     >
+       {/* Answer is a JSX.Element now, so just render it here */}
+       {answer}
+     </motion.section>
 
         )}
       </AnimatePresence>

@@ -232,15 +232,39 @@ return () => {
             transition={{ delay: 2 }}
           >
             <h2 className="text-2xl mb-4">Our Work</h2>
-            <Accordion question="JLC Associates" answer="We revitalised the JLC Associates' digital footprint with a sleek, contemporary website design. Take a moment to explore their transformed platform at jlcassociates.com.au." />
             <Accordion
+        question="JLC Associates"
+        answer={
+            <>
+                We revitalised the JLC Associates' digital footprint with a sleek, contemporary website design.
+                Take a moment to explore their transformed platform at
+                <a href="http://www.jlcassociates.com.au" target="_blank" rel="noopener noreferrer">jlcassociates.com.au</a>.
+            </>
+        }
+    />
+    <Accordion
         question="The Barefoot Disciple"
-        answer="Tasked with showcasing their book, we constructed a clean, intuitive website for The Barefoot Disciple using WordPress, ACF, and GeneratePress. Discover our work and their compelling content at barefootdisciple.com.' target='_blank' rel='noopener noreferrer'>barefootdisciple.com</a> to see our work."
-      />
+        answer={
+            <>
+                Tasked with showcasing their book, we constructed a clean, intuitive website for The Barefoot Disciple using WordPress, ACF, and GeneratePress.
+                Discover our work and their compelling content at
+                <a href="http://www.barefootdisciple.com" target="_blank" rel="noopener noreferrer">barefootdisciple.com</a>.
+            </>
+        }
+    />
 
             <Accordion question="Instant Fun" answer="Transitioning to a modern e-commerce platform, we reimagined Instant Fun's website on Shopify, enhancing the online shopping experience." />
-            <Accordion question="BML Ventures" answer="For BML Ventures, we developed a website utilising Gatsby. The result? A platform that's speedy, streamlined, and stylish. Visit bmlventures.com.au to see for yourself." />
-            <Accordion question="Aust-BioSearch" answer="We revitalised Aust-BioSearch's website, introducing a sophisticated search function and modernising the homepage for an improved user experience." />
+            <Accordion
+                question="BML Ventures"
+                answer={
+                    <>
+                        For BML Ventures, we developed a website utilising Gatsby. The result? A platform that's speedy, streamlined, and stylish.
+                        Visit
+                        <a href="http://www.bmlventures.com.au" target="_blank" rel="noopener noreferrer">bmlventures.com.au</a> to see for yourself.
+                    </>
+                }
+            />
+                        <Accordion question="Aust-BioSearch" answer="We revitalised Aust-BioSearch's website, introducing a sophisticated search function and modernising the homepage for an improved user experience." />
             <Accordion question="Wanneroo Basketball Association" answer="We are currently working on developing a new website for Wanneroo Basketball Association. Stay tuned for the upcoming launch!" />
           </motion.div>
         </div>
