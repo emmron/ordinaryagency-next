@@ -55,18 +55,19 @@ export default function Home() {
       }
     };
 
-      const handleParallax = () => {
-        const heroElement = document.querySelector('.hero');
-        const scrollPosition = window.pageYOffset;
+    const handleParallax = () => {
+  const heroElement = document.getElementById('hero');
+  const scrollPosition = window.pageYOffset;
 
-        heroElement.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
-      };
+  if (heroElement) {
+    heroElement.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+  }
+};
 
-      window.addEventListener('scroll', handleParallax);
-
-        return () => {
-          window.removeEventListener('scroll', handleParallax);
-        };
+window.addEventListener('scroll', handleParallax);
+return () => {
+  window.removeEventListener('scroll', handleParallax);
+};
 
     if (typeof window !== "undefined") {
       Modal.setAppElement('#my-root')
