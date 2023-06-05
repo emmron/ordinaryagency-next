@@ -67,7 +67,10 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
             className="p-4 pt-2 text-black text-lg overflow-hidden"
             style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500", fontSize: "1.5em" }} // Increase the font size here
           >
-            {answer}
+            <div
+              dangerouslySetInnerHTML={{ __html: answer }}
+              className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto link-styling"
+            />
           </motion.section>
 
         )}
