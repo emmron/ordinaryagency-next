@@ -233,7 +233,11 @@ return () => {
           >
             <h2 className="text-2xl mb-4">Our Work</h2>
             <Accordion question="JLC Associates" answer="We rebuilt their website giving them a clean modern design. Check out the website at <a href='http://jlcassociates.com.au' target='_blank' rel='noopener noreferrer'>jlcassociates.com.au</a>." />
-            <Accordion question="The Barefoot Disciple" answer="Details of the work we've done for The Barefoot Disciple." />
+            <Accordion
+        question="The Barefoot Disciple"
+        answer="Our team created a clean, user-friendly website for The Barefoot Disciple, with the aim of highlighting their book. The site, built with WordPress, ACF, and GeneratePress, provides an accessible and engaging platform for potential readers. Visit <a href='https://barefootdisciple.com/' target='_blank' rel='noopener noreferrer'>barefootdisciple.com</a> to see our work."
+      />
+
             <Accordion question="Instant Fun" answer="We rebuilt their website in Shopify, offering a modern ecommerce experience." />
             <Accordion question="BML Ventures" answer="We built BML Ventures a Gatsby website that's fast, clean, and modern. Visit <a href='http://bmlventures.com.au' target='_blank' rel='noopener noreferrer'>bmlventures.com.au</a> to see it." />
             <Accordion question="Aust-BioSearch" answer="We revamped Aust-BioSearch's website search and modernised the homepage." />
