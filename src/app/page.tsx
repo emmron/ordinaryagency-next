@@ -141,14 +141,14 @@ export default function Home() {
       <Parallax bgImage={image1} strength={500}>
         <div className="flex flex-col hero md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-0 h-screen bg-white text-black mt-8 md:mt-0"
           style={{
-            backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/images/frest2.png')",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed',
-            height: '120vh',
-            width: '100vw',
-            marginTop: '-200px',
+            backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))",
+       backgroundPosition: 'center',
+       backgroundSize: 'cover',
+       backgroundRepeat: 'no-repeat',
+       backgroundAttachment: 'fixed',
+       height: '120vh',
+       width: '100vw',
+       marginTop: '-200px',
           }}
         >
           <motion.span className="md:pr-4 text-5xl sm:text-6xl md:text-8xl text-black"
