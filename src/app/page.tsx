@@ -55,6 +55,19 @@ export default function Home() {
       }
     };
 
+      const handleParallax = () => {
+        const heroElement = document.querySelector('.hero');
+        const scrollPosition = window.pageYOffset;
+
+        heroElement.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+      };
+
+      window.addEventListener('scroll', handleParallax);
+
+        return () => {
+          window.removeEventListener('scroll', handleParallax);
+        };
+
     if (typeof window !== "undefined") {
       Modal.setAppElement('#my-root')
 
@@ -139,18 +152,21 @@ export default function Home() {
       </Modal>
 
             <Parallax bgImage={image1} strength={500}>
-              <div className="flex flex-col hero md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-0 h-screen bg-white text-black mt-8 md:mt-0"
-                style={{
-                  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/images/frest2.png')",
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundAttachment: 'fixed',
-                  height: '120vh',
-                  width: '100vw',
-                  marginTop: '-200px',
-                }}
-              >
+            <div className="flex flex-col hero md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-0 h-screen bg-white text-black mt-8 md:mt-0"
+    style={{
+      backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/images/frest2.png')",
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'scroll', // change this line
+      height: '120vh',
+      width: '100vw',
+      marginTop: '-200px',
+      transform: 'translateZ(0)',
+      backfaceVisibility: 'hidden',
+      perspective: 1000,
+    }}
+  >
                 <motion.span className="md:pr-4 text-5xl sm:text-6xl md:text-8xl text-black"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                   initial={{ opacity: 0, x: -100 }}
