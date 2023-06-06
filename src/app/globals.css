@@ -79,3 +79,10 @@ p {
   transform: translateY(-5px);
   transition: all 0.3s ease;
 }
+.link {
+  transition: transform 0.3s ease;
+}
+
+.link:hover {
+  transform: scale(1.1);
+}

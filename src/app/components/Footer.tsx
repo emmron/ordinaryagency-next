@@ -34,12 +34,12 @@ const Footer = () => {
       <div className="flex justify-between items-center px-4 md:px-8">
         <Logo className="w-12 h-12 md:w-16 md:h-16 object-contain" />
         <div className="text-sm">
-          <a href="/terms" className="mr-2 md:mr-4 bg-white border border-black text-black hover:bg-black hover:text-white rounded-full px-2 md:px-4 py-1 md:py-2 transition-colors duration-200 ease-in-out font-poppins hover:animate-bounce">Terms</a>
-          <a href="/privacy" className="mr-2 md:mr-4 bg-white border border-black text-black hover:bg-black hover:text-white rounded-full px-2 md:px-4 py-1 md:py-2 transition-colors duration-200 ease-in-out font-poppins hover:animate-bounce">Privacy Policy</a>
-          <a href="https://au.linkedin.com/company/ordinaryagencyseo?trk=public_profile_experience-item_profile-section-card_subtitle-click" className="mr-2 md:mr-4 bg-white border border-black text-black hover:bg-black hover:text-white rounded-full px-2 md:px-4 py-1 md:py-2 transition-colors duration-200 ease-in-out font-poppins hover:animate-bounce">
+          <a href="/terms" className="mr-2 md:mr-4 bg-white border border-black text-black hover:bg-black hover:text-white rounded-full px-2 md:px-4 py-1 md:py-2 transition-all duration-200 ease-in-out font-poppins hover:animate-bounce hover:scale-110">Terms</a>
+          <a href="/privacy" className="mr-2 md:mr-4 bg-white border border-black text-black hover:bg-black hover:text-white rounded-full px-2 md:px-4 py-1 md:py-2 transition-all duration-200 ease-in-out font-poppins hover:animate-bounce hover:scale-110">Privacy Policy</a>
+          <a href="https://au.linkedin.com/company/ordinaryagencyseo?trk=public_profile_experience-item_profile-section-card_subtitle-click" className="mr-2 md:mr-4 bg-white border border-black text-black hover:bg-black hover:text-white rounded-full px-2 md:px-4 py-1 md:py-2 transition-all duration-200 ease-in-out font-poppins hover:animate-bounce hover:scale-110">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
-          <a href="https://www.instagram.com/ordinaryagency/" className="bg-white border border-black text-black hover:bg-black hover:text-white rounded-full px-2 md:px-4 py-1 md:py-2 transition-colors duration-200 ease-in-out font-poppins hover:animate-bounce">
+          <a href="https://www.instagram.com/ordinaryagency/" className="bg-white border border-black text-black hover:bg-black hover:text-white rounded-full px-2 md:px-4 py-1 md:py-2 transition-all duration-200 ease-in-out font-poppins hover:animate-bounce hover:scale-110">
             <FontAwesomeIcon icon={faInstagram} />
           </a>
         </div>
