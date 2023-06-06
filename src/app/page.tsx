@@ -107,7 +107,6 @@ export default function Home() {
     </Head>
     <main id="#my-root" className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 lg:py-0 xl:p-28 bg-transparent text-black">
 <header className={`fixed top-0 right-0 p-4 md:p-8 w-full z-10 ${isScrolled ? 'bg-white' : 'bg-transparent'}`}>
-    {console.log(isScrolled ? 'bg-white' : 'bg-transparent')}
         <div className="flex items-center justify-between w-full">
           <Logo className="w-12 h-12 md:w-16 md:h-16 object-contain" />
           <div className="md:flex items-center">
