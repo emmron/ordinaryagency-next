@@ -7,8 +7,8 @@ const Footer = () => {
       <div className="flex justify-between items-center">
         <Logo className="w-12 h-12 md:w-16 md:h-16 object-contain" />
         <div className="text-sm">
-          <a href="/terms" className="mr-4 hover:text-gray-500">Terms</a>
-          <a href="/privacy" className="hover:text-gray-500">Privacy Policy</a>
+          <a href="/terms" className="mr-4 bg-white border border-black text-black hover:bg-black hover:text-white rounded-full px-4 py-2 transition-colors duration-200 ease-in-out font-poppins">Terms</a>
+          <a href="/privacy" className="bg-white border border-black text-black hover:bg-black hover:text-white rounded-full px-4 py-2 transition-colors duration-200 ease-in-out font-poppins">Privacy Policy</a>
         </div>
       </div>
     </footer>
