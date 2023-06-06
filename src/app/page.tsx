@@ -64,10 +64,6 @@ export default function Home() {
   }
 };
 
-window.addEventListener('scroll', handleParallax);
-return () => {
-  window.removeEventListener('scroll', handleParallax);
-};
 
     if (typeof window !== "undefined") {
       Modal.setAppElement('#my-root')
@@ -110,7 +106,8 @@ return () => {
       <meta name="description" content="Digital Agency in West Perth" key="desc" />
     </Head>
     <main id="#my-root" className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 lg:py-0 xl:p-28 bg-transparent text-black">
-      <header className={`fixed top-0 right-0 bg-transparent p-4 md:p-8 w-full z-10 ${isScrolled ? '' : ''}`}>
+<header className={`fixed top-0 right-0 p-4 md:p-8 w-full z-10 ${isScrolled ? 'bg-white' : 'bg-transparent'}`}>
+    {console.log(isScrolled ? 'bg-white' : 'bg-transparent')}
         <div className="flex items-center justify-between w-full">
           <Logo className="w-12 h-12 md:w-16 md:h-16 object-contain" />
           <div className="md:flex items-center">
@@ -267,7 +264,7 @@ return () => {
   question="JLC Associates"
   answer={
     <>
-      We revitalised the JLC Associates' digital footprint with a sleek, contemporary website design. Take a moment to explore their transformed platform at <a href="http://www.jlcassociates.com.au" target="_blank" rel="noopener noreferrer">jlcassociates.com.au</a>.
+      We revitalised the JLC Associates' digital footprint with a sleek, contemporary website design. Take a moment to explore their transformed platform at <a href="http://jlcassociates.com.au" target="_blank" rel="noopener noreferrer">jlcassociates.com.au</a>.
     </>
   }
 />
