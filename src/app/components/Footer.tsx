@@ -16,6 +16,9 @@ const Footer = () => {
             entry.target.classList.remove('fade-in');
           }
         });
+      },
+      {
+        threshold: 0.1
       }
     );
 
@@ -27,8 +30,8 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer ref={footerRef} className="w-full bg-white text-black py-6 opacity-0">
-      <div className="flex justify-between items-center px-4 md:px-10">
+    <footer ref={footerRef} className="w-full bg-white text-black py-6 opacity-0 transition-opacity duration-500">
+      <div className="flex justify-between items-center px-4 md:px-8">
         <Logo className="w-12 h-12 md:w-16 md:h-16 object-contain" />
         <div className="text-sm">
           <a href="/terms" className="mr-4 bg-white border border-black text-black hover:bg-black hover:text-white rounded-full px-4 py-2 transition-colors duration-200 ease-in-out font-poppins hover:animate-bounce">Terms</a>
