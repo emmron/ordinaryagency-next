@@ -15,6 +15,10 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+.fade-in {
+  transition: opacity 1s;
+  opacity: 1 !important;
+}
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -56,4 +60,15 @@ p {
 }
 .lc_text-widget--btn {
   background-color: #000 !important;
+}
+@keyframes bop {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-bop:hover {
+  animation: bop 0.5s ease-in-out infinite;
 }
