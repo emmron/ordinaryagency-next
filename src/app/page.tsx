@@ -10,6 +10,9 @@ import { FiPhone } from 'react-icons/fi';
 import { useInView } from 'react-intersection-observer';
 import Head from "next/head"
 import { Parallax } from 'react-parallax';
+import Link from 'next/link';
+
+
 const variants = {
   hidden: { opacity: 0, x: -100 },
   visible: { opacity: 1, x: 0 },
