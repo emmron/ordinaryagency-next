@@ -280,32 +280,6 @@ export default function Home() {
   }
 />
 
-<Accordion
-  question="Instant Fun"
-  answer={
-    <>
-      Transitioning to a modern e-commerce platform, we reimagined Instant Fun's website on Shopify, enhancing the online shopping experience.
-    </>
-  }
-/>
-
-<Accordion
-  question="BML Ventures"
-  answer={
-    <>
-    Given the task to create a fast and elegant platform for BML Ventures, we developed a website using Gatsby, coupled with a WordPress backend, striking a balance between performance and ease of management. Check out their new website at
-  <a href="http://www.bmlventures.com.au" target="_blank" rel="noopener noreferrer">bmlventures.com.au</a>.    </>
-  }
-/>
-
-<Accordion
-  question="Aust-BioSearch"
-  answer={
-    <>
-      We revitalised Aust-BioSearch's website, introducing a sophisticated search function and modernising the homepage for an improved user experience.
-    </>
-  }
-/>
 
 <Accordion
   question="Wanneroo Basketball Association"
