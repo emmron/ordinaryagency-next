@@ -247,8 +247,7 @@ export default function Home() {
               question="Web Development & API Integrations"
               answer={
                 <>
-                  Specialising in creating seamless digital experiences, our expert web development team seamlessly integrates APIs with diverse platforms, including Shopify, WordPress, WooCommerce, and custom React applications. We aim to simplify complex technical processes, ensuring your business tools perform harmoniously for maximum performance and scalability.
-                </>
+Our talented web development team excels in creating exceptional websites and web applications using platforms like WordPress, Shopify, WooCommerce, and custom React applications. By expertly integrating APIs, we ensure seamless functionality, delivering efficient and scalable digital solutions for your business.                </>
               }
             />
 </motion.div>
