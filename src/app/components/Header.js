@@ -18,6 +18,8 @@ const customStyles = {
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [posted, setPosted] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -46,6 +48,26 @@ const Header = () => {
   }, [isScrolled]);
 
   const buttonClass = isScrolled ? 'bg-white text-black border-2 border-black' : 'bg-black text-white border-2 border-black';
+
+
+  const handleSubmit = async event => {
+    event.preventDefault()
+    const form = event.currentTarget.elements
+    const body = {
+      name: form.name.value,
+      from: form.email.value,
+    }
+    setSubmitted(true)
+    try {
+      const res = await fetch('/api/handleForm', {
+        method: 'POST',
+        body: JSON.stringify(body),
+      })
+      if (res.ok) setPosted(true)
+    } catch (error) {
+      console.log("ERROR:", error)
+    }
+  }
 
   return (
     <>
@@ -77,7 +99,7 @@ const Header = () => {
         style={customStyles} // apply the custom styles
       >
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name:</label>
             <input id="name" className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" type="text" name="name" />
