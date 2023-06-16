@@ -238,7 +238,7 @@ export default function Home() {
               question="Automations & AI"
               answer={
                 <>
-                  We embrace the future of digital technology by implementing state-of-the-art automations and AI. Our objective is to enhance your business processes' efficiency and effectiveness, freeing you to focus on what matters most: your business's success.
+                  Our diverse Perth-based team integrates effective automations and AI solutions tailored for your business. With a genuine passion for digital innovation, we remain dedicated to offering cutting-edge services to Australian businesses, elevating their online presence and driving success.
                 </>
               }
             />
