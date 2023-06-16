@@ -16,10 +16,10 @@ const customStyles = {
 };
 
 const Header = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [posted, setPosted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(null);
+  const [submitted, setSubmitted] = useState(null);
+  const [posted, setPosted] = useState(null);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -52,17 +52,26 @@ const Header = () => {
 
   const handleSubmit = async event => {
     event.preventDefault()
+    console.log(event)
     const form = event.currentTarget.elements
     const body = {
       name: form.name.value,
       from: form.email.value,
     }
+
+
+    const bodyJSON = JSON.stringify(body)
+    console.log(bodyJSON)
     setSubmitted(true)
     try {
       const res = await fetch('/api/handleForm', {
         method: 'POST',
-        body: JSON.stringify(body),
+        headers: {
+          'Content-Type':'application/json',
+        },
+        body: bodyJSON,
       })
+
       if (res.ok) setPosted(true)
     } catch (error) {
       console.log("ERROR:", error)
@@ -95,7 +104,6 @@ const Header = () => {
       <Modal
         id="contact_modal"
         isOpen={isModalOpen}
-        onRequestClose={closeModal}
         style={customStyles} // apply the custom styles
       >
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
