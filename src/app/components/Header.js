@@ -18,8 +18,8 @@ const customStyles = {
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [posted, setPosted] = useState(false);
+  const [submitted, setSubmitted] = useState(null);
+  const [posted, setPosted] = useState(null);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -57,12 +57,17 @@ const Header = () => {
       name: form.name.value,
       from: form.email.value,
     }
+    const bodyJSON = JSON.stringify(body)
     setSubmitted(true)
     try {
       const res = await fetch('/api/handleForm', {
         method: 'POST',
-        body: JSON.stringify(body),
+        headers: {
+          'Content-Type':'application/json',
+        },
+        body: bodyJSON,
       })
+
       if (res.ok) setPosted(true)
     } catch (error) {
       console.log("ERROR:", error)

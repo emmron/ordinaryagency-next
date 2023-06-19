@@ -11,7 +11,7 @@ import { useInView } from 'react-intersection-observer';
 import Head from "next/head"
 import { Parallax } from 'react-parallax';
 import Link from 'next/link';
-
+import Header from "./components/Header"
 
 const variants = {
   hidden: { opacity: 0, x: -100 },
@@ -19,7 +19,7 @@ const variants = {
 };
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+ // const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const { ref: refAbout, inView: inViewAbout } = useInView({
@@ -42,13 +42,13 @@ export default function Home() {
     threshold: 0.1,
   });
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
+  // const openModal = () => {
+  //   setIsModalOpen(true);
+  // };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  // const closeModal = () => {
+  //   setIsModalOpen(false);
+  // };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -109,7 +109,8 @@ export default function Home() {
       <meta name="description" content="Digital Agency in West Perth" key="desc" />
     </Head>
     <main id="#my-root" className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 lg:py-0 xl:p-28 bg-transparent text-black">
-<header className={`fixed top-0 right-0 p-4 md:p-8 w-full z-10 ${isScrolled ? 'bg-white' : 'bg-transparent'}`}>
+    <Header />
+{/* <header className={`fixed top-0 right-0 p-4 md:p-8 w-full z-10 ${isScrolled ? 'bg-white' : 'bg-transparent'}`}>
         <div className="flex items-center justify-between w-full">
           <Logo className="w-12 h-12 md:w-16 md:h-16 object-contain" />
           <div className="md:flex items-center">
@@ -129,8 +130,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </header>
-      <Modal
+      </header> */}
+      {/* <Modal
         id="contact_modal"
         isOpen={isModalOpen}
         onRequestClose={closeModal}
@@ -149,7 +150,7 @@ export default function Home() {
           <button type="submit" className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit</button>
         </form>
         <button onClick={closeModal} className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Close</button>
-      </Modal>
+      </Modal> */}
 
             <Parallax bgImage={image1} strength={500}>
             <div className="flex flex-col hero md:flex-row justify-center items-center text-4xl md:text-8xl font-extrabold my-0 h-screen bg-white text-black mt-8 md:mt-0"
