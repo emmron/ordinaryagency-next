@@ -16,8 +16,8 @@ const customStyles = {
 };
 
 const Header = () => {
-  const [isModalOpen, setIsModalOpen] = useState(null);
-  const [isScrolled, setIsScrolled] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [submitted, setSubmitted] = useState(null);
   const [posted, setPosted] = useState(null);
 
@@ -52,16 +52,12 @@ const Header = () => {
 
   const handleSubmit = async event => {
     event.preventDefault()
-    console.log(event)
     const form = event.currentTarget.elements
     const body = {
       name: form.name.value,
       from: form.email.value,
     }
-
-
     const bodyJSON = JSON.stringify(body)
-    console.log(bodyJSON)
     setSubmitted(true)
     try {
       const res = await fetch('/api/handleForm', {
