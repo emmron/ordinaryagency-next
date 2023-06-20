@@ -123,16 +123,32 @@ const Header = () => {
       >
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
         <form className="space-y-4" onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name:</label>
-            <input id="name" className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" type="text" name="name" />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email:</label>
-            <input id="email" className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" type="email" name="email" />
-          </div>
-          <button type="submit" className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit</button>
-        </form>
+    <div>
+      <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name:</label>
+      <input id="name" className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" type="text" name="name" />
+    </div>
+    <div>
+      <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email:</label>
+      <input id="email" className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" type="email" name="email" />
+    </div>
+    <div>
+      <label htmlFor="service" className="block text-sm font-medium text-gray-700">Service:</label>
+      <select id="service" name="service" className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+      <option value="">Select a service</option>
+      <option value="seo">SEO</option>
+      <option value="web-dev">Web Development</option>
+      <option value="api-integrations">API Integrations</option>
+      <option value="wordpress">WordPress</option>
+      <option value="shopify">Shopify</option>
+      <option value="ecommerce">eCommerce</option>
+    </select>
+  </div>
+  <div>
+    <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message:</label>
+    <textarea id="message" name="message" rows="4" className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+  </div>
+  <button type="submit" className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit</button>
+</form>
         <button onClick={closeModal} className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Close</button>
       </Modal>
     </>
