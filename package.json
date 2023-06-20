@@ -36,6 +36,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/react-google-recaptcha": "^2.1.5",
     "@types/react-modal": "^3.16.0"
   }
 }
