@@ -15,7 +15,10 @@ const Contact = () => {
     event.preventDefault();
     setStatus("Sending...");
 
-    const { name, email, message } = event.currentTarget.elements;
+    const name = event.currentTarget.elements.namedItem('name') as HTMLInputElement;
+  const email = event.currentTarget.elements.namedItem('email') as HTMLInputElement;
+  const message = event.currentTarget.elements.namedItem('message') as HTMLInputElement;
+
 
     let details = {
       name: name.value,
@@ -34,7 +37,7 @@ const Contact = () => {
       setStatus("Something went wrong! Please try again.");
     }
   }
-  
+
   return (
     <>
       <Head>
