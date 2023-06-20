@@ -77,6 +77,8 @@ const Header = () => {
     const body = {
       name: form.name.value,
       from: form.email.value,
+      service: form.service.value, // Add this line
+        message: form.message.value, // Add this line
     }
     setSubmitted(true)
     try {
