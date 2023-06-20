@@ -5,22 +5,7 @@ import Footer from '../app/components/Footer';
 import Modal from 'react-modal';
 import Head from 'next/head';
 import InternalHero from '../app/components/InternalHero';
-const Terms = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      Modal.setAppElement('body');
-    }
-  }, []);
+const Privacy = () => {
 
   return (
     <>
@@ -49,4 +34,4 @@ const Terms = () => {
   );
 };
 
-export default Terms;
+export default Privacy;
