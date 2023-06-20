@@ -31,7 +31,7 @@ const SeoStep = styled(motion.div)`
 
 const Line = styled(motion.div)`
   border-left: 2px solid black;
-  height: 80%;
+  height: 0%;
   position: absolute;
   bottom: -80%;
   left: 50%;
@@ -46,14 +46,6 @@ const NumberCircles = () => {
     'Step 4: Off-page Optimization',
     'Step 5: Performance Analysis',
   ];
-  const circleVariants = {
-    hidden: { scale: 0 },
-    visible: { scale: 1 },
-  };
-  const lineVariants = {
-    hidden: { height: '0%' },
-    visible: { height: '80%' },
-  };
 
   return (
     <CircleContainer>
@@ -67,17 +59,15 @@ const NumberCircles = () => {
           }}
         >
           <Circle
-            variants={circleVariants}
-            initial="hidden"
-            animate="visible"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: index * 0.3 }}
           >
             {number}
             {index < numbers.length - 1 && (
               <Line
-                variants={lineVariants}
-                initial="hidden"
-                animate="visible"
+                initial={{ height: '0%' }}
+                animate={{ height: '80%' }}
                 transition={{ duration: 0.5, delay: index * 0.3 + 0.2 }}
               />
             )}

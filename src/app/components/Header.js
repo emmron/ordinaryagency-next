@@ -50,8 +50,28 @@ const Header = () => {
   const buttonClass = isScrolled ? 'bg-white text-black border-2 border-black' : 'bg-black text-white border-2 border-black';
   const phoneNumberClass = isScrolled ? 'text-black' : 'text-white';
 
-
   const handleSubmit = async event => {
+    event.preventDefault()
+    const form = event.currentTarget.elements
+    const body = {
+      name: form.name.value,
+      email: form.email.value,
+    }
+    setSubmitted(true)
+    try {
+      const res = await fetch('https://getform.io/f/61892774-9629-43a7-8a42-f3f8e44d35a2', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      })
+      if (res.ok) setPosted(true)
+    } catch (error) {
+      console.log("ERROR:", error)
+    }
+  }
+
+
+  const handleSubmitSendgrid = async event => {
     event.preventDefault()
     const form = event.currentTarget.elements
     const body = {
