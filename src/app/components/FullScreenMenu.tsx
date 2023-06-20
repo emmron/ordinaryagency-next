@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, ReactElement, MouseEvent } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FiArrowRight, FiChevronDown } from 'react-icons/fi';
+
 type FullScreenMenuProps = {
   isOpen: boolean;
   onClose: (event: MouseEvent) => void;
