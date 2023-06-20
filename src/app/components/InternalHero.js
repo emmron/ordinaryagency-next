@@ -7,7 +7,7 @@ const InternalHero = ({ title }) => {
       className="flex items-center justify-center h-96 w-full bg-white text-white"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/frest2.png')",
+          "linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/images/frest2.png')",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -19,7 +19,7 @@ const InternalHero = ({ title }) => {
       }}
     >
       <motion.span
-        className="text-3xl md:text-5xl font-bold text-white"
+        className="text-4xl md:text-6xl font-bold text-black"
         style={{ fontFamily: "'Poppins', sans-serif" }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
