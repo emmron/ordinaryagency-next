@@ -11,6 +11,7 @@ import { useInView } from 'react-intersection-observer';
 import Head from "next/head"
 import { Parallax } from 'react-parallax';
 import Link from 'next/link';
+import Circle from './components/Circle';
 
 
 const variants = {
