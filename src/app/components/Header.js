@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FiPhone, FiCheck } from 'react-icons/fi';
+import { FiPhone, FiCheck, FiMenu } from 'react-icons/fi';
 import Logo from './Logo';
 import Modal from 'react-modal';
+import FullScreenMenu from './FullScreenMenu';
 
 const customStyles = {
   content: {
@@ -20,6 +21,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [posted, setPosted] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -27,6 +29,10 @@ const Header = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   useEffect(() => {
@@ -72,32 +78,12 @@ const Header = () => {
     }
   }
 
-
-  const handleSubmitSendgrid = async event => {
-    event.preventDefault()
-    const form = event.currentTarget.elements
-    const body = {
-      name: form.name.value,
-      from: form.email.value,
-    }
-    setSubmitted(true)
-    try {
-      const res = await fetch('/api/handleForm', {
-        method: 'POST',
-        body: JSON.stringify(body),
-      })
-      if (res.ok) setPosted(true)
-    } catch (error) {
-      console.log("ERROR:", error)
-    }
-  }
-
   return (
     <>
       <header className={`fixed top-0 right-0 p-4 md:p-8 w-full z-10 ${isScrolled ? 'bg-white' : 'bg-transparent'}`}>
         <div className="flex items-center justify-between w-full">
           <Link href="/" passHref>
-              <Logo className="w-12 h-12 md:w-16 md:h-16 object-contain cursor-pointer" />
+            <Logo className="w-12 h-12 md:w-16 md:h-16 object-contain cursor-pointer" />
           </Link>
           <div className="md:flex items-center">
             <div className="flex items-center justify-end md:mr-4">
@@ -107,17 +93,27 @@ const Header = () => {
               </a>
             </div>
             <div className="flex justify-end mt-2 md:mt-0">
-              <button onClick={openModal} className={`${buttonClass} font-bold py-2 px-4 rounded mr-2 hover:bg-white hover:text-black transition-colors duration-300`}>
-                Contact
+              {/* Hamburger Menu Icon */}
+              <button onClick={toggleMenu} className="text-black md:hidden">
+                <FiMenu size={24} />
               </button>
-              <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className={`${buttonClass} font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300`}>
-                Login
-              </a>
+              {/* Contact & Login buttons */}
+              <div className="hidden md:flex">
+                <button onClick={openModal} className={`${buttonClass} font-bold py-2 px-4 rounded mr-2 hover:bg-white hover:text-black transition-colors duration-300`}>
+                  Contact
+                </button>
+                <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className={`${buttonClass} font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300`}>
+                  Login
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </header>
-      <Modal
+      {/* Full Screen Menu */}
+      <FullScreenMenu isOpen={isMenuOpen} onClose={toggleMenu} />
+
+    <Modal
         id="contact_modal"
         isOpen={isModalOpen}
         onRequestClose={closeModal}
