@@ -48,7 +48,7 @@ const Header = () => {
   }, [isScrolled]);
 
   const buttonClass = isScrolled ? 'bg-white text-black border-2 border-black' : 'bg-black text-white border-2 border-black';
-  const phoneNumberClass = isScrolled ? 'text-black' : 'text-white';
+  const phoneNumberClass = isScrolled ? 'text-black' : 'text-black';
 
   const handleSubmit = async event => {
     event.preventDefault()
