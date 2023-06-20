@@ -95,8 +95,8 @@ const Header = () => {
             <div className="flex justify-end mt-2 md:mt-0">
               {/* Hamburger Menu Icon */}
               <button onClick={toggleMenu} className="text-black md:hidden">
-                <FiMenu size={24} />
-              </button>
+             <FiMenu size={24} />
+           </button>
               {/* Contact & Login buttons */}
               <div className="hidden md:flex">
                 <button onClick={openModal} className={`${buttonClass} font-bold py-2 px-4 rounded mr-2 hover:bg-white hover:text-black transition-colors duration-300`}>
