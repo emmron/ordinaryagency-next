@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const CircleContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   padding: 20px;
   width: 100%;
@@ -20,48 +20,70 @@ const Circle = styled(motion.div)`
   align-items: center;
   font-size: 20px;
   position: relative;
+  margin-bottom: 80px;
+`;
+
+const SeoStep = styled(motion.div)`
+  font-size: 18px;
+  margin-left: 15px;
+  text-align: left;
 `;
 
 const Line = styled(motion.div)`
-  border-top: 2px solid black;
-  width: 80%;
+  border-left: 2px solid black;
+  height: 80%;
   position: absolute;
-  top: 50%;
+  bottom: -80%;
   left: 50%;
-  transform: translate(-50%, -50%);
 `;
 
 const NumberCircles = () => {
   const numbers = [1, 2, 3, 4, 5];
+  const seoSteps = [
+    'Step 1: Keyword Research',
+    'Step 2: On-page Optimization',
+    'Step 3: Content Creation',
+    'Step 4: Off-page Optimization',
+    'Step 5: Performance Analysis',
+  ];
   const circleVariants = {
     hidden: { scale: 0 },
-    visible: { scale: 1 }
+    visible: { scale: 1 },
   };
   const lineVariants = {
-    hidden: { width: '0%' },
-    visible: { width: '80%' }
+    hidden: { height: '0%' },
+    visible: { height: '80%' },
   };
 
   return (
     <CircleContainer>
       {numbers.map((number, index) => (
-        <Circle
+        <div
           key={index}
-          variants={circleVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5, delay: index * 0.3 }}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            marginBottom: index < numbers.length - 1 ? '30px' : '0',
+          }}
         >
-          {number}
-          {index < numbers.length - 1 && (
-            <Line
-              variants={lineVariants}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.5, delay: index * 0.3 + 0.2 }}
-            />
-          )}
-        </Circle>
+          <Circle
+            variants={circleVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.5, delay: index * 0.3 }}
+          >
+            {number}
+            {index < numbers.length - 1 && (
+              <Line
+                variants={lineVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.5, delay: index * 0.3 + 0.2 }}
+              />
+            )}
+          </Circle>
+          <SeoStep>{seoSteps[index]}</SeoStep>
+        </div>
       ))}
     </CircleContainer>
   );

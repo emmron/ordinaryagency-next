@@ -33,7 +33,7 @@ const Terms = () => {
           key="desc"
         />
       </Head>
-      <Header openModal={openModal} />
+      <Header />
       <InternalHero title="Privacy" />
       <main className="min-h-screen bg-white items-center justify-start pt-16 md:pt-20 px-4 sm:px-6 md:px-8 lg:px-12 lg:py-0 xl:px-16">
         <section className="max-w-5xl mx-auto px-4 py-10">
