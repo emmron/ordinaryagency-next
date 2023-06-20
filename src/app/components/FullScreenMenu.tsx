@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FiArrowRight, FiChevronDown } from 'react-icons/fi';
+type FullScreenMenuProps = {
+  isOpen: boolean;
+  onClose: (event: MouseEvent) => void;
+};
 
-const FullScreenMenu = ({ isOpen, onClose }) => {
-  const [showSubmenu, setShowSubmenu] = useState(false);
+const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): ReactElement => {
+
+    const [showSubmenu, setShowSubmenu] = useState(false);
 
   const toggleSubmenu = () => {
     setShowSubmenu(!showSubmenu);
