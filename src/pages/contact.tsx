@@ -11,11 +11,11 @@ const formEndpoint = "https://getform.io/f/61892774-9629-43a7-8a42-f3f8e44d35a2"
 const Contact = () => {
   const [status, setStatus] = useState("");
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus("Sending...");
 
-    const { name, email, message } = event.target.elements;
+    const { name, email, message } = event.currentTarget.elements;
 
     let details = {
       name: name.value,
@@ -34,7 +34,7 @@ const Contact = () => {
       setStatus("Something went wrong! Please try again.");
     }
   }
-
+  
   return (
     <>
       <Head>
