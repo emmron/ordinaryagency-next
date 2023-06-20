@@ -9,7 +9,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-.ReactModal__Overlay {
+.ReactModal__Overlay, .fscreenmenu, .overlaymenu {
   z-index: 999 !important;
 }
 @media (prefers-color-scheme: dark) {
