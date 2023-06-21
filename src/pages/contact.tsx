@@ -51,37 +51,36 @@ const Contact = () => {
       <InternalHero title="Contact Us" />
 
       <main className="min-h-screen bg-white items-center justify-start pt-16 md:pt-20 px-4 sm:px-6 md:px-8 lg:px-12 lg:py-0 xl:px-16">
-      <section className="max-w-full px-4 py-12">
-         <div className="max-w-7xl mx-auto">
-           <div className="text-center">
-             <h2 className="text-4xl font-bold mb-8 text-gray-900 tracking-wide">Let's Connect</h2>
-             <p className="text-xl text-gray-600 mb-10 italic">We'd love to hear from you. Fill in the form below and we'll get back to you as soon as possible.</p>
-           </div>
-           <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-             <div className="form-group transition-all duration-300 ease-in-out">
-               <label htmlFor="name" className="block text-sm font-medium text-gray-700 tracking-wide">Your Name</label>
-               <input type="text" id="name" name="name" className="w-full p-3 border-b-2 border-gray-300 mt-1 focus:outline-none focus:border-indigo-500 transition duration-300 ease-in-out" required />
-             </div>
-             <div className="form-group transition-all duration-300 ease-in-out">
-               <label htmlFor="email" className="block text-sm font-medium text-gray-700 tracking-wide">Your Email</label>
-               <input type="email" id="email" name="email" className="w-full p-3 border-b-2 border-gray-300 mt-1 focus:outline-none focus:border-indigo-500 transition duration-300 ease-in-out" required />
-             </div>
-             <div className="col-span-full md:col-span-2 form-group transition-all duration-300 ease-in-out">
-               <label htmlFor="message" className="block text-sm font-medium text-gray-700 tracking-wide">Your Message</label>
-               <textarea id="message" name="message" className="w-full p-3 border-b-2 border-gray-300 mt-1 focus:outline-none focus:border-indigo-500 transition duration-300 ease-in-out" rows={6} required></textarea>
-             </div>
-             <div className="col-span-full">
-             <button
-     type="submit"
-     className="px-6 py-3 border-2 border-black text-black bg-white rounded-full font-semibold text-lg shadow-md hover:bg-black hover:text-white hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-black transition-all duration-300 ease-in-out transition-colors delay-150"
-   >
-     Submit
-   </button>
-
-             </div>
-           </form>
-         </div>
-       </section>
+      <section className="max-w-full px-4 py-12 bg-white text-black">
+    <div className="max-w-7xl mx-auto">
+      <div className="text-center">
+        <h2 className="text-4xl font-bold mb-8 text-black tracking-wide">Let's Connect</h2>
+        <p className="text-xl text-black mb-10 italic">We'd love to hear from you. Fill in the form below and we'll get back to you as soon as possible.</p>
+      </div>
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+        <div className="form-group transition-all duration-300 ease-in-out">
+          <label htmlFor="name" className="block text-sm font-medium text-black tracking-wide">Your Name</label>
+          <input type="text" id="name" name="name" className="w-full p-3 border-b-2 border-black mt-1 focus:outline-none focus:border-black transition duration-300 ease-in-out" required />
+        </div>
+        <div className="form-group transition-all duration-300 ease-in-out">
+          <label htmlFor="email" className="block text-sm font-medium text-black tracking-wide">Your Email</label>
+          <input type="email" id="email" name="email" className="w-full p-3 border-b-2 border-black mt-1 focus:outline-none focus:border-black transition duration-300 ease-in-out" required />
+        </div>
+        <div className="col-span-full md:col-span-2 form-group transition-all duration-300 ease-in-out">
+          <label htmlFor="message" className="block text-sm font-medium text-black tracking-wide">Your Message</label>
+          <textarea id="message" name="message" className="w-full p-3 border-b-2 border-black mt-1 focus:outline-none focus:border-black transition duration-300 ease-in-out" rows={6} required></textarea>
+        </div>
+        <div className="col-span-full">
+          <button
+            type="submit"
+            className="px-6 py-3 border-2 border-black text-black bg-white rounded-full font-semibold text-lg shadow-md hover:bg-black hover:text-white hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-black transition-all duration-300 ease-in-out transition-colors delay-150"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
 
         <section className="max-w-5xl mx-auto px-4 py-12">
           <h2 className="text-3xl font-bold mb-10 text-center text-gray-900">Reach Us Directly</h2>
