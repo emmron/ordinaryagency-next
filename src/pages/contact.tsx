@@ -81,26 +81,26 @@ const Contact = () => {
       </form>
     </div>
   </section>
+  <section className="max-w-5xl mx-auto px-4 py-12">
+    <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-center text-black tracking-wide">Reach Us Directly</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="contact-item border-2 border-black bg-white rounded-lg p-6 md:p-10 space-y-6 transform transition-all duration-500 ease-in-out hover:border-black hover:shadow-lg hover:scale-105">
+        <div className="flex items-center mb-4">
+          <FaPhone className="text-black transition-colors duration-500 ease-in-out hover:text-gray-700 mr-4" size={28} />
+          <h3 className="text-lg md:text-xl font-bold text-black tracking-wide">Phone</h3>
+        </div>
+        <a href="tel:+0899308081" className="text-black text-xl md:text-2xl font-extrabold transition-colors duration-500 ease-in-out hover:text-gray-800">+08 9930 8081</a>
+      </div>
+      <div className="contact-item border-2 border-black bg-white rounded-lg p-6 md:p-10 space-y-6 transform transition-all duration-500 ease-in-out hover:border-black hover:shadow-lg hover:scale-105">
+        <div className="flex items-center mb-4">
+          <FaRegEnvelope className="text-black transition-colors duration-500 ease-in-out hover:text-gray-700 mr-4" size={28} />
+          <h3 className="text-lg md:text-xl font-bold text-black tracking-wide">Email</h3>
+        </div>
+        <a href="mailto:hello@ordinaryagency.com.au" className="text-black text-xl md:text-2xl font-extrabold transition-colors duration-500 ease-in-out hover:text-gray-800">hello@ordinaryagency.com.au</a>
+      </div>
+    </div>
+  </section>
 
-        <section className="max-w-5xl mx-auto px-4 py-12">
-          <h2 className="text-3xl font-bold mb-10 text-center text-gray-900">Reach Us Directly</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="contact-item border-2 border-gray-300 bg-white rounded-lg p-6 md:p-10 space-y-6 transform transition-all duration-500 ease-in-out hover:border-indigo-500 hover:shadow-lg hover:-translate-y-1">
-              <div className="flex items-start md:items-center mb-4">
-                <FaPhone className="text-black mr-4" size={28} />
-                <h3 className="text-lg md:text-xl font-semibold text-gray-800">Phone</h3>
-              </div>
-              <a href="tel:+0899308081" className="text-gray-800 text-xl md:text-2xl hover:text-indigo-500 font-bold">+08 9930 8081</a>
-            </div>
-            <div className="contact-item border-2 border-gray-300 bg-white rounded-lg p-6 md:p-10 space-y-6 transform transition-all duration-500 ease-in-out hover:border-indigo-500 hover:shadow-lg hover:-translate-y-1">
-              <div className="flex items-start md:items-center mb-4">
-                <FaRegEnvelope className="text-black mr-4" size={28} />
-                <h3 className="text-lg md:text-xl font-semibold text-gray-800">Email</h3>
-              </div>
-              <a href="mailto:hello@ordinaryagency.com.au" className="text-gray-800 text-xl md:text-2xl hover:text-indigo-500 font-bold">hello@ordinaryagency.com.au</a>
-            </div>
-          </div>
-        </section>
 
         <section className="max-w-5xl mx-auto px-4 py-10">
           <h2 className="text-2xl font-bold mb-10 text-center text-gray-900">Frequently Asked Questions</h2>
