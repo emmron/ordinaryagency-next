@@ -5,7 +5,6 @@ const CircleContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
   width: 100%;
 `;
 
@@ -20,7 +19,7 @@ const Circle = styled(motion.div)`
   align-items: center;
   font-size: 20px;
   position: relative;
-  margin-bottom: 80px;
+  z-index: 1; // Add this to bring the circle above the line
 `;
 
 const SeoStep = styled(motion.div)`
@@ -31,11 +30,21 @@ const SeoStep = styled(motion.div)`
 
 const Line = styled(motion.div)`
   border-left: 2px solid black;
-  height: 0%;
+  height: 100%;
   position: absolute;
-  bottom: -80%;
-  left: 50%;
+  left: 25px; // Adjust this to match the center of the circle
+  top: -25px; // Move the line up to start from the center of the circle
+  z-index: 1; // Ensure the line is below the circle
 `;
+
+const ItemContainer = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 30px 0; // Adjust this to give some space above for the line
+  height: 70px; // Define a height for proper line positioning
+`;
+
 
 const NumberCircles = () => {
   const numbers = [1, 2, 3, 4, 5];
@@ -50,30 +59,23 @@ const NumberCircles = () => {
   return (
     <CircleContainer>
       {numbers.map((number, index) => (
-        <div
-          key={index}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            marginBottom: index < numbers.length - 1 ? '30px' : '0',
-          }}
-        >
+        <ItemContainer key={index}>
           <Circle
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: index * 0.3 }}
           >
             {number}
-            {index < numbers.length - 1 && (
-              <Line
-                initial={{ height: '0%' }}
-                animate={{ height: '80%' }}
-                transition={{ duration: 0.5, delay: index * 0.3 + 0.2 }}
-              />
-            )}
           </Circle>
+          {index < numbers.length - 1 && (
+            <Line
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.3 + 0.2 }}
+            />
+          )}
           <SeoStep>{seoSteps[index]}</SeoStep>
-        </div>
+        </ItemContainer>
       ))}
     </CircleContainer>
   );
