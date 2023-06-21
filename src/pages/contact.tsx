@@ -64,7 +64,7 @@ const Contact = () => {
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700">Your Message</label>
-                <textarea id="message" name="message" className="w-full p-3 border border-gray-300 rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-black" rows="6" required></textarea>
+                <textarea id="message" name="message" className="w-full p-3 border border-gray-300 rounded-lg mt-1 focus:outline-none focus:ring-2 focus:ring-black" rows={6} required></textarea>
               </div>
               <div>
                 <button type="submit" className="w-full p-3 bg-black text-white rounded-lg hover:bg-gray-700 focus:outline-none">Submit</button>
@@ -73,45 +73,51 @@ const Contact = () => {
           </div>
         </section>
         <section className="max-w-5xl mx-auto px-4 py-12">
-      <h2 className="text-3xl font-bold mb-10 text-center text-gray-900">Reach Us Directly</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className="border-2 border-gray-300 bg-white rounded-lg p-10 space-y-6 transform transition-all duration-500 ease-in-out hover:border-indigo-500 hover:shadow-lg hover:-translate-y-1">
-          <div className="flex items-center mb-4">
-            <FaPhone className="text-black mr-4" size={32} />
-            <h3 className="text-xl font-semibold text-gray-800">Phone</h3>
+          <h2 className="text-3xl font-bold mb-10 text-center text-gray-900">Reach Us Directly</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="border-2 border-gray-300 bg-white rounded-lg p-6 md:p-10 space-y-6 transform transition-all duration-500 ease-in-out hover:border-indigo-500 hover:shadow-lg hover:-translate-y-1">
+              <div className="flex items-start md:items-center mb-4">
+                <FaPhone className="text-black mr-4" size={28} />
+                <h3 className="text-lg md:text-xl font-semibold text-gray-800">Phone</h3>
+              </div>
+              <a href="tel:+0899308081" className="text-gray-800 text-xl md:text-2xl hover:text-indigo-500 font-bold">+08 9930 8081</a>
+            </div>
+            <div className="border-2 border-gray-300 bg-white rounded-lg p-6 md:p-10 space-y-6 transform transition-all duration-500 ease-in-out hover:border-indigo-500 hover:shadow-lg hover:-translate-y-1">
+              <div className="flex items-start md:items-center mb-4">
+                <FaRegEnvelope className="text-black mr-4" size={28} />
+                <h3 className="text-lg md:text-xl font-semibold text-gray-800">Email</h3>
+              </div>
+              <a href="mailto:hello@ordinaryagency.com.au" className="text-gray-800 text-xl md:text-2xl hover:text-indigo-500 font-bold">hello@ordinaryagency.com.au</a>
+            </div>
           </div>
-          <a href="tel:+0899308081" className="text-gray-800 text-2xl hover:text-indigo-500 font-bold">+08 9930 8081</a>
-        </div>
-        <div className="border-2 border-gray-300 bg-white rounded-lg p-10 space-y-6 transform transition-all duration-500 ease-in-out hover:border-indigo-500 hover:shadow-lg hover:-translate-y-1">
-          <div className="flex items-center mb-4">
-            <FaRegEnvelope className="text-black mr-4" size={32} />
-            <h3 className="text-xl font-semibold text-gray-800">Email</h3>
-          </div>
-          <a href="mailto:hello@ordinaryagency.com.au" className="text-gray-800 text-2xl hover:text-indigo-500 font-bold">hello@ordinaryagency.com.au</a>
-        </div>
-      </div>
-    </section>
-
-
-
-
+        </section>
         <section className="max-w-5xl mx-auto px-4 py-10">
-          <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-lg font-semibold">How quickly do you respond to inquiries?</h3>
+          <h2 className="text-2xl font-bold mb-10 text-center text-gray-900">Frequently Asked Questions</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="border-2 border-gray-300 bg-white rounded-lg p-6 md:p-10 space-y-6 transform transition-all duration-500 ease-in-out hover:border-indigo-500 hover:shadow-lg hover:-translate-y-1">
+              <div className="flex items-start md:items-center mb-4">
+                <FaRegClock className="text-black mr-4" size={28} />
+                <h3 className="text-lg md:text-xl font-semibold text-gray-800">How quickly do you respond to inquiries?</h3>
+              </div>
               <p>We aim to respond to all inquiries within 24 hours during our working days.</p>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold">What is SEO?</h3>
+            <div className="border-2 border-gray-300 bg-white rounded-lg p-6 md:p-10 space-y-6 transform transition-all duration-500 ease-in-out hover:border-indigo-500 hover:shadow-lg hover:-translate-y-1">
+              <div className="flex items-start md:items-center mb-4">
+                <FaRegCommentDots className="text-black mr-4" size={28} />
+                <h3 className="text-lg md:text-xl font-semibold text-gray-800">What is SEO?</h3>
+              </div>
               <p>SEO, or Search Engine Optimization, is the practice of optimizing your website to improve its visibility on search engines like Google.</p>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold">Why is SEO important?</h3>
+            <div className="border-2 border-gray-300 bg-white rounded-lg p-6 md:p-10 space-y-6 transform transition-all duration-500 ease-in-out hover:border-indigo-500 hover:shadow-lg hover:-translate-y-1">
+              <div className="flex items-start md:items-center mb-4">
+                <FaRegUser className="text-black mr-4" size={28} />
+                <h3 className="text-lg md:text-xl font-semibold text-gray-800">Why is SEO important?</h3>
+              </div>
               <p>SEO is important because it increases the visibility of your website, which can lead to increased traffic, more customers, and ultimately higher revenue.</p>
             </div>
           </div>
         </section>
+
       </main>
       <Footer />
     </>
