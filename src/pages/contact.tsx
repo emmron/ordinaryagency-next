@@ -82,13 +82,13 @@ const Contact = () => {
              </form>
            </div>
            <div className="w-full max-w-lg pl-4">
-             <iframe
-               className="w-full md:w-full"
-               style={{maxWidth: '600px', height: '450px', border: '0'}}
-               referrerpolicy="no-referrer-when-downgrade"
-               src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAFaKgtNcVrijcVmdLr_rHDMvfm4PIZVvs&q=Ordinary+Agency,Location+Address"
-               allowFullScreen>
-             </iframe>
+           <iframe
+       className="w-full md:w-full"
+       style={{maxWidth: '600px', height: '450px', border: '0'}}
+       referrerPolicy="no-referrer-when-downgrade"
+       src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAFaKgtNcVrijcVmdLr_rHDMvfm4PIZVvs&q=Ordinary+Agency,Location+Address"
+       allowFullScreen
+     ></iframe>
            </div>
          </section>
 </main>
