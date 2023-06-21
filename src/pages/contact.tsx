@@ -67,7 +67,7 @@ const Contact = () => {
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
                   Message
                 </label>
-                <textarea className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" rows="6" placeholder="Your Message" required></textarea>
+                <textarea className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" rows={6} placeholder="Your Message" required></textarea>
               </div>
               <div className="mb-4">
                  <ReCAPTCHA sitekey="6Ld-xLQmAAAAAOWD5COryyyLmQZ6qjWn5Kj8lDN2" />
