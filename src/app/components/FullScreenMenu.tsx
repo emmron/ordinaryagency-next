@@ -9,8 +9,7 @@ type FullScreenMenuProps = {
 };
 
 const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): ReactElement => {
-
-    const [showSubmenu, setShowSubmenu] = useState(false);
+  const [showSubmenu, setShowSubmenu] = useState(false);
 
   const toggleSubmenu = () => {
     setShowSubmenu(!showSubmenu);
@@ -22,8 +21,8 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): Rea
   };
 
   const submenuVariants = {
-    open: { height: 'auto', opacity: 1 },
-    closed: { height: 0, opacity: 0 },
+    open: { height: 'auto', opacity: 1, transition: { duration: 0.2 } },
+    closed: { height: 0, opacity: 0, transition: { duration: 0.2 } },
   };
 
   return (
@@ -34,7 +33,7 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): Rea
           animate="open"
           exit="closed"
           variants={menuVariants}
-          className="fixed overlaymenu top-0 left-0 w-full h-screen z-20 bg-white bg-opacity-60 flex justify-center items-center font-poppins"
+          className="fixed overlaymenu top-0 left-0 w-full h-screen z-20 bg-white flex justify-center items-center font-poppins"
         >
           <div className="text-center text-black text-3xl font-bold">
             <button
@@ -43,7 +42,7 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): Rea
             >
               &times;
             </button>
-            <ul className="space-y-4">
+            <ul className="space-y-8">
               <li className="relative pb-2">
                 <Link href="/contact">
                   <motion.span
@@ -53,7 +52,6 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): Rea
                     Contact
                   </motion.span>
                 </Link>
-
               </li>
               <li className="relative pb-2">
                 <button
@@ -73,7 +71,7 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): Rea
                   variants={submenuVariants}
                   className="overflow-hidden mt-4"
                 >
-                  <ul className="space-y-2 pl-6">
+                  <ul className="space-y-4 pl-6">
                     <li className="flex items-center">
                       <FiArrowRight />
                       <Link href="/seo-perth">
@@ -87,7 +85,6 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): Rea
                     </li>
                   </ul>
                 </motion.div>
-                {showSubmenu}
               </li>
             </ul>
           </div>
