@@ -108,14 +108,7 @@ const Contact = () => {
               </div>
           </div>
       </section>
-
-
-
-
-
-
-<FAQ />
-
+      <FAQ />
       </main>
       <Footer />
     </>
