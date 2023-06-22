@@ -23,6 +23,9 @@
   transition: opacity 1s;
   opacity: 1 !important;
 }
+.email {
+  word-wrap: break-word;
+}
 
 body {
   color: rgb(var(--foreground-rgb));
