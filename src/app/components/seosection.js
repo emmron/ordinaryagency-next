@@ -17,7 +17,7 @@ const SEOSection = () => {
   return (
     <section
       className="relative flex items-center justify-center min-h-screen py-10 sm:py-20 px-2 sm:px-4 bg-center bg-cover"
-      style={{ backgroundImage: `url(/images/0_0.png)`}}
+      style={{ backgroundImage: `url(/images/0_1.png)`}}
     >
       <motion.div
         className="relative z-10 max-w-xs sm:max-w-3xl p-6 sm:p-10 mx-auto bg-white bg-opacity-80 rounded-xl shadow-2xl"
