@@ -1,3 +1,4 @@
+import '../app/aos.css'
 import '../app/globals.css'
 import { useState } from "react";
 import Header from "../app/components/Header";
@@ -5,6 +6,8 @@ import Footer from "../app/components/Footer";
 import Head from "next/head";
 import InternalHero from "../app/components/InternalHero";
 import { FaChartLine, FaRegLightbulb, FaRocket, FaSearchDollar, FaCheck } from "react-icons/fa";
+import { motion } from 'framer-motion';
+import SEOSection from "../app/components/seosection.js";
 
 const SEOPerth = () => {
   return (
@@ -40,7 +43,7 @@ const SEOPerth = () => {
             <div className="seo-item text-left p-6 md:p-10 space-y-4 transition-all duration-500 ease-in-out transform hover:shadow-2xl hover:scale-105">
                 <FaRocket className="text-black transition-all duration-500 ease-in-out hover:scale-150 hover:text-gray-700" size={32} />
                 <h3 className="text-lg md:text-xl font-bold text-black tracking-wide">Growth-Oriented SEO</h3>
-                <p className="text-black text-lg">At Ordinary Agency, we're committed to helping Perth businesses reach new heights. Leverage our SEO services Perth to elevate your online visibility and business growth.</p>
+                <p className="text-black text-lg">At Ordinary Agency,we're committed to helping Perth businesses reach new heights. Leverage our SEO services Perth to elevate your online visibility and business growth.</p>
             </div>
           </div>
         </section>
@@ -62,27 +65,27 @@ const SEOPerth = () => {
               </div>
           </div>
         </section>
-        <section className="container mx-auto px-4 py-12 text-center">
-    <h2 className="text-5xl font-extrabold mb-4 text-black tracking-wide transform transition-transform duration-500 hover:scale-105">What is SEO and Why it's Crucial for Your Business</h2>
-    <p className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
-        Search engine optimization, or SEO, is the process of enhancing a website's visibility on search engine results pages (SERPs). By leveraging SEO, Perth businesses can increase their online visibility, reach more potential customers, and improve their bottom line. SEO is crucial for businesses of all sizes because it helps attract organic traffic, build credibility, and deliver a better user experience.
-    </p>
-</section>
+        <SEOSection />
+
+
+
 
 <section className="container mx-auto px-4 py-12 text-center">
     <h2 className="text-5xl font-extrabold mb-4 text-black tracking-wide transform transition-transform duration-500 hover:scale-105">Our SEO Approach</h2>
     <p className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
-        At Ordinary Agency, we understand that no two businesses are the same. That's why we offer bespoke SEO solutions tailored to your unique business needs. Our SEO services in Perth include keyword research, on-page and off-page optimization, technical SEO, local SEO, and SEO analytics. With a focus on driving sustainable growth, our approach combines the best of technology and creativity to deliver unparalleled results.
+        At Ordinary Agency, we understand that no two businesses are the same. That's why we offer bespoke SEO solutions tailored to your unique business needs. Our SEO services in Perth include keyword research,on-page and off-page optimization, technical SEO, local SEO, and SEO analytics. With a focus on driving sustainable growth, our approach combines the best of technology and creativity to deliver unparalleled results.
     </p>
 </section>
 
-<section className="container mx-auto px-4 py-12 text-center">
-    <h2 className="text-5xl font-extrabold mb-4 text-black tracking-wide transform transition-transform duration-500 hover:scale-105">Common SEO Misconceptions</h2>
-    <p className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
-        One of the most common misconceptions about SEO is that it delivers instant results. The truth is that SEO is a long-term strategy and it may take several months to see significant improvements. Another misconception is that SEO is all about keywords. While keywords are important, modern SEO involves a wide range of factors including content quality, user experience, site speed, mobile-friendliness, and more.
-    </p>
+<section className="container mx-auto px-4 py-12 flex md:flex-row flex-col items-center justify-center">
+    <div className="md:w-1/2 w-full">
+        <img src="/images/seobg.png" alt="Visualize a high - resolution image that strongly represents SEO services in Perth for a digital agency. The image features a large, vibrant screen displaying a detailed SEO analytics dashboard. In the foreground, a digital marketer is seen working on a laptop, with the iconic Perth skyline reflected in the laptop screen. The medium is digital photography, rendered in a contemporary, professional style. The lighting is natural and bright, highlighting the focused work atmosphere. The composition is a wide - angle shot, capturing the entire workspace and the reflection of Perth in the laptop screen. " className="rounded-lg shadow-xl" />
+    </div>
+    <div className="md:w-1/2 w-full md:px-8 px-4 py-4 md:py-0">
+        <h3 className="text-lg md:text-xl font-bold text-black tracking-wide">The Role of Our SEO Agency in Perth</h3>
+        <p className="text-black text-lg">As a leading SEO agency in Perth, we aim to bridge the gap between businesses and their target audience. We employ innovative techniques and SEO strategies that not only increase your website's visibility but also improve its credibility. Our team of SEO experts in Perth understand the local market dynamics and consumer behavior, which enables us to craft effective SEO campaigns for Perth businesses..</p>
+    </div>
 </section>
-
 <section className="container mx-auto px-4 py-12 text-center">
     <h2 className="text-5xl font-extrabold mb-4 text-black tracking-wide transform transition-transform duration-500 hover:scale-105">FAQs About Our Perth SEO Services</h2>
     <div className="text-left text-lg">
@@ -96,12 +99,6 @@ const SEOPerth = () => {
         <p>SEO is a long-term strategy and it usually takes 3-6 months to see noticeable results. However, this can vary based on a number of factors, including the competitiveness of your industry and the current state of your website.</p>
     </div>
 </section>
-<section className="container mx-auto px-4 py-12 text-center">
-    <h2 className="text-5xl font-extrabold mb-4 text-black tracking-wide transform transition-transform duration-500 hover:scale-105">The Role of Our SEO Agency in Perth</h2>
-    <p className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
-        As a leading SEO agency in Perth, we aim to bridge the gap between businesses and their target audience. We employ innovative techniques and SEO strategies that not only increase your website's visibility but also improve its credibility. Our team of SEO experts in Perth understand the local market dynamics and consumer behavior, which enables us to craft effective SEO campaigns for Perth businesses.
-    </p>
-</section>
 
 <section className="container mx-auto px-4 py-12 text-center">
     <h2 className="text-5xl font-extrabold mb-4 text-black tracking-wide transform transition-transform duration-500 hover:scale-105">SEO Services Perth - Our Offerings</h2>
@@ -114,15 +111,18 @@ const SEOPerth = () => {
     <h2 className="text-5xl font-extrabold mb-4 text-black tracking-wide transform transition-transform duration-500 hover:scale-105">Why is Local SEO Important for Perth Businesses?</h2>
     <p className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
         With the rising competition in the digital market, it is essential for businesses to target customers in their locale. Local SEO is a strategy that helps businesses rank higher in local search results. For Perth businesses, local SEO is a key way to reach more potential customers in the area and build a strong local presence.
-    </p>
+</p>
 </section>
-
 <section className="container mx-auto px-4 py-12 text-center">
     <h2 className="text-5xl font-extrabold mb-4 text-black tracking-wide transform transition-transform duration-500 hover:scale-105">Contact Our SEO Agency Perth for A Free Consultation</h2>
     <p className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
         Ready to take your online presence to the next level? Contact Ordinary Agency, your trusted SEO agency in Perth, for a free consultation. We'd be more than happy to discuss your business goals and how our SEO services in Perth can help you achieve them.
     </p>
 </section>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script>
+     AOS.init();
+ </script>
       </main>
       <Footer />
     </>
