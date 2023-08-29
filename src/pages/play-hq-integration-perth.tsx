@@ -1,14 +1,19 @@
 import '../app/aos.css'
 import '../app/globals.css'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../app/components/Header";
 import Footer from "../app/components/Footer";
 import Head from "next/head";
 import InternalHero from "../app/components/InternalHero";
 import { FaBasketballBall, FaCalendar, FaFutbol } from "react-icons/fa";
 import { motion } from 'framer-motion';
+import AOS from 'aos';
 
 const PlayHQPerth = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       <Head>
@@ -57,10 +62,6 @@ const PlayHQPerth = () => {
 
 
 
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
       </main>
       <Footer />
     </>

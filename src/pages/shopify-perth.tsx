@@ -1,6 +1,6 @@
 import '../app/aos.css'
 import '../app/globals.css'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../app/components/Header";
 import Footer from "../app/components/Footer";
 import Head from "next/head";
@@ -14,6 +14,13 @@ const ShopifyPerth = () => {
     console.log("Setup button clicked");
     // Add your logic here
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const AOS = require('aos');
+      AOS.init();
+    }
+  }, []);
 
   return (
     <>
@@ -59,11 +66,6 @@ const ShopifyPerth = () => {
             />
           </div>
         </section>
-
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
       </main>
       <Footer />
     </>
