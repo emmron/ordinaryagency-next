@@ -5,7 +5,7 @@ import Header from "../app/components/Header";
 import Footer from "../app/components/Footer";
 import Head from "next/head";
 import InternalHero from "../app/components/InternalHero";
-import { FaBasketballBall, FaCalendarAlt, FaWhistle } from "react-icons/fa";
+import { FaBasketballBall, FaCalendar, FaFutbol } from "react-icons/fa";
 import { motion } from 'framer-motion';
 
 const PlayHQPerth = () => {
@@ -36,12 +36,12 @@ const PlayHQPerth = () => {
                 <p className="text-black text-lg">Our Play HQ integration allows you to seamlessly add fixtures and season stats to your website, providing your members with easy access to important information.</p>
             </div>
             <div className="integration-item text-left p-6 md:p-10 space-y-4 transition-all duration-500 ease-in-out transform hover:shadow-2xl hover:scale-105">
-                <FaCalendarAlt className="text-black transition-all duration-500 ease-in-out hover:scale-150 hover:text-gray-700" size={32} />
+                <FaCalendar className="text-black transition-all duration-500 ease-in-out hover:scale-150 hover:text-gray-700" size={32} />
                 <h3 className="text-lg md:text-xl font-bold text-black tracking-wide">Real-Time Updates</h3>
                 <p className="text-black text-lg">With real-time updates, your members can stay up-to-date with the latest fixtures and stats, improving their experience and engagement.</p>
             </div>
             <div className="integration-item text-left p-6 md:p-10 space-y-4 transition-all duration-500 ease-in-out transform hover:shadow-2xl hover:scale-105">
-                <FaWhistle className="text-black transition-all duration-500 ease-in-out hover:scale-150 hover:text-gray-700" size={32} />
+                <FaFutbol className="text-black transition-all duration-500 ease-in-out hover:scale-150 hover:text-gray-700" size={32} />
                 <h3 className="text-lg md:text-xl font-bold text-black tracking-wide">Efficient Management</h3>
                 <p className="text-black text-lg">Play HQ integration simplifies the management of your sports club, allowing you to focus on what matters most - the game.</p>
             </div>
