@@ -25,7 +25,7 @@ const PlayHQPerth = () => {
 
       <main className="min-h-screen bg-white items-center justify-start pt-40 md:pt-20 px-4 sm:px-6 md:px-8 lg:px-12 lg:py-0 xl:px-16">
         <section className="container mx-auto px-4 py-12 text-center">
-          <img src="/images/playhq.png" alt="Play HQ Integration" className="w-full h-auto mb-8" />
+          <img src="/images/hq.png" alt="Play HQ Integration" className="w-full h-auto mb-8" />
           <h2 className="text-5xl font-extrabold mb-4 text-black tracking-wide transform transition-transform duration-500 hover:scale-105">Empowering Perth Sports Clubs</h2>
           <p className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">Streamline your club's operations and enhance member experience with our top integration services in Perth.</p>
 
