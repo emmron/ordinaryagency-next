@@ -104,6 +104,7 @@ export default function Home() {
   };
   const image1 = "/images/frest2.png";
   return (
+    
     <>
     <Head>
       <title>Ordinary Agency</title>
@@ -247,7 +248,7 @@ Our talented web development team excels in creating exceptional websites and we
   question="JLC Associates"
   answer={
     <>
-      We revitalised the JLC Associates' digital footprint with a sleek, contemporary website design. Take a moment to explore their transformed platform at <a href="http://jlcassociates.com.au" target="_blank" rel="noopener noreferrer">jlcassociates.com.au</a>.
+      We updated JLC Associates' website with a modern and clean design. Check out their new website at <a href="http://jlcassociates.com.au" target="_blank" rel="noopener noreferrer">jlcassociates.com.au</a>.
     </>
   }
 />
@@ -264,7 +265,7 @@ Our talented web development team excels in creating exceptional websites and we
   question="Instant Fun"
   answer={
     <>
-      Transitioning to a modern e-commerce platform, we reimagined Instant Fun's website on Shopify, enhancing the online shopping experience.
+      We moved Instant Fun's website from WooCommerce to Shopify, a more user-friendly online shopping platform. This process involved moving product data from WooCommerce to Shopify and setting up the new site. Visit the improved website at <a href="http://www.instantfun.com.au" target="_blank" rel="noopener noreferrer">instantfun.com.au</a>.
     </>
   }
 />
