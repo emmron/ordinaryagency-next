@@ -1,119 +1,71 @@
-import React, { useState, ReactElement, MouseEvent } from 'react';
+"use client";
+
+import { useState, useEffect, Fragment } from 'react';
+import { motion } from 'framer-motion';
+import Modal from 'react-modal';
+import Logo from '../app/components/Logo';
+import Accordion from '../app/components/Accordion';
+import Footer from '../app/components/Footer';
+import { FiPhone } from 'react-icons/fi';
+import Head from "next/head"
+import { Parallax } from 'react-parallax';
 import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
-import { FiArrowRight, FiChevronDown } from 'react-icons/fi';
+import Circle from '../app/components/Circle';
+import Header from '../app/components/Header';
 
-type FullScreenMenuProps = {
-  isOpen: boolean;
-  onClose: (event: MouseEvent) => void;
+const variants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0 },
 };
 
-const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): ReactElement => {
-  const [showSubmenu, setShowSubmenu] = useState(false);
-
-  const toggleSubmenu = () => {
-    setShowSubmenu(!showSubmenu);
-  };
-
-  const menuVariants = {
-    open: { opacity: 1, display: 'flex', transition: { duration: 0.3, ease: 'easeInOut' } },
-    closed: { opacity: 0, transition: { duration: 0.3, ease: 'easeInOut', when: 'afterChildren' }, transitionEnd: { display: 'none' } }
-  };
-
-  const submenuVariants = {
-    open: { height: 'auto', opacity: 1, transition: { duration: 0.2 } },
-    closed: { height: 0, opacity: 0, transition: { duration: 0.2 } },
-  };
-
+export default function ShopifyPerth() {
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial="closed"
-          animate="open"
-          exit="closed"
-          variants={menuVariants}
-          className="fixed overlaymenu top-0 left-0 w-full h-screen z-20 bg-white flex justify-center items-center font-poppins"
-        >
-          <div className="text-center text-black text-3xl font-bold">
-            <button
-              onClick={onClose}
-              className="absolute top-6 right-6 text-3xl font-bold"
-            >
-              &times;
-            </button>
-            <ul className="space-y-8">
-              <li className="relative pb-2">
-                <Link href="/contact">
-                  <motion.span
-                    onClick={onClose}
-                    className="block p-2 hover:text-gray-800 cursor-pointer transition duration-300 ease-in"
-                  >
-                    Contact
-                  </motion.span>
-                </Link>
-              </li>
-              <li className="relative pb-2">
-                <button
-                  onClick={toggleSubmenu}
-                  className="focus:outline-none py-2 flex items-center justify-center"
-                >
-                  <span>Services</span>
-                  <FiChevronDown
-                    className={`ml-2 transform transition-transform ${
-                      showSubmenu ? 'rotate-180' : 'rotate-0'
-                    }`}
-                  />
-                </button>
-                <motion.div
-                  initial="closed"
-                  animate={showSubmenu ? 'open' : 'closed'}
-                  variants={submenuVariants}
-                  className="overflow-hidden mt-4"
-                >
-                  <ul className="space-y-4 pl-6 flex flex-col items-center">
-                    <li className="flex items-center">
-                      <FiArrowRight />
-                      <Link href="/seo-perth">
-                        <motion.span
-                          onClick={onClose}
-                          className="ml-2 text-2xl hover:text-gray-800 cursor-pointer transition duration-300 ease-in"
-                        >
-                          SEO Perth
-                        </motion.span>
-                      </Link>
-                    </li>
-                    <li className="flex items-center">
-                      <FiArrowRight />
-                      <Link href="/play-hq-integration-perth">
-                        <motion.span
-                          onClick={onClose}
-                          className="ml-2 text-2xl hover:text-gray-800 cursor-pointer transition duration-300 ease-in"
-                        >
-                          Play HQ Integration 
-                        </motion.span>
-                      </Link>
-                    </li>
-                    <li className="flex items-center">
-                      <FiArrowRight />
-                      <Link href="/shopify-perth">
-                        <motion.span
-                          onClick={onClose}
-                          className="ml-2 text-2xl hover:text-gray-800 cursor-pointer transition duration-300 ease-in"
-                        >
-                          Shopify Perth
-                        </motion.span>
-                      </Link>
-                    </li>
-                  </ul>
-                </motion.div>
-              </li>
-            </ul>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-};
+    <>
+      <Head>
+        <title>Shopify Services | Ordinary Agency</title>
+        <meta property="og:title" content="Shopify Services | Ordinary Agency" key="title" />
+        <meta name="description" content="Expert Shopify services in Perth" key="desc" />
+      </Head>
+      <main id="#my-root" className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 lg:py-0 xl:p-28 bg-transparent text-black">
+        <Header />
+        <div>
+          <motion.div className="services mb-8"
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            transition={{ delay: 1.5 }}
+          >
+            <h2 className="text-2xl mb-4">Our Shopify Services</h2>
+            <Accordion
+              question="Shopify Store Setup & Customization"
+              answer={
+                <div>
+                  We help businesses set up their Shopify stores and customize them to match their brand. This includes setting up product listings, payment gateways, shipping settings, and more.
+                </div>
+              }
+            />
 
-export default FullScreenMenu;
+            <Accordion
+              question="Shopify SEO"
+              answer={
+                <div>
+                  We optimize your Shopify store for search engines to help you rank higher, attract more traffic, and increase sales.
+                </div>
+              }
+            />
+
+            <Accordion
+              question="Shopify Maintenance & Support"
+              answer={
+                <div>
+                  We provide ongoing maintenance and support services to keep your Shopify store running smoothly. This includes updating product listings, managing promotions, troubleshooting issues, and more.
+                </div>
+              }
+            />
+          </motion.div>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+}
