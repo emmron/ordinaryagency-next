@@ -221,8 +221,7 @@ export default function Home() {
               question="Automations & AI"
               answer={
                 <>
-                  Our diverse Perth-based team integrates effective automations and AI solutions tailored for your business. With a genuine passion for digital innovation, we remain dedicated to offering cutting-edge services to Australian businesses, elevating their online presence and driving success.
-                </>
+Our Perth-based team is skilled in integrating automation and AI solutions that are specifically tailored to your business needs. We are passionate about using the latest digital technologies to help Australian businesses enhance their online presence and achieve their business goals.                </>
               }
             />
 
