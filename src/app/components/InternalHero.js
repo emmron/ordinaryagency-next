@@ -19,7 +19,7 @@ const InternalHero = ({ title }) => {
       }}
     >
       <motion.span
-        className="text-4xl md:text-6xl font-bold text-black"
+        className="text-3xl sm:text-4xl md:text-6xl font-bold text-black text-center"
         style={{ fontFamily: "'Poppins', sans-serif" }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
