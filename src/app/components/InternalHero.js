@@ -20,8 +20,9 @@ const InternalHero = ({ title }) => {
 
   return (
     <div
-      className={`flex items-center justify-center h-96 w-full bg-white text-white ${isLoaded ? 'bg-loaded' : 'bg-loading'}`}
+      className={`flex items-center justify-center h-96 w-full text-white ${isLoaded ? 'bg-loaded' : 'bg-loading'}`}
       style={{
+        backgroundImage: `url(${img.src})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
