@@ -35,12 +35,12 @@ export default function ShopifyPerth() {
             variants={variants}
             transition={{ delay: 1.5 }}
           >
-            <h2 className="text-5xl font-extrabold mb-4 text-black tracking-wide transform transition-transform duration-500 hover:scale-105">Our Shopify Services</h2>
+            <h2 className="text-5xl font-extrabold mb-4 text-black tracking-wide transform transition-transform duration-500 hover:scale-105">Discover the Power of Shopify with Our Services</h2>
             <Accordion
               question="Shopify Store Setup & Customization"
               answer={
                 <div className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
-                  We help businesses set up their Shopify stores and customize them to match their brand. This includes setting up product listings, payment gateways, shipping settings, and more.
+                  We don't just set up Shopify stores, we create unique online experiences that resonate with your brand. From product listings to payment gateways, we've got you covered. <button onClick={this.handleSetup}>Learn More</button>
                 </div>
               }
             />
@@ -49,7 +49,7 @@ export default function ShopifyPerth() {
               question="Shopify SEO"
               answer={
                 <div className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
-                  We optimize your Shopify store for search engines to help you rank higher, attract more traffic, and increase sales.
+                  Our Shopify SEO services are designed to catapult your online store to the top of search engine results, driving traffic and boosting sales like never before. <button onClick={this.handleSEO}>Learn More</button>
                 </div>
               }
             />
@@ -58,13 +58,14 @@ export default function ShopifyPerth() {
               question="Shopify Maintenance & Support"
               answer={
                 <div className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
-                  We provide ongoing maintenance and support services to keep your Shopify store running smoothly. This includes updating product listings, managing promotions, troubleshooting issues, and more.
+                  With our ongoing maintenance and support, your Shopify store will always be in top shape. From updating product listings to troubleshooting, we're here to ensure your success. <button onClick={this.handleSupport}>Learn More</button>
                 </div>
               }
             />
           </motion.div>
         </div>
       </main>
+
       <Footer />
     </>
   );
