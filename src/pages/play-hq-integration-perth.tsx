@@ -47,15 +47,15 @@ const PlayHQPerth = () => {
             </div>
           </div>
         </section>
-                <section className="flex flex-col md:flex-row bg-blue-200 rounded-lg p-3 md:p-5 shadow-lg">
-                  <div className="w-full md:w-1/2">
-                    <img src="/images/eee.png" alt="Play HQ" className="w-full h-auto rounded-lg shadow-md" style={{maxHeight: '300px'}} />
-                  </div>
-                  <div className="w-full md:w-1/2 p-3 md:p-5 space-y-2">
-                    <h3 className="text-2xl md:text-3xl font-bold text-black tracking-wide">Experience the Convenience of Play HQ Integration</h3>
-                    <p className="text-black text-lg leading-relaxed mb-2">Play HQ integration brings everything you need to your fingertips. Say goodbye to the hassle of searching for information. Managing your sports club has never been easier.</p>
+                <section className="flex flex-col md:flex-row bg-blue-200 rounded-lg p-3 md:p-5 shadow-lg" style={{backgroundImage: 'url(/images/eee.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+                  <div className="w-full md:w-1/2 flex flex-col justify-center items-start p-5" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
+                    <h3 className="text-4xl md:text-5xl font-bold text-white tracking-wide mb-4" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>Experience the Convenience of Play HQ Integration</h3>
+                    <p className="text-white text-lg leading-relaxed" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.5)'}}>Play HQ integration brings everything you need to your fingertips. Say goodbye to the hassle of searching for information. Managing your sports club has never been easier.</p>
                   </div>
                 </section>
+
+
+
 
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
