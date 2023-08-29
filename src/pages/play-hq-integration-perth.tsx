@@ -23,27 +23,27 @@ const PlayHQPerth = () => {
       <Header />
       <InternalHero title="Play HQ Integration | Ordinary Agency" />
 
-      <main className="min-h-screen bg-white items-center justify-start pt-20 md:pt-10 px-4 sm:px-6 md:px-8 lg:px-12 lg:py-0 xl:px-16">
-        <section className="container mx-auto px-4 py-6 text-center bg-gradient-to-r from-blue-500 to-blue-700 text-white" data-aos="fade-up">
+      <main className="min-h-screen bg-white items-center justify-start pt-20 md:pt-10 px-4 sm:px-6 md:px-8 lg:px-12 lg:py-0 xl:px-16 overflow-x-hidden">
+        <section className="container mx-auto px-4 py-6 text-center bg-white" data-aos="fade-up">
           <img src="/images/hq.png" alt="Play HQ Integration" className="w-64 h-auto mx-auto mb-4 shadow-lg rounded-full" data-aos="fade-up" data-aos-delay="100" />
-          <h2 className="text-6xl font-extrabold mb-2 tracking-wide transform transition-transform duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="200">Revolutionize Your Sports Club with Play HQ Integration</h2>
-          <p className="text-2xl italic mb-6 transform transition-transform duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="300">Unleash the power of Play HQ integration and transform your sports club into a digital powerhouse. Stay ahead of the game with real-time updates and seamless integration.</p>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2 tracking-wide transform transition-transform duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="200">Revolutionize Your Sports Club with Play HQ Integration</h2>
+          <p className="text-lg sm:text-xl md:text-2xl italic mb-6 transform transition-transform duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="300">Unleash the power of Play HQ integration and transform your sports club into a digital powerhouse. Stay ahead of the game with real-time updates and seamless integration.</p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4" data-aos="fade-up" data-aos-delay="400">
-            <div className="integration-item text-left p-3 md:p-5 space-y-2 transition-all duration-500 ease-in-out transform hover:scale-105 bg-blue-300 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="500">
-                <FaBasketballBall className="text-white transition-all duration-500 ease-in-out hover:scale-150 hover:text-gray-700" size={32} data-aos="fade-up" data-aos-delay="600" />
-                <h3 className="text-lg md:text-xl font-bold text-white tracking-wide" data-aos="fade-up" data-aos-delay="700">Seamless Integration</h3>
-                <p className="text-white text-lg" data-aos="fade-up" data-aos-delay="800">Experience the future of sports management with our Play HQ integration. Add fixtures and season stats to your website effortlessly, providing your members with instant access to crucial information.</p>
+            <div className="integration-item text-left p-3 md:p-5 space-y-2 transition-all duration-500 ease-in-out transform hover:scale-105 bg-gray-200 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="500">
+                <FaBasketballBall className="text-black transition-all duration-500 ease-in-out hover:scale-150 hover:text-gray-700" size={32} data-aos="fade-up" data-aos-delay="600" />
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-black tracking-wide" data-aos="fade-up" data-aos-delay="700">Seamless Integration</h3>
+                <p className="text-base sm:text-lg md:text-xl text-black" data-aos="fade-up" data-aos-delay="800">Experience the future of sports management with our Play HQ integration. Add fixtures and season stats to your website effortlessly, providing your members with instant access to crucial information.</p>
             </div>
-            <div className="integration-item text-left p-3 md:p-5 space-y-2 transition-all duration-500 ease-in-out transform hover:scale-105 bg-blue-300 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="900">
-                <FaCalendar className="text-white transition-all duration-500 ease-in-out hover:scale-150 hover:text-gray-700" size={32} data-aos="fade-up" data-aos-delay="1000" />
-                <h3 className="text-lg md:text-xl font-bold text-white tracking-wide" data-aos="fade-up" data-aos-delay="1100">Real-Time Updates</h3>
-                <p className="text-white text-lg" data-aos="fade-up" data-aos-delay="1200">Keep your members in the loop with real-time updates. Our Play HQ integration ensures your members never miss a beat, enhancing their experience and engagement.</p>
+            <div className="integration-item text-left p-3 md:p-5 space-y-2 transition-all duration-500 ease-in-out transform hover:scale-105 bg-gray-200 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="900">
+                <FaCalendar className="text-black transition-all duration-500 ease-in-out hover:scale-150 hover:text-gray-700" size={32} data-aos="fade-up" data-aos-delay="1000" />
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-black tracking-wide" data-aos="fade-up" data-aos-delay="1100">Real-Time Updates</h3>
+                <p className="text-base sm:text-lg md:text-xl text-black" data-aos="fade-up" data-aos-delay="1200">Keep your members in the loop with real-time updates. Our Play HQ integration ensures your members never miss a beat, enhancing their experience and engagement.</p>
             </div>
-            <div className="integration-item text-left p-3 md:p-5 space-y-2 transition-all duration-500 ease-in-out transform hover:scale-105 bg-blue-300 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="1300">
-                <FaFutbol className="text-white transition-all duration-500 ease-in-out hover:scale-150 hover:text-gray-700" size={32} data-aos="fade-up" data-aos-delay="1400" />
-                <h3 className="text-lg md:text-xl font-bold text-white tracking-wide" data-aos="fade-up" data-aos-delay="1500">Efficient Management</h3>
-                <p className="text-white text-lg" data-aos="fade-up" data-aos-delay="1600">Play HQ integration takes the hassle out of sports club management. Focus on what truly matters - the game, while we handle the rest.</p>
+            <div className="integration-item text-left p-3 md:p-5 space-y-2 transition-all duration-500 ease-in-out transform hover:scale-105 bg-gray-200 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="1300">
+                <FaFutbol className="text-black transition-all duration-500 ease-in-out hover:scale-150 hover:text-gray-700" size={32} data-aos="fade-up" data-aos-delay="1400" />
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-black tracking-wide" data-aos="fade-up" data-aos-delay="1500">Efficient Management</h3>
+                <p className="text-base sm:text-lg md:text-xl text-black" data-aos="fade-up" data-aos-delay="1600">Play HQ integration takes the hassle out of sports club management. Focus on what truly matters - the game, while we handle the rest.</p>
             </div>
           </div>
         </section>
