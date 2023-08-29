@@ -4,11 +4,18 @@ import { motion, useReducedMotion } from 'framer-motion';
 const InternalHero = ({ title }) => {
   const shouldReduceMotion = useReducedMotion();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [imgSrc, setImgSrc] = useState('');
 
   useEffect(() => {
     const img = new Image();
     img.src = '/images/frest2.png';
-    img.onload = () => setIsLoaded(true);
+    img.onload = () => {
+      setIsLoaded(true);
+      setImgSrc(img.src);
+    };
+    img.onerror = () => {
+      console.error('Failed to load image');
+    };
   }, []);
 
   const variants = shouldReduceMotion
@@ -22,7 +29,7 @@ const InternalHero = ({ title }) => {
     <div
       className={`flex items-center justify-center h-96 w-full text-white ${isLoaded ? 'bg-loaded' : 'bg-loading'}`}
       style={{
-        backgroundImage: `url(${img.src})`,
+        backgroundImage: `url(${imgSrc})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
