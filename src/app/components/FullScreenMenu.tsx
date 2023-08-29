@@ -82,6 +82,15 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): Rea
                           SEO Perth
                         </motion.span>
                       </Link>
+
+                      <Link href="/play-hq-integration-perth">
+                        <motion.span
+                          onClick={onClose}
+                          className="ml-2 text-2xl hover:text-gray-800 cursor-pointer transition duration-300 ease-in"
+                        >
+                          Play HQ Integration 
+                        </motion.span>
+                      </Link>
                     </li>
                   </ul>
                 </motion.div>
