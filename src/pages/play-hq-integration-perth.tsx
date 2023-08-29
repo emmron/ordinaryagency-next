@@ -50,7 +50,7 @@ const PlayHQPerth = () => {
 
         <section className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/2">
-            <img src="/path-to-your-image.jpg" alt="Play HQ" className="w-full h-auto" />
+            <img src="/images/playhqcricket.png" alt="Play HQ" className="w-full h-auto" />
           </div>
           <div className="w-full md:w-1/2 p-6 md:p-10 space-y-4">
             <h3 className="text-lg md:text-xl font-bold text-black tracking-wide">The Convenience of Play HQ Integration</h3>
