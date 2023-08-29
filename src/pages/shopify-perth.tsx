@@ -1,27 +1,20 @@
+import '../app/aos.css'
 import '../app/globals.css'
-import { useState, useEffect, Fragment } from 'react';
+import { useState } from "react";
+import Header from "../app/components/Header";
+import Footer from "../app/components/Footer";
+import Head from "next/head";
+import InternalHero from "../app/components/InternalHero";
+import { FaBasketballBall, FaCalendar, FaFutbol } from "react-icons/fa";
 import { motion } from 'framer-motion';
-import Modal from 'react-modal';
-import Logo from '../app/components/Logo';
 import Accordion from '../app/components/Accordion';
-import Footer from '../app/components/Footer';
-import { FiPhone } from 'react-icons/fi';
-import Head from "next/head"
-import { Parallax } from 'react-parallax';
-import Link from 'next/link';
-import Circle from '../app/components/Circle';
-import Header from '../app/components/Header';
 
+const ShopifyPerth = () => {
+  const handleSetup = () => {
+    console.log("Setup button clicked");
+    // Add your logic here
+  };
 
-const variants = {
-  hidden: { opacity: 0, x: -100 },
-  visible: { opacity: 1, x: 0 },
-};
-const handleSetup = () => {
-  console.log("Setup button clicked");
-  // Add your logic here
-};
-export default function ShopifyPerth() {
   return (
     <>
       <Head>
@@ -29,20 +22,19 @@ export default function ShopifyPerth() {
         <meta property="og:title" content="Shopify Services | Ordinary Agency" key="title" />
         <meta name="description" content="Expert Shopify services in Perth" key="desc" />
       </Head>
-      <main id="#my-root" className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 lg:py-0 xl:p-28 bg-transparent text-black">
-        <Header />
-        <div className="container mx-auto px-4 py-12 text-center">
-          <motion.div className="services mb-8"
-            initial="hidden"
-            animate="visible"
-            variants={variants}
-            transition={{ delay: 1.5 }}
-          >
-            <h2 className="text-5xl font-extrabold mb-4 text-black tracking-wide transform transition-transform duration-500 hover:scale-105">Discover the Power of Shopify with Our Services</h2>
+      <Header />
+      <InternalHero title="Shopify Services | Ordinary Agency" />
+
+      <main className="min-h-screen bg-white items-center justify-start pt-20 md:pt-10 px-4 sm:px-6 md:px-8 lg:px-12 lg:py-0 xl:px-16 overflow-x-hidden">
+        <section className="container mx-auto px-4 py-6 text-center bg-white" data-aos="fade-up">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2 tracking-wide transform transition-transform duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="200">Discover the Power of Shopify with Our Services</h2>
+          <p className="text-lg sm:text-xl md:text-2xl italic mb-6 transform transition-transform duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="300">We offer a range of Shopify services to help your business succeed online.</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4" data-aos="fade-up" data-aos-delay="400">
             <Accordion
               question="Shopify Store Setup & Customization"
               answer={
-                <div className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
+                <div className="text-lg md:text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
                   We don't just set up Shopify stores, we create unique online experiences that resonate with your brand. From product listings to payment gateways, we've got you covered. <button onClick={handleSetup}>Learn More</button>
                 </div>
               }
@@ -51,7 +43,7 @@ export default function ShopifyPerth() {
             <Accordion
               question="Shopify SEO"
               answer={
-                <div className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
+                <div className="text-lg md:text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
                   Our Shopify SEO services are designed to catapult your online store to the top of search engine results, driving traffic and boosting sales like never before. <button onClick={handleSetup}>Learn More</button>
                 </div>
               }
@@ -60,16 +52,22 @@ export default function ShopifyPerth() {
             <Accordion
               question="Shopify Maintenance & Support"
               answer={
-                <div className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
+                <div className="text-lg md:text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
                   With our ongoing maintenance and support, your Shopify store will always be in top shape. From updating product listings to troubleshooting, we're here to ensure your success. <button onClick={handleSetup}>Learn More</button>
                 </div>
               }
             />
-          </motion.div>
-        </div>
-      </main>
+          </div>
+        </section>
 
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+      </main>
       <Footer />
     </>
   );
-}
+};
+
+export default ShopifyPerth;
