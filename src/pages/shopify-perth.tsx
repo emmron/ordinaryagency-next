@@ -1,17 +1,18 @@
 "use client";
 
+import 'styles/globals.css';
 import { useState, useEffect, Fragment } from 'react';
 import { motion } from 'framer-motion';
 import Modal from 'react-modal';
-import Logo from '../app/components/Logo';
-import Accordion from '../app/components/Accordion';
-import Footer from '../app/components/Footer';
+import Logo from 'components/Logo';
+import Accordion from 'components/Accordion';
+import Footer from 'components/Footer';
 import { FiPhone } from 'react-icons/fi';
 import Head from "next/head"
 import { Parallax } from 'react-parallax';
 import Link from 'next/link';
-import Circle from '../app/components/Circle';
-import Header from '../app/components/Header';
+import Circle from 'components/Circle';
+import Header from 'components/Header';
 
 const variants = {
   hidden: { opacity: 0, x: -100 },
