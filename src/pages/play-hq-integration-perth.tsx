@@ -28,10 +28,10 @@ const PlayHQPerth = () => {
       <Header />
       <InternalHero title="Play HQ Integration | Ordinary Agency" />
 
-      <main className="min-h-screen bg-white items-center justify-start pt-20 md:pt-10 px-4 sm:px-6 md:px-8 lg:px-12 lg:py-0 xl:px-16 overflow-x-hidden">
-        <section className="container mx-auto px-4 py-6 text-center bg-gray-100" data-aos="fade-up">
+      <main className="min-h-screen bg-light-gray items-center justify-start pt-20 md:pt-10 px-4 sm:px-6 md:px-8 lg:px-12 lg:py-0 xl:px-16 overflow-x-hidden">
+        <section className="container mx-auto px-4 py-6 text-center bg-light-blue" data-aos="fade-up">
           <img src="/images/hq.png" alt="Play HQ Integration" className="w-64 h-auto mx-auto mb-4 shadow-lg rounded-full border-4 border-blue-500" data-aos="fade-up" data-aos-delay="100" />
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2 tracking-wide transform transition-transform duration-500 hover:scale-105 text-blue-500" data-aos="fade-up" data-aos-delay="200">Revolutionize Your Sports Club with Play HQ Integration</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2 tracking-wide transform transition-transform duration-500 hover:scale-105 text-dark-blue" data-aos="fade-up" data-aos-delay="200">Revolutionize Your Sports Club with Play HQ Integration</h2>
           <p className="text-lg sm:text-xl md:text-2xl italic mb-6 transform transition-transform duration-500 hover:scale-105 text-gray-700" data-aos="fade-up" data-aos-delay="300">Unleash the power of Play HQ integration and transform your sports club into a digital powerhouse. Stay ahead of the game with real-time updates and seamless integration.</p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4" data-aos="fade-up" data-aos-delay="400">
@@ -54,7 +54,7 @@ const PlayHQPerth = () => {
         </section>
                 <section className="flex flex-col md:flex-row bg-blue-200 rounded-lg p-6 md:p-10 shadow-lg h-auto md:h-96 items-center justify-center space-y-4 md:space-y-0" style={{backgroundImage: 'url(/images/eee.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
                   <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-6 md:p-10 space-y-4" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
-                    <h3 className="text-4xl md:text-5xl font-bold text-white tracking-wide mb-6 text-center" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>Experience the Convenience of Play HQ Integration</h3>
+                    <h3 className="text-3xl md:text-4xl font-bold text-white tracking-wide mb-6 text-center" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>Experience the Convenience of Play HQ Integration</h3>
                     <p className="text-white text-lg leading-relaxed text-center" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.5)'}}>Play HQ integration brings everything you need to your fingertips. Say goodbye to the hassle of searching for information. Managing your sports club has never been easier.</p>
                   </div>
                 </section>
