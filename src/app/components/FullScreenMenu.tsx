@@ -42,12 +42,12 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): Rea
             >
               &times;
             </button>
-            <ul className="space-y-8">
+            <ul className="space-y-8 flex flex-col items-center">
               <li className="relative pb-2">
                 <Link href="/contact">
                   <motion.span
                     onClick={onClose}
-                    className="block p-2 hover:text-gray-800 cursor-pointer transition duration-300 ease-in"
+                    className="block p-2 hover:text-gray-800 cursor-pointer transition duration-300 ease-in text-center"
                   >
                     Contact
                   </motion.span>
@@ -58,7 +58,7 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): Rea
                   onClick={toggleSubmenu}
                   className="focus:outline-none py-2 flex items-center justify-center"
                 >
-                  <span>Services</span>
+                  <span className="text-center">Services</span>
                   <FiChevronDown
                     className={`ml-2 transform transition-transform ${
                       showSubmenu ? 'rotate-180' : 'rotate-0'
@@ -72,34 +72,34 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): Rea
                   className="overflow-hidden mt-4"
                 >
                   <ul className="space-y-4 pl-6 flex flex-col items-center">
-                    <li className="flex items-center">
+                    <li className="flex items-center justify-center">
                       <FiArrowRight />
                       <Link href="/seo-perth">
                         <motion.span
                           onClick={onClose}
-                          className="ml-2 text-2xl hover:text-gray-800 cursor-pointer transition duration-300 ease-in"
+                          className="ml-2 text-2xl hover:text-gray-800 cursor-pointer transition duration-300 ease-in text-center"
                         >
                           SEO Perth
                         </motion.span>
                       </Link>
                     </li>
-                    <li className="flex items-center">
+                    <li className="flex items-center justify-center">
                       <FiArrowRight />
                       <Link href="/play-hq-integration-perth">
                         <motion.span
                           onClick={onClose}
-                          className="ml-2 text-2xl hover:text-gray-800 cursor-pointer transition duration-300 ease-in"
+                          className="ml-2 text-2xl hover:text-gray-800 cursor-pointer transition duration-300 ease-in text-center"
                         >
                           Play HQ Integration 
                         </motion.span>
                       </Link>
                     </li>
-                    <li className="flex items-center">
+                    <li className="flex items-center justify-center">
                       <FiArrowRight />
                       <Link href="/shopify-perth">
                         <motion.span
                           onClick={onClose}
-                          className="ml-2 text-2xl hover:text-gray-800 cursor-pointer transition duration-300 ease-in"
+                          className="ml-2 text-2xl hover:text-gray-800 cursor-pointer transition duration-300 ease-in text-center"
                         >
                           Shopify Perth
                         </motion.span>
