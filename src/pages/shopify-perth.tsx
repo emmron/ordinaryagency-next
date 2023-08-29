@@ -17,7 +17,10 @@ const variants = {
   hidden: { opacity: 0, x: -100 },
   visible: { opacity: 1, x: 0 },
 };
-
+const handleSetup = () => {
+  console.log("Setup button clicked");
+  // Add your logic here
+};
 export default function ShopifyPerth() {
   return (
     <>
@@ -40,7 +43,7 @@ export default function ShopifyPerth() {
               question="Shopify Store Setup & Customization"
               answer={
                 <div className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
-                  We don't just set up Shopify stores, we create unique online experiences that resonate with your brand. From product listings to payment gateways, we've got you covered. <button onClick={this.handleSetup}>Learn More</button>
+                  We don't just set up Shopify stores, we create unique online experiences that resonate with your brand. From product listings to payment gateways, we've got you covered. <button onClick={handleSetup}>Learn More</button>
                 </div>
               }
             />
@@ -49,7 +52,7 @@ export default function ShopifyPerth() {
               question="Shopify SEO"
               answer={
                 <div className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
-                  Our Shopify SEO services are designed to catapult your online store to the top of search engine results, driving traffic and boosting sales like never before. <button onClick={this.handleSEO}>Learn More</button>
+                  Our Shopify SEO services are designed to catapult your online store to the top of search engine results, driving traffic and boosting sales like never before. <button onClick={handleSetup}>Learn More</button>
                 </div>
               }
             />
@@ -58,7 +61,7 @@ export default function ShopifyPerth() {
               question="Shopify Maintenance & Support"
               answer={
                 <div className="text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
-                  With our ongoing maintenance and support, your Shopify store will always be in top shape. From updating product listings to troubleshooting, we're here to ensure your success. <button onClick={this.handleSupport}>Learn More</button>
+                  With our ongoing maintenance and support, your Shopify store will always be in top shape. From updating product listings to troubleshooting, we're here to ensure your success. <button onClick={handleSetup}>Learn More</button>
                 </div>
               }
             />
