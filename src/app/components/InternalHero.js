@@ -41,9 +41,10 @@ const InternalHero = ({ title }) => {
         minHeight: '50vh', // Adjusted for mobile view
       }}
     >
+      <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)', position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }}></div> 
       <motion.span
         className="text-2xl sm:text-3xl md:text-4xl font-bold text-black text-center" // Adjusted font size for mobile view
-        style={{ fontFamily: "'Poppins', sans-serif" }}
+        style={{ fontFamily: "'Poppins', sans-serif", position: 'relative' }} // Added relative position to make it on top of the overlay
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
         variants={variants}
@@ -54,8 +55,5 @@ const InternalHero = ({ title }) => {
     </div>
   );
 };
-
-
-
 
 export default InternalHero;
