@@ -1,13 +1,27 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 
 const InternalHero = ({ title }) => {
+  const shouldReduceMotion = useReducedMotion();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = '/images/frest2.png';
+    img.onload = () => setIsLoaded(true);
+  }, []);
+
+  const variants = shouldReduceMotion
+    ? {}
+    : {
+        hidden: { opacity: 0, y: -20 },
+        visible: { opacity: 1, y: 0 },
+      };
+
   return (
     <div
-      className="flex items-center justify-center h-96 w-full bg-white text-white"
+      className={`flex items-center justify-center h-96 w-full bg-white text-white ${isLoaded ? 'bg-loaded' : 'bg-loading'}`}
       style={{
-        backgroundImage:
-          "linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/images/frest2.png')",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -16,13 +30,15 @@ const InternalHero = ({ title }) => {
         transform: 'translateZ(0)',
         backfaceVisibility: 'hidden',
         perspective: 1000,
+        minHeight: '50vh', // Adjusted for mobile view
       }}
     >
       <motion.span
-        className="text-3xl sm:text-4xl md:text-6xl font-bold text-black text-center"
+        className="text-2xl sm:text-3xl md:text-4xl font-bold text-black text-center" // Adjusted font size for mobile view
         style={{ fontFamily: "'Poppins', sans-serif" }}
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial="hidden"
+        animate={isLoaded ? "visible" : "hidden"}
+        variants={variants}
         transition={{ duration: 1 }}
       >
         {title}
@@ -30,5 +46,8 @@ const InternalHero = ({ title }) => {
     </div>
   );
 };
+
+
+
 
 export default InternalHero;
