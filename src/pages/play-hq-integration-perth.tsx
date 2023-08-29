@@ -47,6 +47,17 @@ const PlayHQPerth = () => {
             </div>
           </div>
         </section>
+
+        <section className="flex flex-col md:flex-row">
+          <div className="w-full md:w-1/2">
+            <img src="/path-to-your-image.jpg" alt="Play HQ" className="w-full h-auto" />
+          </div>
+          <div className="w-full md:w-1/2 p-6 md:p-10 space-y-4">
+            <h3 className="text-lg md:text-xl font-bold text-black tracking-wide">The Convenience of Play HQ Integration</h3>
+            <p className="text-black text-lg">With Play HQ integration, there's no more searching for this or that. Everything you need is right at your fingertips, making it easier than ever to manage your sports club.</p>
+          </div>
+        </section>
+
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
             AOS.init();
