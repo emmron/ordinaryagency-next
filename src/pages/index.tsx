@@ -111,6 +111,29 @@ export default function Home({ data }: { data: HomePageData }) {
       zIndex: 10000,
     },
   };
+  const schemaOffers = data.cards.map( (card:ServiceCard) => ({
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "Service",
+      "name": card.title,
+      "description": card.description
+    },
+    "logo": `https://ordinaryagency.com.au${card.serviceImg}`,
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Perth"
+      },
+      {
+        "@type": "State",
+        "name": "Western Australia"
+      },
+      {
+        "@type": "Country",
+        "name": "Australia"
+      },
+    ],
+  }))
   const jsonSchema = {
     "@context": "http://schema.org",
     "@type": "ProfessionalService",
@@ -151,30 +174,7 @@ export default function Home({ data }: { data: HomePageData }) {
         "worksFor": "Your Agency Name"
       }
     ],
-    "makesOffer": (data:HomePageData) =>
-      data.cards.map( (card:ServiceCard) => ({
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": card.title,
-          "description": card.description
-        },
-        "logo": `https://ordinaryagency.com.au${card.serviceImg}`,
-        "areaServed": [
-          {
-            "@type": "City",
-            "name": "Perth"
-          },
-          {
-            "@type": "State",
-            "name": "Western Australia"
-          },
-          {
-            "@type": "Country",
-            "name": "Australia"
-          },
-        ],
-      })),
+    "makesOffer": schemaOffers,
     "sameAs": [
       "https://www.instagram.com/ordinaryagency/",
       "https://au.linkedin.com/company/ordinaryagencyseo",
@@ -189,6 +189,7 @@ export default function Home({ data }: { data: HomePageData }) {
       <title>Ordinary Agency</title>
       <meta property="og:title" content="Ordinary Agency" key="title" />
       <meta name="description" content="Digital Agency in West Perth" key="desc" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonSchema) }} />   
     </Head>
     <main id="#my-root" className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 lg:py-0 xl:p-28 bg-transparent text-black">
     <Header />
