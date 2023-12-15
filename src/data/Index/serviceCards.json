@@ -1,0 +1,32 @@
+{
+    "cards": [
+        {
+            "title":"Lead Generation",
+            "description":"There are many ways to drive & convert traffic on your website, we can help you find solutions that fit your business goals",
+            "linkTo": "https://ordinaryagency.com.au/seo-perth",
+            "serviceImg":"/images/services/exponential-growth.svg",
+            "sellingPoint":"grow"  
+        },
+        {
+            "title":"Web Hosting & Domains",
+            "description":"Host your existing website with us for just $50/month!",
+            "linkTo": "https://ordinaryagency.com.au/seo-perth",
+            "serviceImg":"/images/services/hosting.svg",
+            "sellingPoint":"grow"
+        },
+        {
+            "title":"Marketing & Reputation Management",
+            "description":"Remove the headaches and get the most from your customer connections by leveraging our managed automation services",
+            "linkTo": "https://ordinaryagency.com.au/seo-perth",
+            "serviceImg":"/images/services/bullseye-arrow.svg",
+            "sellingPoint":"grow"
+        },
+        {
+            "title":"Custom Online Solutions",
+            "description":"Our developers boast years of experience and are ready to help you realise your new online presence.",
+            "linkTo": "https://ordinaryagency.com.au/seo-perth",
+            "serviceImg":"/images/services/light-bulb.svg",
+            "sellingPoint":"build"   
+        }
+    ]
+}
