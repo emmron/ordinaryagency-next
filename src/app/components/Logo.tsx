@@ -10,13 +10,17 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 10);
+      setScroll(window.scrollY > 50);
     });
   }, []);
 
+  const classes = {
+    circle:"flex justify-center items-center w-15 h-15 border-[3px] border-black rounded-full transition-color duration-300 ease",
+    text:"text-[36px] font-bold font-radley lowercase transition-color duration-300 ease"
+  }
   return (
-    <div className={`${styles.circle} ${scroll ? styles.scrolled : ""} ${className}`}>
-      <span className={styles.text}>OA</span>
+    <div className={`${classes.circle} ${scroll ? "bg-black border-white" : "bg-white"} ${className}`}>
+      <span className={`${classes.text} ${scroll ? "text-white" : "text-black"}`} >OA</span>
     </div>
   );
 };

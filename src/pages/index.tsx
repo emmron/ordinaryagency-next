@@ -1,26 +1,35 @@
 "use client";
-
-import { useState, useEffect, Fragment } from 'react';
+import fs from 'fs'
+import path from 'path'
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Modal from 'react-modal';
-import Logo from './components/Logo';
-import Accordion from './components/Accordion';
-import Footer from './components/Footer';
-import { FiPhone } from 'react-icons/fi';
+import Accordion from '../app/components/Accordion';
+import Footer from '../app/components/Footer';
 import { useInView } from 'react-intersection-observer';
 import Head from "next/head"
 import { Parallax } from 'react-parallax';
-import Link from 'next/link';
-import Circle from './components/Circle';
-import Header from './components/Header';
-
+import Header from '../app/components/Header';
 
 const variants = {
   hidden: { opacity: 0, x: -100 },
   visible: { opacity: 1, x: 0 },
 };
+interface ServiceCard {
+  title: string;
+  description: string;
+  serviceImg: string;
+  linkTo: string;
+  sellingPoint: string;
+}
 
-export default function Home() {
+interface HomePageData {
+  cards: ServiceCard[];
+}
+
+
+export default function Home({ data }: { data: HomePageData }) {
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -102,7 +111,77 @@ export default function Home() {
       zIndex: 10000,
     },
   };
+  const schemaOffers = data.cards.map( (card:ServiceCard) => ({
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "Service",
+      "name": card.title,
+      "description": card.description
+    },
+    "logo": `https://ordinaryagency.com.au${card.serviceImg}`,
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Perth"
+      },
+      {
+        "@type": "State",
+        "name": "Western Australia"
+      },
+      {
+        "@type": "Country",
+        "name": "Australia"
+      },
+    ],
+  }))
+  const jsonSchema = {
+    "@context": "http://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Ordinary Agency",
+    "image": "https://ordinaryagency.com.au/images/oa-brand-larger.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "236 Railway Parade",
+      "addressLocality": "Perth",
+      "addressRegion": "WA",
+      "postalCode": "6005",
+      "addressCountry": "Australia"
+    },
+    "description": "Offering online design & marketing services to businesses in Perth and wider Australia",
+    "url": "https://ordinaryagency.com.au",
+    "telephone": "+610899308081",
+    "email": "hello@ordinaryagency.com.au",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Perth"
+      },
+      {
+        "@type": "State",
+        "name": "Western Australia"
+      },
+      {
+        "@type": "Country",
+        "name": "Australia"
+      },
+    ],
+    "foundingDate": "22-09-11",
+    "employee": [
+      {
+        "@type": "Person",
+        "name": "Employee Name",
+        "jobTitle": "Employee Job Title",
+        "worksFor": "Your Agency Name"
+      }
+    ],
+    "makesOffer": schemaOffers,
+    "sameAs": [
+      "https://www.instagram.com/ordinaryagency/",
+      "https://au.linkedin.com/company/ordinaryagencyseo",
+    ]
+  }
   const image1 = "/images/frest2.png";
+
   return (
     
     <>
@@ -110,6 +189,7 @@ export default function Home() {
       <title>Ordinary Agency</title>
       <meta property="og:title" content="Ordinary Agency" key="title" />
       <meta name="description" content="Digital Agency in West Perth" key="desc" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonSchema) }} />   
     </Head>
     <main id="#my-root" className="flex flex-col min-h-screen bg-white items-center justify-start pt-28 md:pt-20 p-4 sm:p-6 md:p-8 lg:p-12 lg:py-0 xl:p-28 bg-transparent text-black">
     <Header />
@@ -302,4 +382,16 @@ Our talented web development team excels in creating exceptional websites and we
 <Footer />
     </>
   );
+}
+
+
+export async function getStaticProps() {
+  const filePath = path.join(process.cwd(), 'src', 'data', 'index', 'serviceCards.json');
+  const jsonData = fs.readFileSync(filePath, 'utf8');
+  const data = JSON.parse(jsonData);
+  return {
+    props: {
+      data
+    }
+  };
 }

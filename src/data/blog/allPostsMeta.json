@@ -1,0 +1,13 @@
+{
+    "posts":[
+        {
+            "title": "Under the Hood #1: How to Spot a Lemon Online",
+            "slug": "under-the-hood-1",
+            "excerpt": "Joshua Hill's 'Under the Hood #1' is an essential guide to identifying and avoiding poorly made, slow, and unreliable websites, crucial for digital success.",
+            "author": "Joshua Hill",
+            "isoDate": "2023-12-13",
+            "niceDate": "December 13, 2023",
+            "imgPath": "/blogs/lemon.jpg"
+        }
+    ]
+}

@@ -53,7 +53,7 @@ const Header = () => {
     }
   }, [isScrolled]);
 
-  const buttonClass = isScrolled ? 'bg-white text-black border-2 border-black' : 'bg-black text-white border-2 border-black';
+  const buttonClass = isScrolled ?  'bg-black text-white border-2 border-black' : 'bg-white text-black border-2 border-black';
   const phoneNumberClass = isScrolled ? 'text-black' : 'text-black';
 
   const handleSubmit = async event => {
@@ -80,7 +80,7 @@ const Header = () => {
 
   return (
     <>
-    <header className={`fixed top-0 right-0 p-4 md:p-8 w-full z-10 ${isScrolled ? 'bg-white' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 right-0 p-4 md:p-8 w-full z-10 `}>
        <div className="flex items-center justify-between w-full">
          {/* Logo */}
          <Link href="/">
@@ -95,9 +95,9 @@ const Header = () => {
 
          {/* Hamburger Menu Icon */}
          <div className="flex items-end">
-         <div className="hidden md:flex mr-8 items-center justify-center">
+         <div className="hidden md:flex mr-6 my-auto items-center justify-center">
            <FiPhone />
-           <a href="tel:+610899308081" className={`${phoneNumberClass} block ml-2 hover:text-gray-700 transition-colors duration-300 bold`}>
+           <a href="tel:+610899308081" className={`${phoneNumberClass} block font-bold ml-2 hover:text-gray-700 transition-colors duration-300 bold`}>
              (08) 9930 8081
            </a>
          </div>
