@@ -8,12 +8,13 @@ import Accordion from './components/Accordion';
 import Footer from './components/Footer';
 import { FiPhone } from 'react-icons/fi';
 import { useInView } from 'react-intersection-observer';
-import Head from "next/head"
+import Head from "next/head";
 import { Parallax } from 'react-parallax';
 import Link from 'next/link';
 import Circle from './components/Circle';
 import Header from './components/Header';
-
+import BlogSlider from './components/BlogSlider';
+import matter from 'gray-matter';
 
 const variants = {
   hidden: { opacity: 0, x: -100 },
@@ -23,6 +24,30 @@ const variants = {
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [markdownPosts, setMarkdownPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      // Assuming posts are now fetched from an API instead of the file system
+      const response = await fetch('/api/posts');
+      const postsData = await response.json();
+
+      const posts = postsData.map(post => {
+        const { data: frontmatter, content } = matter(post.content);
+
+        return {
+          slug: post.slug,
+          title: frontmatter.title,
+          excerpt: content.slice(0, 200), // Create an excerpt
+          imageUrl: frontmatter.image, // Assuming an image field in frontmatter
+        };
+      });
+
+      setMarkdownPosts(posts);
+    };
+
+    fetchPosts();
+  }, []);
 
   const { ref: refAbout, inView: inViewAbout } = useInView({
     triggerOnce: true,
@@ -59,16 +84,6 @@ export default function Home() {
         setIsScrolled(show);
       }
     };
-
-    const handleParallax = () => {
-  const heroElement = document.getElementById('hero');
-  const scrollPosition = window.pageYOffset;
-
-  if (heroElement) {
-    heroElement.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
-  }
-};
-
 
     if (typeof window !== "undefined") {
       Modal.setAppElement('#my-root')
@@ -290,16 +305,18 @@ Our talented web development team excels in creating exceptional websites and we
   question="Wanneroo Basketball Association"
   answer={
     <>
-      We are currently working on developing a new website for Wanneroo Basketball Association. Stay tuned for the upcoming launch!
+      We've built a new website for Wanneroo Basketball Association. It's integrated with PlayHQ and built using Gatsby and WordPress. Check it out at <a href="http://www.wolfpackbasketball.com.au" target="_blank" rel="noopener noreferrer">wolfpackbasketball.com.au</a>.
     </>
   }
 />
           </motion.div>
         </div>
       </div>
+      <BlogSlider posts={markdownPosts} />
     </main>
 
 <Footer />
     </>
   );
 }
+

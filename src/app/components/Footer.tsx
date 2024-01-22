@@ -13,8 +13,10 @@ const Footer = () => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('fade-in');
+            entry.target.querySelector('.border-line').classList.add('expand');
           } else {
             entry.target.classList.remove('fade-in');
+            entry.target.querySelector('.border-line').classList.remove('expand');
           }
         });
       },
@@ -54,6 +56,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
+        <div className="border-line h-1 border-black transition-all duration-500 ease-in-out w-0 mx-auto mt-4"></div>
       </footer>
     </div>
   );
