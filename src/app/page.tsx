@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, Fragment } from 'react';
-import Head from 'next/head'; // Import the Head component
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import { createClient } from 'contentful';
 import Accordion from './components/Accordion';
 import Footer from './components/Footer';
@@ -14,7 +14,7 @@ const contentfulClient = createClient({
 
 export default function Home() {
   const [accordionItems, setAccordionItems] = useState<any[]>([]);
-  const [heroData, setHeroData] = useState({});
+  const [heroData, setHeroData] = useState<any>({});
 
   useEffect(() => {
     contentfulClient.getEntries({
@@ -30,10 +30,7 @@ export default function Home() {
     .then((response) => {
       if (response.items.length > 0) {
         const heroData = response.items[0].fields || {};
-        if (heroData.backgroundImage) {
-          // Assuming the URL from Contentful is already complete and doesn't need 'https:' to be added
-          heroData.backgroundImage = heroData.backgroundImage;
-        } else {
+        if (!heroData.backgroundImage) {
           console.error('No valid URL found for backgroundImage');
         }
         console.log(heroData); // Added console log for heroData
@@ -56,11 +53,8 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <div className="relative">
-        <div
-          className="bg-black h-100vh w-100vw flex items-center justify-center"
-        >
-          <h1 className="text-white text-5xl font-bold" style={{ backgroundColor: 'rgba(0, 0, 0, 1)', padding: '10px', borderRadius: '10px' }}>{(heroData as any).title ?? 'Title Placeholder'}</h1>
+        <div className="relative bg-black h-100vh w-100vw flex items-center justify-center">
+          <h1 className="text-white text-5xl font-bold" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px', borderRadius: '10px' }}>{heroData.title || 'Title Placeholder'}</h1>
         </div>
         <section className="max-w-4xl mx-auto p-4">
           <div className="bg-white shadow-md rounded-lg overflow-hidden">
