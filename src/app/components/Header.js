@@ -93,21 +93,44 @@ const Header = () => {
 
          {/* Phone Number, Contact, and Login buttons */}
          <div className="md:flex items-center justify-center space-x-4">
-      
            {/* Services Mega Menu */}
            <div className="relative group">
-             <button onMouseEnter={toggleServicesMenu} onMouseLeave={toggleServicesMenu} className={`${buttonClass} font-bold text-lg py-2 px-4 rounded-lg shadow-md mr-2 transition duration-300 ease-in-out flex items-center focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-black hover:bg-opacity-80`}>
-               Services <FiGrid className="ml-1" />
+             <button 
+               onMouseEnter={toggleServicesMenu} 
+               onMouseLeave={() => setTimeout(toggleServicesMenu, 30000)} 
+               className={`${buttonClass} font-bold text-lg py-2 px-4 rounded shadow-sm mr-1 transition flex items-center focus:outline-none focus:ring-1 focus:ring-opacity-50 focus:ring-black hover:bg-opacity-80`}
+             >
+               Services <FiGrid className="ml-1 h-5 w-5" />
              </button>
-             <div className={`absolute top-full left-0 w-56 bg-black text-white rounded-md shadow-lg mt-2 py-2 transition duration-300 ease-in-out group-hover:scale-100 group-hover:opacity-100 ${isServicesMenuOpen ? 'visible' : 'invisible'}`}>
-               <ul className="space-y-2">
-                 <li className="flex flex-col items-center justify-center text-center bg-black text-white rounded-md transition duration-300 ease-in-out hover:scale-105 hover:bg-gray-800 cursor-pointer py-2">
-                   <span className="text-md font-medium mb-1">Web Development</span>
-                   <p className="text-xs text-gray-400">Empower your online presence.</p>
+             <div 
+               onMouseEnter={toggleServicesMenu} 
+               onMouseLeave={() => setTimeout(toggleServicesMenu, 30000)} 
+               className={`absolute top-full left-0 min-w-max bg-black text-white rounded shadow-md overflow-hidden transition-opacity duration-300 ease-in-out ${isServicesMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+               style={{ marginTop: '-1px', zIndex: 10 }}
+             >
+               <ul className="space-y-2 p-2 divide-y divide-gray-700 max-w-xs mx-auto">
+                 <li className="group flex space-x-2 items-center bg-white text-black rounded-lg p-2 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
+                   <div className="flex-shrink-0 w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                       <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                       <path d="M2 17l10 5 10-5"></path>
+                       <path d="M2 12l10 5 10-5"></path>
+                       <path d="M2 7l10 5 10-5"></path>
+                     </svg>
+                   </div>
+                   <div className="flex-grow">
+                     <span className="font-semibold">Web Development</span>
+                   </div>
                  </li>
-                 <li className="flex flex-col items-center justify-center text-center bg-black text-white rounded-md transition duration-300 ease-in-out hover:scale-105 hover:bg-gray-800 cursor-pointer py-2">
-                   <span className="text-md font-medium mb-1">Lead Generation</span>
-                   <p className="text-xs text-gray-400">Boost your business growth.</p>
+                 <li className="group flex space-x-2 items-center bg-white text-black rounded-lg p-2 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
+                   <div className="flex-shrink-0 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6 animate-pulse">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 1v22M12 6v.01M6 20l6-6 6 6M18 8l-6 6-6-6" />
+                     </svg>
+                   </div>
+                   <div className="flex-grow">
+                     <span className="font-semibold">Lead Generation</span>
+                   </div>
                  </li>
                </ul>
              </div>
