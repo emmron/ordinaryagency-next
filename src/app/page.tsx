@@ -57,10 +57,10 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-700 to-white">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black mix-blend-multiply"></div>
             <div className="absolute inset-0 animate-pulse-slow">
-              <div className="flex h-full w-full transform rotate-45">
-                <div className="w-1/3 h-full bg-gradient-to-t from-black to-transparent"></div>
-                <div className="w-1/3 h-full bg-gradient-to-t from-gray-700 to-transparent animate-spin-slow"></div>
-                <div className="w-1/3 h-full bg-gradient-to-t from-transparent to-white"></div>
+              <div className="flex h-full w-full">
+                <div className="flex-1 h-full bg-gradient-to-b from-black to-gray-800"></div>
+                <div className="flex-1 h-full bg-gradient-to-b from-gray-700 to-gray-500"></div>
+                <div className="flex-1 h-full bg-gradient-to-b from-gray-400 to-white"></div>
               </div>
             </div>
             <div className="absolute inset-0 transform-gpu scale-125 rotate-3 bg-gradient-to-r from-black to-gray-700 opacity-20 blur">
