@@ -2,11 +2,28 @@
 
 import { useState, useEffect, Fragment } from 'react';
 import Head from 'next/head'; // Import the Head component
-import { createClient } from 'contentful';
+import { createClient, Entry } from 'contentful';
 import Accordion from './components/Accordion';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import BlogSlider from './components/BlogSlider';
+
+interface EntrySkeletonType {
+  sys: {
+    id: string;
+  };
+  fields: {
+    question: string;
+    answer: any;
+    backgroundImage?: {
+      fields: {
+        file: {
+          url: string;
+        };
+      };
+    };
+    title?: string;
+  };
+}
 
 const contentfulClient = createClient({
   space: '27rs2i2q5dqf',
@@ -14,8 +31,8 @@ const contentfulClient = createClient({
 });
 
 export default function Home() {
-  const [accordionItems, setAccordionItems] = useState([]);
-  const [heroData, setHeroData] = useState(null);
+  const [accordionItems, setAccordionItems] = useState<Entry<EntrySkeletonType, undefined, string>[]>([]);
+  const [heroData, setHeroData] = useState<EntrySkeletonType | null>(null);
 
   useEffect(() => {
     contentfulClient.getEntries({
@@ -24,7 +41,7 @@ export default function Home() {
     .then((response) => {
       // Ensure the response items are of the correct type before setting the state
       if (Array.isArray(response.items) && response.items.every(item => item.sys && item.fields)) {
-        setAccordionItems(response.items);
+        setAccordionItems(response.items as Entry<EntrySkeletonType, undefined, string>[]);
       }
     })
     .catch(console.error);
@@ -35,7 +52,7 @@ export default function Home() {
     .then((response) => {
       // Check if the response contains items before trying to access them
       if (response.items.length > 0) {
-        setHeroData(response.items[0].fields);
+        setHeroData(response.items[0].fields as EntrySkeletonType);
       } else {
         // Handle the case where no items are returned
         console.error('No hero data found');
@@ -58,22 +75,22 @@ export default function Home() {
         <div className="relative">
           <div
             className="bg-cover bg-center h-screen flex items-center justify-center"
-            style={{ backgroundImage: `url(${heroData.backgroundImage.fields.file.url})` }}
+            style={{ backgroundImage: `url(${heroData.backgroundImage?.fields.file.url})` }}
           >
             <h1 className="text-white text-5xl font-bold">{heroData.title}</h1>
           </div>
         </div>
-        <section>
-          {accordionItems.map((item) => (
-            <Accordion
-              key={item.sys.id}
-              question={item.fields.question}
-              answer={item.fields.answer}
-            />
-          ))}
+        <section className="max-w-4xl mx-auto p-4">
+          <div className="bg-white shadow-md rounded-lg overflow-hidden">
+            {accordionItems.map((item) => (
+              <Accordion
+                key={item.sys.id}
+                question={item.fields.question}
+                answer={item.fields.answer}
+              />
+            ))}
+          </div>
         </section>
-        {/* Pass the required 'posts' prop to BlogSlider */}
-        <BlogSlider posts={[]} />
       </main>
       <Footer />
     </Fragment>
