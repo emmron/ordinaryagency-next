@@ -94,23 +94,22 @@ const Header = () => {
          {/* Phone Number, Contact, and Login buttons */}
          <div className="md:flex items-center justify-center space-x-4">
            {/* Services Mega Menu */}
-           <div className="relative">
-             <button onMouseEnter={toggleServicesMenu} onMouseLeave={toggleServicesMenu} className={`${buttonClass} font-bold py-2 px-4 rounded-full shadow-lg mr-2 hover:bg-black hover:text-white transition-colors duration-300 flex items-center`}>
+           <div className="relative group">
+             <button onMouseEnter={toggleServicesMenu} onMouseLeave={toggleServicesMenu} className={`${buttonClass} font-bold py-2 px-4 rounded-lg shadow-lg mr-2 transition duration-500 ease-in-out flex items-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black`}>
                Services <FiGrid className="ml-2" />
              </button>
-             <div className={`absolute top-full left-0 bg-white text-black rounded-lg shadow-2xl mt-2 py-4 w-80 transform transition-all duration-500 ease-in-out ${isServicesMenuOpen ? 'scale-100 opacity-100 visible' : 'scale-95 opacity-0 invisible'}`}>
-               <ul className="grid grid-cols-2 gap-4 p-4">
-                 <li className="flex flex-col items-center justify-center text-center border border-black bg-white rounded-lg transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-gray-100 cursor-pointer">
-                   <span className="text-lg font-medium mb-1 text-black">Web Development</span>
-                   <p className="text-sm text-gray-700">Tailored web solutions that empower your online presence.</p>
+             <div className={`absolute top-full left-0 w-56 bg-black text-white rounded-md shadow-lg mt-2 py-2 transform transition duration-500 ease-in-out group-hover:scale-100 group-hover:opacity-100 ${isServicesMenuOpen ? 'visible' : 'invisible'}`}>
+               <ul className="space-y-2 p-4">
+                 <li className="flex flex-col items-center justify-center text-center bg-black text-white rounded-md transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-gray-800 cursor-pointer p-3 group hover:opacity-100">
+                   <span className="text-md font-medium mb-1 text-white">Web Development</span>
+                   <p className="text-xs text-gray-400">Tailored web solutions that empower your online presence.</p>
                  </li>
-                 <li className="flex flex-col items-center justify-center text-center border border-black bg-white rounded-lg transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-gray-100 cursor-pointer">
-                   <span className="text-lg font-medium mb-1 text-black">Lead Generation</span>
-                   <p className="text-sm text-gray-700">Innovative strategies to boost your business growth.</p>
+                 <li className="flex flex-col items-center justify-center text-center bg-black text-white rounded-md transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-gray-800 cursor-pointer p-3 group hover:opacity-100">
+                   <span className="text-md font-medium mb-1 text-white">Lead Generation</span>
+                   <p className="text-xs text-gray-400">Innovative strategies to boost your business growth.</p>
                  </li>
                </ul>
              </div>
-           </div>
            </div>
 
          {/* Hamburger Menu Icon */}
@@ -184,6 +183,7 @@ const Header = () => {
 
         <button onClick={closeModal} className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Close</button>
       </Modal>
+      </div>
     </header>
   );
 };
