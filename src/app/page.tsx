@@ -54,9 +54,13 @@ export default function Home() {
       <Header />
       <main>
         <div className="relative overflow-hidden h-screen bg-black">
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-500 to-gray-300 opacity-75"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-500 to-gray-300 opacity-50">
+            <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-b from-transparent to-gray-900 opacity-75"></div>
+            <div className="absolute inset-0 transform skew-y-6 bg-gradient-to-r from-gray-700 via-gray-500 to-gray-300 opacity-50 animate-pulse"></div>
+            <div className="absolute inset-0 transform -skew-y-6 bg-gradient-to-l from-gray-700 via-gray-500 to-gray-300 opacity-50 animate-pulse"></div>
+          </div>
           <div className="relative flex items-center justify-center h-full">
-            <div className="text-6xl font-extrabold text-white animate-pulse">
+            <div className="text-6xl font-extrabold text-white animate-bounce">
               {heroData.title || 'Title Placeholder'}
             </div>
           </div>
