@@ -48,7 +48,7 @@
     "react-spring": "latest",
     "react-zdog": "latest",
     "styled-components": "latest",
-    "tailwind": "latest",
+    "tailwind": "^2.2.0",
     "tailwindcss": "latest",
     "three": "latest",
     "typescript": "latest",

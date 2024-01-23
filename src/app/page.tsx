@@ -50,7 +50,7 @@ export default function Home() {
   }
 
   return (
-    <Fragment>
+    <>
       <Head>
         <title>Your Page Title</title>
       </Head>
@@ -75,6 +75,6 @@ export default function Home() {
         </section>
       </main>
       <Footer />
-    </Fragment>
+    </>
   );
 }
