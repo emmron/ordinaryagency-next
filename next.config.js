@@ -9,7 +9,7 @@ const nextConfig = {
     }
     return config;
   },
+  // Removed exportPathMap and output as they are not needed for Cloudflare Pages
 };
 
 module.exports = nextConfig;
-
