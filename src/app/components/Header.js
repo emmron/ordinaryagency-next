@@ -95,18 +95,18 @@ const Header = () => {
          <div className="md:flex items-center justify-center space-x-4">
            {/* Services Mega Menu */}
            <div className="relative group">
-             <button onMouseEnter={toggleServicesMenu} onMouseLeave={toggleServicesMenu} className={`${buttonClass} font-bold py-2 px-4 rounded-lg shadow-lg mr-2 transition duration-500 ease-in-out flex items-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black`}>
-               Services <FiGrid className="ml-2" />
+             <button onMouseEnter={toggleServicesMenu} onMouseLeave={toggleServicesMenu} className={`${buttonClass} font-bold text-lg py-2 px-4 rounded-lg shadow-md mr-2 transition duration-300 ease-in-out flex items-center focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-black hover:bg-opacity-80`}>
+               Services <FiGrid className="ml-1" />
              </button>
-             <div className={`absolute top-full left-0 w-56 bg-black text-white rounded-md shadow-lg mt-2 py-2 transform transition duration-500 ease-in-out group-hover:scale-100 group-hover:opacity-100 ${isServicesMenuOpen ? 'visible' : 'invisible'}`}>
-               <ul className="space-y-2 p-4">
-                 <li className="flex flex-col items-center justify-center text-center bg-black text-white rounded-md transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-gray-800 cursor-pointer p-3 group hover:opacity-100">
-                   <span className="text-md font-medium mb-1 text-white">Web Development</span>
-                   <p className="text-xs text-gray-400">Tailored web solutions that empower your online presence.</p>
+             <div className={`absolute top-full left-0 w-56 bg-black text-white rounded-md shadow-lg mt-2 py-2 transition duration-300 ease-in-out group-hover:scale-100 group-hover:opacity-100 ${isServicesMenuOpen ? 'visible' : 'invisible'}`}>
+               <ul className="space-y-2">
+                 <li className="flex flex-col items-center justify-center text-center bg-black text-white rounded-md transition duration-300 ease-in-out hover:scale-105 hover:bg-gray-800 cursor-pointer py-2">
+                   <span className="text-md font-medium mb-1">Web Development</span>
+                   <p className="text-xs text-gray-400">Empower your online presence.</p>
                  </li>
-                 <li className="flex flex-col items-center justify-center text-center bg-black text-white rounded-md transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-gray-800 cursor-pointer p-3 group hover:opacity-100">
-                   <span className="text-md font-medium mb-1 text-white">Lead Generation</span>
-                   <p className="text-xs text-gray-400">Innovative strategies to boost your business growth.</p>
+                 <li className="flex flex-col items-center justify-center text-center bg-black text-white rounded-md transition duration-300 ease-in-out hover:scale-105 hover:bg-gray-800 cursor-pointer py-2">
+                   <span className="text-md font-medium mb-1">Lead Generation</span>
+                   <p className="text-xs text-gray-400">Boost your business growth.</p>
                  </li>
                </ul>
              </div>
