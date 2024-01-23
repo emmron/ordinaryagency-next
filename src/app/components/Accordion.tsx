@@ -6,7 +6,7 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 interface AccordionProps {
   question: string;
-  answer: JSX.Element;
+  answer: React.ReactNode; // Change the type of answer to React.ReactNode
 }
 
 const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
@@ -67,8 +67,7 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
        className="p-4 pt-2 text-black text-lg overflow-hidden"
        style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500", fontSize: "1.5em" }}
      >
-       {/* Answer is a JSX.Element now, so just render it here */}
-       {answer}
+       {typeof answer === 'string' ? answer : React.isValidElement(answer) ? answer : null}
      </motion.section>
 
         )}

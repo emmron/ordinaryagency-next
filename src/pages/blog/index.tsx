@@ -1,7 +1,8 @@
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import BlogSlider from 'src/app/components/BlogSlider';
-import matter from 'gray-matter';
 
 interface BlogPost {
   slug: string;
@@ -16,26 +17,20 @@ interface BlogIndexProps {
 }
 
 const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
-  // Render the BlogSlider with posts
-  return <BlogSlider posts={posts} />;
+  return <div>Blog posts will be listed here.</div>;
 };
 
 export const getStaticProps = async () => {
-  // Use Webpack's require.context to read all markdown files in src/posts
-  const context = require.context('../../posts', true, /\.md$/);
+  const postsDirectory = path.join(process.cwd(), 'posts');
+  const filenames = fs.readdirSync(postsDirectory);
 
-  // Process each markdown file
-  const postsPromises = context.keys().map(async (key: string) => {
-    // Get the slug from the file name
-    const slug = key.replace(/^.*[\\\/]/, '').slice(0, -3);
-    // Use context to get the file contents
-    const value = context(key);
-    // Use gray-matter to parse the post metadata section
-    const { data, content } = matter(value.default);
-    // Serialize the content to be rendered by next-mdx-remote
+  const postsPromises = filenames.map(async (filename) => {
+    const filePath = path.join(postsDirectory, filename);
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const { data, content } = matter(fileContents);
     const mdxContent = await serialize(content);
     return {
-      slug,
+      slug: filename.replace(/\.md$/, ''),
       title: data.title,
       excerpt: data.excerpt,
       imageUrl: data.imageUrl,
@@ -43,10 +38,8 @@ export const getStaticProps = async () => {
     };
   });
 
-  // Wait for all markdown files to be processed
   const posts = await Promise.all(postsPromises);
 
-  // Return the list of posts as props
   return {
     props: { posts },
   };

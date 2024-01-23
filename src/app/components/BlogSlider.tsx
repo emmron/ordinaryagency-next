@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
@@ -15,6 +15,18 @@ interface BlogSliderProps {
 }
 
 const BlogSlider: React.FC<BlogSliderProps> = ({ posts }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (posts && posts.length > 0) {
+      setIsLoading(false);
+    }
+  }, [posts]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="bg-white py-12">
       <div className="container mx-auto px-6">
@@ -23,7 +35,7 @@ const BlogSlider: React.FC<BlogSliderProps> = ({ posts }) => {
           <FaArrowAltCircleLeft className="absolute left-0 text-3xl text-gray-600 cursor-pointer" />
           <div className="flex overflow-x-auto snap-x snap-mandatory space-x-6">
             {posts.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} passHref legacyBehavior>
+              <Link key={post.slug} href={`/blog/${post.slug}`} passHref>
                 <a className="snap-center shrink-0 w-80 bg-gray-100 rounded-lg overflow-hidden shadow-lg transition-shadow duration-300 ease-in-out transform hover:scale-105 cursor-pointer">
                   <Image src={post.imageUrl} alt={post.title} width={320} height={192} objectFit="cover" className="w-full h-48" />
                   <div className="p-6">
@@ -38,7 +50,7 @@ const BlogSlider: React.FC<BlogSliderProps> = ({ posts }) => {
           <FaArrowAltCircleRight className="absolute right-0 text-3xl text-gray-600 cursor-pointer" />
         </div>
         <div className="text-center mt-8">
-          <Link href="/blog" passHref legacyBehavior>
+          <Link href="/blog" passHref>
             <a className="text-lg font-semibold text-indigo-600 hover:text-indigo-800 transition-colors duration-200">View all articles</a>
           </Link>
         </div>

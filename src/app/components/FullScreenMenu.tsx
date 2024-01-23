@@ -16,13 +16,13 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): Rea
   };
 
   const menuVariants = {
-    open: { opacity: 1, display: 'flex', transition: { duration: 0.3, ease: 'easeInOut' } },
-    closed: { opacity: 0, transition: { duration: 0.3, ease: 'easeInOut', when: 'afterChildren' }, transitionEnd: { display: 'none' } }
+    open: { y: 0, opacity: 1, transition: { duration: 0.5, ease: 'easeInOut' } },
+    closed: { y: "-100%", opacity: 0, transition: { duration: 0.5, ease: 'easeInOut' } }
   };
 
   const submenuVariants = {
-    open: { height: 'auto', opacity: 1, transition: { duration: 0.2 } },
-    closed: { height: 0, opacity: 0, transition: { duration: 0.2 } },
+    open: { height: 'auto', opacity: 1, transition: { duration: 0.3 } },
+    closed: { height: 0, opacity: 0, transition: { duration: 0.3 } },
   };
 
   return (
@@ -33,36 +33,38 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): Rea
           animate="open"
           exit="closed"
           variants={menuVariants}
-          className="fixed overlaymenu top-0 left-0 w-full h-screen z-20 bg-white flex justify-center items-center font-poppins"
+          className="fixed inset-0 z-50 flex items-center justify-center transition-all duration-500 ease-in-out"
         >
-          <div className="text-center text-black text-4xl font-bold">
-            <button
+          <div className="w-full max-w-4xl p-8 mx-auto bg-white rounded-lg shadow-2xl">
+            <motion.button
               onClick={onClose}
-              className="absolute top-6 right-6 text-4xl font-bold text-red-500 hover:text-red-700 transition duration-300 ease-in-out"
+              className="absolute top-0 right-0 mt-4 mr-4 text-4xl text-black hover:text-gray-600 transition-all duration-300 ease-in-out"
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.2 }}
             >
               &times;
-            </button>
-            <ul className="flex flex-col items-center divide-y divide-gray-200">
-              <li className="relative py-4">
+            </motion.button>
+            <ul className="space-y-4">
+              <li className="relative">
                 <Link href="/contact">
-                  <motion.span
+                  <motion.a
                     onClick={onClose}
-                    className="block p-4 hover:text-gray-800 cursor-pointer transition duration-300 ease-in-out text-center text-2xl"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.5 }}
+                    className="block px-6 py-3 text-3xl font-medium text-center text-black bg-white border-2 border-black rounded-full hover:bg-gray-100 transition-all duration-300 ease-in-out"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
                   >
                     Contact
-                  </motion.span>
+                  </motion.a>
                 </Link>
               </li>
-              <li className="relative py-4">
+              <li className="relative">
                 <button
                   onClick={toggleSubmenu}
-                  className="focus:outline-none py-4 flex items-center justify-center text-2xl hover:text-gray-800 transition duration-300 ease-in-out"
+                  className="w-full px-6 py-3 text-3xl font-medium text-center text-black bg-white border-2 border-black rounded-full focus:outline-none hover:bg-gray-100 transition-all duration-300 ease-in-out"
                 >
-                  <span className="text-center">Services</span>
+                  Services
                   <FiChevronDown
-                    className={`ml-2 transform transition-transform ${
+                    className={`inline-block w-5 h-5 ml-2 transform transition-transform duration-300 ease-in-out ${
                       showSubmenu ? 'rotate-180' : 'rotate-0'
                     }`}
                   />
@@ -71,46 +73,46 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }): Rea
                   initial="closed"
                   animate={showSubmenu ? 'open' : 'closed'}
                   variants={submenuVariants}
-                  className="overflow-hidden mt-6"
+                  className="mt-2 overflow-hidden"
                 >
-                  <ul className="flex flex-col items-center divide-y divide-gray-200">
-                    <li className="flex items-center justify-center text-2xl py-3">
-                      <FiArrowRight />
+                  <ul className="space-y-2">
+                    <li className="flex items-center justify-center">
+                      <FiArrowRight className="w-5 h-5 text-black" />
                       <Link href="/seo-perth">
-                        <motion.span
+                        <motion.a
                           onClick={onClose}
-                          className="ml-2 text-2xl hover:text-gray-800 cursor-pointer transition duration-300 ease-in-out text-center"
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ duration: 0.5 }}
+                          className="block ml-2 text-xl text-black hover:text-gray-800 transition duration-300 ease-in-out"
+                          whileHover={{ scale: 1.03 }}
+                          transition={{ duration: 0.3 }}
                         >
                           SEO Perth
-                        </motion.span>
+                        </motion.a>
                       </Link>
                     </li>
-                    <li className="flex items-center justify-center text-2xl py-3">
-                      <FiArrowRight />
+                    <li className="flex items-center justify-center">
+                      <FiArrowRight className="w-5 h-5 text-black" />
                       <Link href="/play-hq-integration-perth">
-                        <motion.span
+                        <motion.a
                           onClick={onClose}
-                          className="ml-2 text-2xl hover:text-gray-800 cursor-pointer transition duration-300 ease-in-out text-center"
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ duration: 0.5 }}
+                          className="block ml-2 text-xl text-black hover:text-gray-800 transition duration-300 ease-in-out"
+                          whileHover={{ scale: 1.03 }}
+                          transition={{ duration: 0.3 }}
                         >
                           Play HQ Integration 
-                        </motion.span>
+                        </motion.a>
                       </Link>
                     </li>
-                    <li className="flex items-center justify-center text-2xl py-3">
-                      <FiArrowRight />
+                    <li className="flex items-center justify-center">
+                      <FiArrowRight className="w-5 h-5 text-black" />
                       <Link href="/shopify-perth">
-                        <motion.span
+                        <motion.a
                           onClick={onClose}
-                          className="ml-2 text-2xl hover:text-gray-800 cursor-pointer transition duration-300 ease-in-out text-center"
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ duration: 0.5 }}
+                          className="block ml-2 text-xl text-black hover:text-gray-800 transition duration-300 ease-in-out"
+                          whileHover={{ scale: 1.03 }}
+                          transition={{ duration: 0.3 }}
                         >
                           Shopify Perth
-                        </motion.span>
+                        </motion.a>
                       </Link>
                     </li>
                   </ul>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FiPhone, FiCheck } from 'react-icons/fi';
+import { FiPhone, FiCheck, FiGrid } from 'react-icons/fi';
 import Logo from './Logo';
 import Modal from 'react-modal';
 import FullScreenMenu from './FullScreenMenu';
@@ -22,6 +22,7 @@ const Header = () => {
   const [submitted, setSubmitted] = useState(false);
   const [posted, setPosted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false); // State to manage services mega menu
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -33,6 +34,10 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleServicesMenu = () => { // Function to toggle services mega menu
+    setIsServicesMenuOpen(!isServicesMenuOpen);
   };
 
   useEffect(() => {
@@ -79,19 +84,34 @@ const Header = () => {
   }
 
   return (
-    <>
     <header className={`fixed top-0 right-0 p-4 md:p-8 w-full z-10 ${isScrolled ? 'bg-white' : 'bg-transparent'}`}>
        <div className="flex items-center justify-between w-full">
          {/* Logo */}
-         <Link href="/">
-             <Logo className="w-12 h-12 md:w-16 md:h-16 object-contain cursor-pointer" />
+         <Link href="/" legacyBehavior>
+             <a><Logo className="w-12 h-12 md:w-16 md:h-16 object-contain cursor-pointer" /></a>
          </Link>
 
          {/* Phone Number, Contact, and Login buttons */}
          <div className="md:flex items-center justify-center space-x-4">
-
-
-
+           {/* Services Mega Menu */}
+           <div className="relative">
+             <button onMouseEnter={toggleServicesMenu} onMouseLeave={toggleServicesMenu} className={`${buttonClass} font-bold py-2 px-4 rounded mr-2 hover:bg-gray-100 hover:text-black transition-colors duration-300 flex items-center`}>
+               Services <FiGrid className="ml-2" />
+             </button>
+             <div className={`absolute top-full left-0 bg-blue-500 text-white rounded-lg shadow-lg mt-2 py-4 w-72 transform transition-all duration-500 ease-in-out ${isServicesMenuOpen ? 'scale-100 opacity-100 visible' : 'scale-95 opacity-0 invisible'}`}>
+               <ul className="grid grid-cols-2 gap-4 p-4">
+                 <li className="flex flex-col items-center justify-center text-center border border-gray-200 bg-white rounded-md transition-transform duration-500 ease-in-out hover:scale-105 cursor-pointer">
+                   <span className="text-lg font-medium mb-1 text-white">Web Development</span>
+                   <p className="text-sm text-gray-200">Tailored web solutions that empower your online presence.</p>
+                 </li>
+                 <li className="flex flex-col items-center justify-center text-center border border-gray-200 bg-white rounded-md transition-transform duration-500 ease-in-out hover:scale-105 cursor-pointer">
+                   <span className="text-lg font-medium mb-1 text-white">Lead Generation</span>
+                   <p className="text-sm text-gray-200">Innovative strategies to boost your business growth.</p>
+                 </li>
+               </ul>
+             </div>
+           </div>
+           </div>
 
          {/* Hamburger Menu Icon */}
          <div className="flex items-end">
@@ -116,8 +136,6 @@ const Header = () => {
              <div className="w-6 h-0.5 bg-black"></div>
            </button>
          </div>
-       </div>
-     </header>
       {/* Full Screen Menu */}
       <FullScreenMenu isOpen={isMenuOpen} onClose={toggleMenu} />
 
@@ -166,7 +184,7 @@ const Header = () => {
 
         <button onClick={closeModal} className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Close</button>
       </Modal>
-    </>
+    </header>
   );
 };
 

@@ -1,6 +1,5 @@
-import '../app/aos.css'
 import '../app/globals.css'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "../app/components/Header";
 import Footer from "../app/components/Footer";
 import Head from "next/head";
@@ -15,13 +14,6 @@ const ShopifyPerth = () => {
     // Add your logic here
   };
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const AOS = require('aos');
-      AOS.init();
-    }
-  }, []);
-
   return (
     <>
       <Head>
@@ -32,17 +24,17 @@ const ShopifyPerth = () => {
       <Header />
       <InternalHero title="Shopify Services | Ordinary Agency" />
 
-      <main className="min-h-screen bg-white items-center justify-start pt-20 md:pt-10 px-4 sm:px-6 md:px-8 lg:px-12 lg:py-0 xl:px-16 overflow-x-hidden">
-        <section className="container mx-auto px-4 py-6 text-center bg-white" data-aos="fade-up">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2 tracking-wide transform transition-transform duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="200">Discover the Power of Shopify with Our Services</h2>
-          <p className="text-lg sm:text-xl md:text-2xl italic mb-6 transform transition-transform duration-500 hover:scale-105" data-aos="fade-up" data-aos-delay="300">We offer a range of Shopify services to help your business succeed online.</p>
+      <main className="min-h-screen bg-white flex items-center justify-start pt-20 md:pt-10 px-4 sm:px-6 md:px-8 lg:px-12 lg:py-0 xl:px-16 overflow-x-hidden">
+        <section className="container mx-auto px-4 py-6 text-center bg-white">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2 tracking-wide transform transition-transform duration-500 hover:scale-105">Discover the Power of Shopify with Our Services</h2>
+          <p className="text-lg sm:text-xl md:text-2xl italic mb-6 transform transition-transform duration-500 hover:scale-105">We offer a range of Shopify services to help your business succeed online.</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4" data-aos="fade-up" data-aos-delay="400">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Accordion
               question="Shopify Store Setup & Customization"
               answer={
                 <div className="text-lg md:text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
-                  We don't just set up Shopify stores, we create unique online experiences that resonate with your brand. From product listings to payment gateways, we've got you covered. <button onClick={handleSetup}>Learn More</button>
+                  We don't just set up Shopify stores, we create unique online experiences that resonate with your brand. From product listings to payment gateways, we've got you covered. <button className="px-4 py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-700" onClick={handleSetup}>Learn More</button>
                 </div>
               }
             />
@@ -51,7 +43,7 @@ const ShopifyPerth = () => {
               question="Shopify SEO"
               answer={
                 <div className="text-lg md:text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
-                  Our Shopify SEO services are designed to catapult your online store to the top of search engine results, driving traffic and boosting sales like never before. <button onClick={handleSetup}>Learn More</button>
+                  Our Shopify SEO services are designed to catapult your online store to the top of search engine results, driving traffic and boosting sales like never before. <button className="px-4 py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-700" onClick={handleSetup}>Learn More</button>
                 </div>
               }
             />
@@ -60,7 +52,7 @@ const ShopifyPerth = () => {
               question="Shopify Maintenance & Support"
               answer={
                 <div className="text-lg md:text-xl text-black italic mb-12 transform transition-transform duration-500 hover:scale-105">
-                  With our ongoing maintenance and support, your Shopify store will always be in top shape. From updating product listings to troubleshooting, we're here to ensure your success. <button onClick={handleSetup}>Learn More</button>
+                  With our ongoing maintenance and support, your Shopify store will always be in top shape. From updating product listings to troubleshooting, we're here to ensure your success. <button className="px-4 py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-700" onClick={handleSetup}>Learn More</button>
                 </div>
               }
             />
