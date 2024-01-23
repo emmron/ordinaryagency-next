@@ -53,11 +53,12 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <div className="relative overflow-hidden h-screen bg-black">
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-700 to-white">
+        <div className="relative overflow-hidden h-screen bg-gradient-to-r from-blue-900 via-purple-800 to-pink-600 animate-float">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 mix-blend-multiply animate-pulse-slow">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black mix-blend-multiply"></div>
             <div className="absolute inset-0 animate-pulse-slow">
               <div className="flex h-full w-full">
+                <div className="flex-1 h-full bg-gradient-to-b from-blue-500 to-purple-500"></div>
                 <div className="flex-1 h-full bg-gradient-to-b from-black to-gray-800"></div>
                 <div className="flex-1 h-full bg-gradient-to-b from-gray-700 to-gray-500"></div>
                 <div className="flex-1 h-full bg-gradient-to-b from-gray-400 to-white"></div>
