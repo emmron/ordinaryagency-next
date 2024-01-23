@@ -14,7 +14,7 @@ const contentfulClient = createClient({
 
 export default function Home() {
   const [accordionItems, setAccordionItems] = useState<any[]>([]);
-    const [heroData, setHeroData] = useState({});
+  const [heroData, setHeroData] = useState({});
 
   useEffect(() => {
     contentfulClient.getEntries({
@@ -29,7 +29,15 @@ export default function Home() {
     })
     .then((response) => {
       if (response.items.length > 0) {
-        setHeroData(response.items[0].fields || {});
+        const heroData = response.items[0].fields || {};
+        if (heroData.backgroundImage) {
+          // Assuming the URL from Contentful is already complete and doesn't need 'https:' to be added
+          heroData.backgroundImage = heroData.backgroundImage;
+        } else {
+          console.error('No valid URL found for backgroundImage');
+        }
+        console.log(heroData); // Added console log for heroData
+        setHeroData(heroData);
       } else {
         console.error('No hero data found');
       }
@@ -51,9 +59,9 @@ export default function Home() {
         <div className="relative">
         <div
       className="bg-cover bg-center h-screen flex items-center justify-center"
-      style={{ backgroundImage: `url(${heroData?.backgroundImage?.fields?.file?.url ? 'https:' + heroData.backgroundImage.fields.file.url : ''})` }}
+      style={{ backgroundImage: `url(${(heroData as any)['backgroundImage'] ? `https:${(heroData as any)['backgroundImage']}` : ''})` }}
     >
-            <h1 className="text-white text-5xl font-bold">{heroData?.title ?? 'Title Placeholder'}</h1>
+            <h1 className="text-white text-5xl font-bold">{(heroData as any).title ?? 'Title Placeholder'}</h1>
           </div>
         </div>
         <section className="max-w-4xl mx-auto p-4">
