@@ -124,8 +124,12 @@ const Header = () => {
                  </li>
                  <li className="group flex space-x-2 items-center bg-white text-black rounded-lg p-2 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
                    <div className="flex-shrink-0 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6 animate-pulse">
-                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 1v22M12 6v.01M6 20l6-6 6 6M18 8l-6 6-6-6" />
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+                         <title>Telephone Icon</title>
+                         <desc>Icon representing a telephone, used for the Lead Generation service</desc>
+                         <circle cx="12" cy="12" r="3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                         <circle cx="12" cy="12" r="9" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                         <path d="M12 2a10 10 0 00-3.34 19.34l1.57-1.572a8 8 0 010-11.596l-1.57-1.572A10 10 0 0012 2z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                      </svg>
                    </div>
                    <div className="flex-grow">
@@ -154,7 +158,7 @@ const Header = () => {
            </a>
          </div>
        </div>
-           <button onClick={toggleMenu}>
+           <button onClick={toggleMenu} className="md:hidden">
              <div className="w-6 h-0.5 bg-black mb-1.5"></div>
              <div className="w-6 h-0.5 bg-black mb-1.5"></div>
              <div className="w-6 h-0.5 bg-black"></div>

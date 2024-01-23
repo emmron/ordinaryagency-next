@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Your Page Title</title>
+        <title>Ordinary Agency - West Leederville Digital Agency</title>
       </Head>
       <Header />
       <main>
@@ -73,11 +73,11 @@ export default function Home() {
               </svg>
             </div>
           </div>
-          <div className="relative flex items-center justify-center h-full">
-            <div className="text-6xl font-extrabold text-white animate-fade-in-down">
+          <div className="relative flex items-center justify-center h-full md:text-6xl text-3xl">
+            <div className="font-extrabold text-white animate-fade-in-down">
               {heroData.title || 'Title Placeholder'}
             </div>
-            <svg className="absolute bottom-0 animate-bounce-slow h-24 w-24 text-white" viewBox="0 0 20 20" fill="currentColor" stroke="white" strokeWidth="2">
+            <svg className="absolute bottom-0 animate-bounce-slow h-12 w-12 md:h-24 md:w-24 text-white" viewBox="0 0 20 20" fill="currentColor" stroke="white" strokeWidth="2">
               <circle cx="7" cy="7" r="2" fill="none" />
             </svg>
           </div>
