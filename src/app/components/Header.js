@@ -125,7 +125,7 @@ const Header = () => {
            </a>
          </div>
          <div className="hidden md:flex mr-2 mb-2 ml-2 items-center justify-center">
-           <a href="tel:+610899308081" className={`text-sm font-bold py-2 px-4 rounded-full transition-colors duration-300 text-lg ${isScrolled ? 'bg-black text-white' : 'bg-white text-black'} hover:bg-gray-200`}>
+           <a href="tel:+610899308081" className={`text-sm font-bold py-2 px-4 rounded-full transition-colors duration-300 text-lg ${isScrolled ? 'bg-black text-white' : 'bg-white text-black'} hover:bg-gray-800 hover:text-white`}>
              <FiPhone className="inline mr-2" />
              (08) 9930 8081
            </a>
