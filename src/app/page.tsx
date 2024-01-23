@@ -63,6 +63,7 @@ export default function Home() {
             <div className="text-6xl font-extrabold text-white animate-bounce">
               {heroData.title || 'Title Placeholder'}
             </div>
+            <svg className="absolute bottom-0 animate-bounce h-24 w-24 text-white" viewBox="0 0 20 20" fill="currentColor">
           </div>
         </div>
         <section className="max-w-4xl mx-auto p-4">
