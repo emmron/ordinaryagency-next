@@ -7,54 +7,30 @@ import Accordion from './components/Accordion';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
-interface EntrySkeletonType {
-  sys: {
-    id: string;
-  };
-  fields: {
-    question: string;
-    answer: any;
-    backgroundImage?: {
-      fields: {
-        file: {
-          url: string;
-        };
-      };
-    };
-    title?: string;
-  };
-}
-
 const contentfulClient = createClient({
   space: '27rs2i2q5dqf',
   accessToken: 'NHGhWwA_AB9q3RGf8PBUpRiZ6fnDRxWgi5QeH6RjNNE',
 });
 
 export default function Home() {
-  const [accordionItems, setAccordionItems] = useState<Entry<EntrySkeletonType, undefined, string>[]>([]);
-  const [heroData, setHeroData] = useState<EntrySkeletonType | null>(null);
+  const [accordionItems, setAccordionItems] = useState([]);
+  const [heroData, setHeroData] = useState(null);
 
   useEffect(() => {
     contentfulClient.getEntries({
-      content_type: 'accordionItem' // Replace 'YOUR_ACCORDION_CONTENT_TYPE_ID' with a valid content type ID
+      content_type: 'accordionItem'
     })
     .then((response) => {
-      // Ensure the response items are of the correct type before setting the state
-      if (Array.isArray(response.items) && response.items.every(item => item.sys && item.fields)) {
-        setAccordionItems(response.items as Entry<EntrySkeletonType, undefined, string>[]);
-      }
+      setAccordionItems(response.items as Entry<any>[] || []);
     })
     .catch(console.error);
-
     contentfulClient.getEntries({
-      content_type: 'homeHero', // Replace with your actual content type ID
+      content_type: 'homeHero',
     })
     .then((response) => {
-      // Check if the response contains items before trying to access them
       if (response.items.length > 0) {
-        setHeroData(response.items[0].fields as EntrySkeletonType);
+        setHeroData(response.items[0] || null);
       } else {
-        // Handle the case where no items are returned
         console.error('No hero data found');
       }
     })
