@@ -13,8 +13,8 @@ const contentfulClient = createClient({
 });
 
 export default function Home() {
-  const [accordionItems, setAccordionItems] = useState([]);
-  const [heroData, setHeroData] = useState({});
+  const [accordionItems, setAccordionItems] = useState<any[]>([]);
+    const [heroData, setHeroData] = useState({});
 
   useEffect(() => {
     contentfulClient.getEntries({
@@ -49,11 +49,11 @@ export default function Home() {
       <Header />
       <main>
         <div className="relative">
-          <div
-            className="bg-cover bg-center h-screen flex items-center justify-center"
-            style={{ backgroundImage: `url(${heroData.backgroundImage?.fields?.file?.url})` }}
-          >
-            <h1 className="text-white text-5xl font-bold">{heroData.title}</h1>
+        <div
+      className="bg-cover bg-center h-screen flex items-center justify-center"
+      style={{ backgroundImage: `url(${heroData?.backgroundImage?.fields?.file?.url ? 'https:' + heroData.backgroundImage.fields.file.url : ''})` }}
+    >
+            <h1 className="text-white text-5xl font-bold">{heroData?.title ?? 'Title Placeholder'}</h1>
           </div>
         </div>
         <section className="max-w-4xl mx-auto p-4">
