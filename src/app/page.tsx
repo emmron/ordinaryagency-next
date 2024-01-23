@@ -53,23 +53,21 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <div className="relative overflow-hidden h-screen bg-gradient-to-r from-blue-900 via-purple-800 to-pink-600 animate-float">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 mix-blend-multiply animate-pulse-slow">
+        <div className="relative overflow-hidden h-screen bg-gradient-to-r from-blue-900 via-purple-800 to-pink-600">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 mix-blend-multiply">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black mix-blend-multiply"></div>
-            <div className="absolute inset-0 animate-pulse-slow">
-              <div className="flex h-full w-full">
-                <div className="flex-1 h-full bg-gradient-to-b from-blue-500 to-purple-500"></div>
-                <div className="flex-1 h-full bg-gradient-to-b from-black to-gray-800"></div>
-                <div className="flex-1 h-full bg-gradient-to-b from-gray-700 to-gray-500"></div>
-                <div className="flex-1 h-full bg-gradient-to-b from-gray-400 to-white"></div>
-              </div>
+            <div className="flex h-full w-full">
+              <div className="flex-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 transition duration-300 ease-in-out hover:from-blue-400 hover:to-purple-400"></div>
+              <div className="flex-1 h-full bg-gradient-to-b from-black to-gray-800 transition duration-300 ease-in-out hover:from-black hover:to-gray-700"></div>
+              <div className="flex-1 h-full bg-gradient-to-b from-gray-700 to-gray-500 transition duration-300 ease-in-out hover:from-gray-600 hover:to-gray-400"></div>
+              <div className="flex-1 h-full bg-gradient-to-b from-gray-400 to-white transition duration-300 ease-in-out hover:from-gray-300 hover:to-gray-100"></div>
             </div>
-            <div className="absolute inset-0 transform-gpu scale-125 rotate-3 bg-gradient-to-r from-black to-gray-700 opacity-20 blur">
+            <div className="absolute inset-0 transform-gpu scale-110 rotate-6 bg-gradient-to-r from-black to-gray-700 opacity-10 blur-lg transition duration-500 ease-in-out hover:opacity-25 hover:scale-105">
               <svg className="h-full w-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                 <polygon points="100,10 40,198 190,78 10,78 160,198" stroke="white" strokeWidth="4" fill="none" />
               </svg>
             </div>
-            <div className="absolute inset-0 transform-gpu scale-125 -rotate-3 bg-gradient-to-l from-gray-700 to-white opacity-20 blur">
+            <div className="absolute inset-0 transform-gpu scale-110 -rotate-6 bg-gradient-to-l from-gray-700 to-white opacity-10 blur-lg transition duration-500 ease-in-out hover:opacity-25 hover:scale-105">
               <svg className="h-full w-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                 <polygon points="100,10 40,198 190,78 10,78 160,198" stroke="white" strokeWidth="4" fill="none" />
               </svg>

@@ -93,6 +93,12 @@ const Header = () => {
 
          {/* Phone Number, Contact, and Login buttons */}
          <div className="md:flex items-center justify-center space-x-4">
+         <div className="hidden md:flex mr-4 items-center justify-center">
+           <a href="tel:+610899308081" className="bg-white text-black text-sm font-bold py-2 px-4 rounded-full transition-colors duration-300 hover:bg-gray-200 text-lg">
+             <FiPhone className="inline mr-2" />
+             (08) 9930 8081
+           </a>
+         </div>
            {/* Services Mega Menu */}
            <div className="relative group">
              <button onMouseEnter={toggleServicesMenu} onMouseLeave={toggleServicesMenu} className={`${buttonClass} font-bold text-lg py-2 px-4 rounded-lg shadow-md mr-2 transition duration-300 ease-in-out flex items-center focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-black hover:bg-opacity-80`}>
@@ -114,12 +120,7 @@ const Header = () => {
 
          {/* Hamburger Menu Icon */}
          <div className="flex items-end">
-         <div className="hidden md:flex mr-8 items-center justify-center">
-           <FiPhone />
-           <a href="tel:+610899308081" className={`${phoneNumberClass} block ml-2 hover:text-gray-700 transition-colors duration-300 bold`}>
-             (08) 9930 8081
-           </a>
-         </div>
+      
          <div className="hidden md:flex pr-4">
            <button onClick={openModal} className={`${buttonClass} font-bold py-2 px-4 rounded mr-2 hover:bg-white hover:text-black transition-colors duration-300`}>
              Contact
