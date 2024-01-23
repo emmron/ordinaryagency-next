@@ -54,16 +54,25 @@ export default function Home() {
       <Header />
       <main>
         <div className="relative overflow-hidden h-screen bg-black">
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-500 to-gray-300 opacity-50">
-            <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-b from-transparent to-gray-900 opacity-75"></div>
-            <div className="absolute inset-0 transform skew-y-6 bg-gradient-to-r from-gray-700 via-gray-500 to-gray-300 opacity-50 animate-pulse"></div>
-            <div className="absolute inset-0 transform -skew-y-6 bg-gradient-to-l from-gray-700 via-gray-500 to-gray-300 opacity-50 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-700">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 mix-blend-multiply"></div>
+            <div className="absolute inset-0 animate-pulse-slow">
+              <div className="flex h-full w-full">
+                <div className="w-1/3 h-full bg-gradient-to-t from-gray-900 to-transparent"></div>
+                <div className="w-1/3 h-full bg-gradient-to-t from-gray-800 to-transparent animate-spin-slow"></div>
+                <div className="w-1/3 h-full bg-gradient-to-t from-transparent to-gray-900"></div>
+              </div>
+            </div>
+            <div className="absolute inset-0 transform-gpu scale-125 rotate-3 bg-gradient-to-r from-gray-900 to-gray-700 opacity-20 blur"></div>
+            <div className="absolute inset-0 transform-gpu scale-125 -rotate-3 bg-gradient-to-l from-gray-900 to-gray-700 opacity-20 blur"></div>
           </div>
           <div className="relative flex items-center justify-center h-full">
-            <div className="text-6xl font-extrabold text-white animate-bounce">
+            <div className="text-6xl font-extrabold text-white animate-fade-in-down">
               {heroData.title || 'Title Placeholder'}
             </div>
-            <svg className="absolute bottom-0 animate-bounce h-24 w-24 text-white" viewBox="0 0 20 20" fill="currentColor">
+            <svg className="absolute bottom-0 animate-bounce-slow h-24 w-24 text-white" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-5a1 1 0 112 0h-2zm1-3a1 1 0 01-1-1V5a1 1 0 012 0v4a1 1 0 01-1 1z" clip-rule="evenodd" />
+            </svg>
           </div>
         </div>
         <section className="max-w-4xl mx-auto p-4">

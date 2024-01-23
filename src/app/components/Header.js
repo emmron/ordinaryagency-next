@@ -95,18 +95,18 @@ const Header = () => {
          <div className="md:flex items-center justify-center space-x-4">
            {/* Services Mega Menu */}
            <div className="relative">
-             <button onMouseEnter={toggleServicesMenu} onMouseLeave={toggleServicesMenu} className={`${buttonClass} font-bold py-2 px-4 rounded mr-2 hover:bg-gray-100 hover:text-black transition-colors duration-300 flex items-center`}>
+             <button onMouseEnter={toggleServicesMenu} onMouseLeave={toggleServicesMenu} className={`${buttonClass} font-bold py-2 px-4 rounded-full shadow-lg mr-2 hover:bg-black hover:text-white transition-colors duration-300 flex items-center`}>
                Services <FiGrid className="ml-2" />
              </button>
-             <div className={`absolute top-full left-0 bg-blue-500 text-white rounded-lg shadow-lg mt-2 py-4 w-72 transform transition-all duration-500 ease-in-out ${isServicesMenuOpen ? 'scale-100 opacity-100 visible' : 'scale-95 opacity-0 invisible'}`}>
+             <div className={`absolute top-full left-0 bg-white text-black rounded-lg shadow-2xl mt-2 py-4 w-80 transform transition-all duration-500 ease-in-out ${isServicesMenuOpen ? 'scale-100 opacity-100 visible' : 'scale-95 opacity-0 invisible'}`}>
                <ul className="grid grid-cols-2 gap-4 p-4">
-                 <li className="flex flex-col items-center justify-center text-center border border-gray-200 bg-white rounded-md transition-transform duration-500 ease-in-out hover:scale-105 cursor-pointer">
-                   <span className="text-lg font-medium mb-1 text-white">Web Development</span>
-                   <p className="text-sm text-gray-200">Tailored web solutions that empower your online presence.</p>
+                 <li className="flex flex-col items-center justify-center text-center border border-black bg-white rounded-lg transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-gray-100 cursor-pointer">
+                   <span className="text-lg font-medium mb-1 text-black">Web Development</span>
+                   <p className="text-sm text-gray-700">Tailored web solutions that empower your online presence.</p>
                  </li>
-                 <li className="flex flex-col items-center justify-center text-center border border-gray-200 bg-white rounded-md transition-transform duration-500 ease-in-out hover:scale-105 cursor-pointer">
-                   <span className="text-lg font-medium mb-1 text-white">Lead Generation</span>
-                   <p className="text-sm text-gray-200">Innovative strategies to boost your business growth.</p>
+                 <li className="flex flex-col items-center justify-center text-center border border-black bg-white rounded-lg transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-gray-100 cursor-pointer">
+                   <span className="text-lg font-medium mb-1 text-black">Lead Generation</span>
+                   <p className="text-sm text-gray-700">Innovative strategies to boost your business growth.</p>
                  </li>
                </ul>
              </div>
