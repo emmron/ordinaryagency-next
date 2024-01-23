@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, isValidElement, ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 interface AccordionProps {
   question: string;
-  answer: React.ReactNode; // Change the type of answer to React.ReactNode
+  answer: ReactNode | string;
 }
 
 const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
@@ -17,7 +17,7 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
   };
 
   const variants = {
-    open: { opacity: 1, maxHeight: 1000 }, // Change height: "auto" to a large maxHeight
+    open: { opacity: 1, maxHeight: 1000 },
     closed: { opacity: 0, maxHeight: 0 }
   };
 
@@ -48,7 +48,7 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
       className="font-bold text-lg text-gray-800"
       style={{ fontFamily: "'Poppins', sans-serif", color: 'black', fontWeight: "600" }}
       initial={false}
-      animate={{ fontSize: isOpen ? "1.8em" : "1.5em" }} // Increase the font size here
+      animate={{ fontSize: isOpen ? "1.8em" : "1.5em" }}
       transition={transition}
     >
       {question}
@@ -67,7 +67,7 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
        className="p-4 pt-2 text-black text-lg overflow-hidden"
        style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500", fontSize: "1.5em" }}
      >
-       {typeof answer === 'string' ? answer : React.isValidElement(answer) ? answer : null}
+       {typeof answer === 'string' ? answer : isValidElement(answer) ? answer : 'Invalid answer format'}
      </motion.section>
 
         )}

@@ -9,8 +9,8 @@ import Header from './components/Header';
 import BlogSlider from './components/BlogSlider';
 
 const contentfulClient = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  space: '27rs2i2q5dqf',
+  accessToken: 'NHGhWwA_AB9q3RGf8PBUpRiZ6fnDRxWgi5QeH6RjNNE',
 });
 
 export default function Home() {
@@ -28,7 +28,25 @@ export default function Home() {
       }
     })
     .catch(console.error);
+
+    contentfulClient.getEntries({
+      content_type: 'homeHero', // Replace with your actual content type ID
+    })
+    .then((response) => {
+      // Check if the response contains items before trying to access them
+      if (response.items.length > 0) {
+        setHeroData(response.items[0].fields);
+      } else {
+        // Handle the case where no items are returned
+        console.error('No hero data found');
+      }
+    })
+    .catch(console.error);
   }, []);
+
+  if (!heroData) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <Fragment>
@@ -37,6 +55,14 @@ export default function Home() {
       </Head>
       <Header />
       <main>
+        <div className="relative">
+          <div
+            className="bg-cover bg-center h-screen flex items-center justify-center"
+            style={{ backgroundImage: `url(${heroData.backgroundImage.fields.file.url})` }}
+          >
+            <h1 className="text-white text-5xl font-bold">{heroData.title}</h1>
+          </div>
+        </div>
         <section>
           {accordionItems.map((item) => (
             <Accordion
