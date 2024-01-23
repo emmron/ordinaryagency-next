@@ -51,7 +51,7 @@ export default function Home() {
         <div className="relative">
           <div
             className="bg-cover bg-center h-screen flex items-center justify-center"
-            style={{ backgroundImage: heroData.backgroundImage?.file?.url ? `url(${heroData.backgroundImage.file.url})` : 'none' }}
+            style={{ backgroundImage: `url(${heroData.backgroundImage?.fields?.file?.url})` }}
           >
             <h1 className="text-white text-5xl font-bold">{heroData.title}</h1>
           </div>
