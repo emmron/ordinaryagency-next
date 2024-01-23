@@ -58,11 +58,9 @@ export default function Home() {
       <main>
         <div className="relative">
         <div
-      className="bg-cover bg-center h-screen flex items-center justify-center"
-      style={{ backgroundImage: `url(${(heroData as any)['backgroundImage'] ? `https:${(heroData as any)['backgroundImage']}` : ''})` }}
-    >
-            <h1 className="text-white text-5xl font-bold">{(heroData as any).title ?? 'Title Placeholder'}</h1>
-          </div>
+          className="bg-black h-100vh w-100vw flex items-center justify-center"
+        >
+          <h1 className="text-white text-5xl font-bold" style={{ backgroundColor: 'rgba(0, 0, 0, 1)', padding: '10px', borderRadius: '10px' }}>{(heroData as any).title ?? 'Title Placeholder'}</h1>
         </div>
         <section className="max-w-4xl mx-auto p-4">
           <div className="bg-white shadow-md rounded-lg overflow-hidden">
