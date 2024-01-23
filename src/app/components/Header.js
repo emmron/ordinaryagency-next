@@ -93,12 +93,7 @@ const Header = () => {
 
          {/* Phone Number, Contact, and Login buttons */}
          <div className="md:flex items-center justify-center space-x-4">
-         <div className="hidden md:flex mr-4 items-center justify-center">
-           <a href="tel:+610899308081" className="bg-white text-black text-sm font-bold py-2 px-4 rounded-full transition-colors duration-300 hover:bg-gray-200 text-lg">
-             <FiPhone className="inline mr-2" />
-             (08) 9930 8081
-           </a>
-         </div>
+      
            {/* Services Mega Menu */}
            <div className="relative group">
              <button onMouseEnter={toggleServicesMenu} onMouseLeave={toggleServicesMenu} className={`${buttonClass} font-bold text-lg py-2 px-4 rounded-lg shadow-md mr-2 transition duration-300 ease-in-out flex items-center focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-black hover:bg-opacity-80`}>
@@ -127,6 +122,12 @@ const Header = () => {
            </button>
            <a href="https://app.ordinaryagency.com.au" target="_blank" rel="noopener noreferrer" className={`${buttonClass} font-bold py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300`}>
              Login
+           </a>
+         </div>
+         <div className="hidden md:flex mr-2 mb-2 ml-2 items-center justify-center">
+           <a href="tel:+610899308081" className="bg-white text-black text-sm font-bold py-2 px-4 rounded-full transition-colors duration-300 hover:bg-gray-200 text-lg">
+             <FiPhone className="inline mr-2" />
+             (08) 9930 8081
            </a>
          </div>
        </div>
