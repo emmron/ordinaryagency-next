@@ -53,7 +53,7 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <div className="relative bg-black h-100vh w-100vw flex items-center justify-center">
+        <div className="flex items-center justify-center h-screen">
           <h1 className="text-white text-5xl font-bold" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px', borderRadius: '10px' }}>{heroData.title || 'Title Placeholder'}</h1>
         </div>
         <section className="max-w-4xl mx-auto p-4">
