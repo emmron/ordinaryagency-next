@@ -11,12 +11,13 @@ const Footer = () => {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
+          const borderLine = entry.target.querySelector('.border-line');
           if (entry.isIntersecting) {
             entry.target.classList.add('fade-in');
-            entry.target.querySelector('.border-line').classList.add('expand');
+            if (borderLine) borderLine.classList.add('expand');
           } else {
             entry.target.classList.remove('fade-in');
-            entry.target.querySelector('.border-line').classList.remove('expand');
+            if (borderLine) borderLine.classList.remove('expand');
           }
         });
       },

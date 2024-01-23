@@ -3,10 +3,11 @@
 import { useState, isValidElement, ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 interface AccordionProps {
   question: string;
-  answer: ReactNode | string;
+  answer: any;
 }
 
 const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
@@ -67,7 +68,7 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
        className="p-4 pt-2 text-black text-lg overflow-hidden"
        style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500", fontSize: "1.5em" }}
      >
-       {typeof answer === 'string' ? answer : isValidElement(answer) ? answer : 'Invalid answer format'}
+       {documentToReactComponents(answer)}
      </motion.section>
 
         )}
