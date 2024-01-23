@@ -54,18 +54,27 @@ export default function Home() {
       <Header />
       <main>
         <div className="relative overflow-hidden h-screen bg-black">
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-700">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-700 to-white">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black mix-blend-multiply"></div>
             <div className="absolute inset-0 animate-pulse-slow">
-              <div className="flex h-full w-full">
-                <div className="w-1/3 h-full bg-gradient-to-t from-gray-900 to-transparent"></div>
-                <div className="w-1/3 h-full bg-gradient-to-t from-gray-800 to-transparent animate-spin-slow"></div>
-                <div className="w-1/3 h-full bg-gradient-to-t from-transparent to-gray-900"></div>
+              <div className="flex h-full w-full transform rotate-45">
+                <div className="w-1/3 h-full bg-gradient-to-t from-black to-transparent"></div>
+                <div className="w-1/3 h-full bg-gradient-to-t from-gray-700 to-transparent animate-spin-slow"></div>
+                <div className="w-1/3 h-full bg-gradient-to-t from-transparent to-white"></div>
               </div>
             </div>
-            <div className="absolute inset-0 transform-gpu scale-125 rotate-3 bg-gradient-to-r from-gray-900 to-gray-700 opacity-20 blur"></div>
-            <div className="absolute inset-0 transform-gpu scale-125 -rotate-3 bg-gradient-to-l from-gray-900 to-gray-700 opacity-20 blur"></div>
+            <div className="absolute inset-0 transform-gpu scale-125 rotate-3 bg-gradient-to-r from-black to-gray-700 opacity-20 blur">
+              <svg className="h-full w-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="100,10 40,198 190,78 10,78 160,198" stroke="white" strokeWidth="4" fill="none" />
+              </svg>
+            </div>
+            <div className="absolute inset-0 transform-gpu scale-125 -rotate-3 bg-gradient-to-l from-gray-700 to-white opacity-20 blur">
+              <svg className="h-full w-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="100,10 40,198 190,78 10,78 160,198" stroke="white" strokeWidth="4" fill="none" />
+              </svg>
+            </div>
           </div>
+        </div>
           <div className="relative flex items-center justify-center h-full">
             <div className="text-6xl font-extrabold text-white animate-fade-in-down">
               {heroData.title || 'Title Placeholder'}
