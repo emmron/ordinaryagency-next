@@ -74,7 +74,6 @@ export default function Home() {
               </svg>
             </div>
           </div>
-        </div>
           <div className="relative flex items-center justify-center h-full">
             <div className="text-6xl font-extrabold text-white animate-fade-in-down">
               {heroData.title || 'Title Placeholder'}

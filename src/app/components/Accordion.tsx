@@ -29,48 +29,46 @@ const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
 
   return (
     <motion.div
-      className="rounded-none my-0.5 overflow-hidden"
+      className="my-0.5 overflow-hidden"
       whileHover={{ scale: 1.02 }}
       transition={transition}
     >
       <motion.div
-        className="p-4 flex items-center cursor-pointer transition-colors duration-200 ease-out"
+        className="p-4 flex items-center cursor-pointer"
         onClick={handleClick}
-        style={{ justifyContent: 'flex-start' }}
+        initial={false}
+        animate={{ justifyContent: isOpen ? 'space-between' : 'flex-start' }}
+        transition={{ duration: 0.2, ease: 'easeOut' }}
       >
-        <motion.div
-          className="transition-all duration-500 ease-in-out mr-3"
+        <motion.span
+          className="text-black mr-3"
           animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+        >
+          {isOpen ? <IoIosArrowUp size={24} /> : <IoIosArrowDown size={24} />}
+        </motion.span>
+        <motion.h2
+          className="font-semibold text-lg text-gray-800"
+          animate={{ fontSize: isOpen ? 'text-xl' : 'text-lg' }}
           transition={transition}
         >
-          {isOpen ? <IoIosArrowUp size={24} color="black" /> : <IoIosArrowDown size={24} color="black" />}
-        </motion.div>
-        <motion.h2
-      className="font-bold text-lg text-gray-800"
-      style={{ fontFamily: "'Poppins', sans-serif", color: 'black', fontWeight: "600" }}
-      initial={false}
-      animate={{ fontSize: isOpen ? "1.8em" : "1.5em" }}
-      transition={transition}
-    >
-      {question}
-    </motion.h2>
-
+          {question}
+        </motion.h2>
       </motion.div>
 
       <AnimatePresence>
         {isOpen && (
           <motion.section
-       variants={variants}
-       initial="closed"
-       animate={isOpen ? "open" : "closed"}
-       exit="closed"
-       transition={transition}
-       className="p-4 pt-2 text-black text-lg overflow-hidden"
-       style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500", fontSize: "1.5em" }}
-     >
-       {documentToReactComponents(answer)}
-     </motion.section>
-
+            variants={variants}
+            initial="closed"
+            animate={isOpen ? "open" : "closed"}
+            exit="closed"
+            transition={transition}
+            className="p-4 pt-2 text-black text-lg overflow-hidden"
+            style={{ fontFamily: "'Poppins', sans-serif", fontWeight: "500", fontSize: "1.5em" }}
+          >
+            {documentToReactComponents(answer)}
+          </motion.section>
         )}
       </AnimatePresence>
     </motion.div>
