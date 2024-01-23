@@ -53,8 +53,13 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <div className="flex items-center justify-center h-screen">
-          <h1 className="text-white text-5xl font-bold" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px', borderRadius: '10px' }}>{heroData.title || 'Title Placeholder'}</h1>
+        <div className="relative overflow-hidden h-screen bg-black">
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-500 to-gray-300 opacity-75"></div>
+          <div className="relative flex items-center justify-center h-full">
+            <div className="text-6xl font-extrabold text-white animate-pulse">
+              {heroData.title || 'Title Placeholder'}
+            </div>
+          </div>
         </div>
         <section className="max-w-4xl mx-auto p-4">
           <div className="bg-white shadow-md rounded-lg overflow-hidden">
