@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Fragment } from 'react';
 import Head from 'next/head'; // Import the Head component
-import { createClient, Entry } from 'contentful';
+import { createClient } from 'contentful';
 import Accordion from './components/Accordion';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -14,14 +14,14 @@ const contentfulClient = createClient({
 
 export default function Home() {
   const [accordionItems, setAccordionItems] = useState([]);
-  const [heroData, setHeroData] = useState(null);
+  const [heroData, setHeroData] = useState({});
 
   useEffect(() => {
     contentfulClient.getEntries({
       content_type: 'accordionItem'
     })
     .then((response) => {
-      setAccordionItems(response.items as Entry<any>[] || []);
+      setAccordionItems(response.items || []);
     })
     .catch(console.error);
     contentfulClient.getEntries({
@@ -29,7 +29,7 @@ export default function Home() {
     })
     .then((response) => {
       if (response.items.length > 0) {
-        setHeroData(response.items[0] || null);
+        setHeroData(response.items[0].fields || {});
       } else {
         console.error('No hero data found');
       }
@@ -37,7 +37,7 @@ export default function Home() {
     .catch(console.error);
   }, []);
 
-  if (!heroData) {
+  if (Object.keys(heroData).length === 0) {
     return <div>Loading...</div>;
   }
 
@@ -51,7 +51,7 @@ export default function Home() {
         <div className="relative">
           <div
             className="bg-cover bg-center h-screen flex items-center justify-center"
-            style={{ backgroundImage: `url(${heroData.backgroundImage?.fields.file.url})` }}
+            style={{ backgroundImage: heroData.backgroundImage?.file?.url ? `url(${heroData.backgroundImage.file.url})` : 'none' }}
           >
             <h1 className="text-white text-5xl font-bold">{heroData.title}</h1>
           </div>
