@@ -1,9 +1,0 @@
-.answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-
-.answer.open {
-  max-height: 100px; /* Adjust this value to fit your content */
-}
