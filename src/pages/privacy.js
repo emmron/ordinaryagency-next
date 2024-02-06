@@ -1,7 +1,6 @@
-import '../app/globals.css'
 import { useState, useEffect } from 'react';
-import Header from '../app/components/Header';
-import Footer from '../app/components/Footer';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import Modal from 'react-modal';
 import Head from 'next/head';
 import InternalHero from '../app/components/InternalHero';
