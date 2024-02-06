@@ -1,12 +1,11 @@
-import '../app/globals.css'
 import { useState } from "react";
-import Header from "../app/components/Header";
-import Footer from "../app/components/Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Head from "next/head";
-import InternalHero from "../app/components/InternalHero";
+import InternalHero from "../components/InternalHero";
 import { FaBasketballBall, FaCalendar, FaFutbol } from "react-icons/fa";
 import { motion } from 'framer-motion';
-import Accordion from '../app/components/Accordion';
+import Accordion from '../components/Accordion';
 
 const ShopifyPerth = () => {
   const handleSetup = () => {

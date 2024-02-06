@@ -1,51 +1,18 @@
 "use client";
 
-import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { createClient } from 'contentful';
-import Accordion from './components/Accordion';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import Accordion from '../components/Accordion';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
-const contentfulClient = createClient({
-  space: '27rs2i2q5dqf',
-  accessToken: 'NHGhWwA_AB9q3RGf8PBUpRiZ6fnDRxWgi5QeH6RjNNE',
-});
+// const contentfulClient = createClient({
+//   space: '27rs2i2q5dqf',
+//   accessToken: 'NHGhWwA_AB9q3RGf8PBUpRiZ6fnDRxWgi5QeH6RjNNE',
+// });
 
-export default function Home() {
-  const [accordionItems, setAccordionItems] = useState<any[]>([]);
-  const [heroData, setHeroData] = useState<any>({});
-
-  useEffect(() => {
-    contentfulClient.getEntries({
-      content_type: 'accordionItem'
-    })
-    .then((response) => {
-      setAccordionItems(response.items || []);
-    })
-    .catch(console.error);
-    contentfulClient.getEntries({
-      content_type: 'homeHero',
-    })
-    .then((response) => {
-      if (response.items.length > 0) {
-        const heroData = response.items[0].fields || {};
-        if (!heroData.backgroundImage) {
-          console.error('No valid URL found for backgroundImage');
-        }
-        console.log(heroData); // Added console log for heroData
-        setHeroData(heroData);
-      } else {
-        console.error('No hero data found');
-      }
-    })
-    .catch(console.error);
-  }, []);
-
-  if (Object.keys(heroData).length === 0) {
-    return <div>Loading...</div>;
-  }
-
+export default function Home({accordionItems, heroData}) {
+  console.log(accordionItems, heroData)
   return (
     <>
       <Head>
@@ -84,7 +51,7 @@ export default function Home() {
         </div>
         <section className="max-w-4xl mx-auto p-4">
           <div className="bg-white shadow-md rounded-lg overflow-hidden">
-            {accordionItems.map((item) => (
+            {accordionItems.items.map( (item) => (
               <Accordion
                 key={item.sys.id}
                 question={item.fields.question}
@@ -97,4 +64,40 @@ export default function Home() {
       <Footer />
     </>
   );
+}
+
+export async function getStaticProps() {
+  // Environment variables are accessed here to initialize the Contentful client
+  const contentfulClient = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID || "",
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "",
+  });
+
+  let accordionItems = {items: []};
+  let heroData = null;
+
+  try {
+    accordionItems = await contentfulClient.getEntries({
+      content_type: 'accordionItem',
+    });
+
+    const heroDataResponse = await contentfulClient.getEntries({
+      content_type: 'homeHero',
+    });
+
+    if (heroDataResponse.items.length > 0) {
+      heroData = heroDataResponse.items[0].fields;
+    }
+  } catch (error) {
+    console.error("Error fetching data from Contentful", error);
+  }
+
+  // Returns props to your page component below
+  return {
+    props: {
+      accordionItems,
+      heroData,
+    },
+    revalidate: 1, // Use ISR if needed
+  };
 }

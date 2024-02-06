@@ -5,12 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-interface AccordionProps {
-  question: string;
-  answer: any;
-}
-
-const Accordion: React.FC<AccordionProps> = ({ question, answer }) => {
+const Accordion= ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {

@@ -1,10 +1,9 @@
-import "../app/globals.css";
 import { useState } from "react";
 import axios from "axios";
-import Header from "../app/components/Header";
-import Footer from "../app/components/Footer";
-import FAQ from "../app/components/FAQ";
-import InternalHero from "../app/components/InternalHero";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import FAQ from "../components/FAQ";
+import InternalHero from "../components/InternalHero";
 import Head from "next/head";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FaRegEnvelope, FaRegUser, FaRegCommentDots, FaPhone, FaRegClock } from "react-icons/fa";
@@ -14,13 +13,13 @@ const formEndpoint = "https://getform.io/f/61892774-9629-43a7-8a42-f3f8e44d35a2"
 const Contact = () => {
   const [status, setStatus] = useState("");
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setStatus("Sending...");
 
-    const name = event.currentTarget.elements.namedItem("name") as HTMLInputElement;
-    const email = event.currentTarget.elements.namedItem("email") as HTMLInputElement;
-    const message = event.currentTarget.elements.namedItem("message") as HTMLInputElement;
+    const name = event.currentTarget.elements.namedItem("name");
+    const email = event.currentTarget.elements.namedItem("email");
+    const message = event.currentTarget.elements.namedItem("message");
 
     let details = {
       name: name.value,

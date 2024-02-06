@@ -1,13 +1,12 @@
-import '../app/aos.css';
-import '../app/globals.css';
+import '../styles/aos.css';
 import { useState } from 'react';
-import Header from '../app/components/Header';
-import Footer from '../app/components/Footer';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import Head from 'next/head';
-import InternalHero from '../app/components/InternalHero';
+import InternalHero from '../components/InternalHero';
 import { FaBug, FaSearch, FaChartLine, FaTools } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import SEOSection from '../app/components/seosection.js'; // Assuming you have a similar component for SEO
+import SEOSection from '../components/seosection.js'; // Assuming you have a similar component for SEO
 
 const PestControlWebAndSEO = () => {
   return (

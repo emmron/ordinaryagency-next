@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './logo.module.css';
 
-interface LogoProps {
-  className?: string;
-}
-
-const Logo: React.FC<LogoProps> = ({ className }) => {
+const Logo = ({ className }) => {
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {

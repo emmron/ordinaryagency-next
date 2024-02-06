@@ -3,18 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
-interface BlogPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  imageUrl: string;
-}
-
-interface BlogSliderProps {
-  posts: BlogPost[];
-}
-
-const BlogSlider: React.FC<BlogSliderProps> = ({ posts }) => {
+const BlogSlider = ({ posts }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
